@@ -1,0 +1,11 @@
+2014-08-10 00:28:01 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-10 00:39:24 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-08-10 20:18:27 Server:Workerman is starting ...
+2014-08-10 20:18:27 Server:[1A
+[KWorkerman start success ...[0m
+2014-08-10 21:25:56 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-10 21:25:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-10 21:30:58 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-08-10 23:29:33 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_WARNING file_get_contents(/var/run/workerman-chat.pid): failed to open stream: No such file or directory in /var/www/html/nws_v2/websocket/workerman/Core/Lib/Checker.php on line 276
+2014-08-10 23:29:33 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-10 23:29:33 Worker[FileMonitor]:terminal closed and reset workers fd

@@ -1,0 +1,123 @@
+2014-08-31 00:42:18 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 00:42:18 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-08-31 00:42:19 Server:worker[637:BusinessWorker] exit with status 12
+2014-08-31 00:42:19 Server:worker[630:BusinessWorker] exit with status 12
+2014-08-31 00:42:19 Server:worker[631:ChatWeb] exit with status 12
+2014-08-31 00:42:19 Server:worker[632:StatisticProvider] exit with status 12
+2014-08-31 00:42:19 Server:worker[633:StatisticWeb] exit with status 12
+2014-08-31 00:42:19 Server:worker[634:BusinessWorker] exit with status 12
+2014-08-31 00:42:19 Server:worker[635:BusinessWorker] exit with status 12
+2014-08-31 00:42:19 Server:worker[636:Monitor] exit with status 12
+2014-08-31 00:42:19 Server:worker[638:StatisticWorker] exit with status 12
+2014-08-31 00:42:20 Server:worker[640:BusinessWorker] exit with status 12
+2014-08-31 00:42:20 Server:worker[641:BusinessWorker] exit with status 12
+2014-08-31 00:42:20 Server:worker[642:ChatWeb] exit with status 12
+2014-08-31 00:42:20 Server:worker[643:StatisticProvider] exit with status 12
+2014-08-31 00:42:20 Server:worker[644:StatisticWeb] exit with status 12
+2014-08-31 00:42:20 Server:worker[645:BusinessWorker] exit with status 12
+2014-08-31 00:42:20 Server:worker[646:BusinessWorker] exit with status 12
+2014-08-31 00:42:20 Server:worker[647:Monitor] exit with status 12
+2014-08-31 00:42:20 Server:worker[648:StatisticWorker] exit with status 12
+2014-08-31 10:56:31 Server:Workerman is starting ...
+2014-08-31 10:56:31 Server:[1A
+[KWorkerman start success ...[0m
+2014-08-31 10:56:54 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 10:56:57 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 10:56:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 13:45:25 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 13:45:27 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 13:45:28 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 13:46:06 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 14:10:24 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 14:10:37 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 14:14:34 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 14:14:39 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 14:14:43 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-08-31 16:50:53 Server:Workerman is starting ...
+2014-08-31 16:50:53 Server:[1A
+[KWorkerman start success ...[0m
+2014-08-31 16:51:59 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 16:53:01 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 16:55:03 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 16:59:48 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 16:59:55 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 16:59:56 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 16:59:57 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 16:59:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:00:10 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:00:13 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:00:15 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:01:34 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:04:42 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:04:43 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:05:06 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:05:41 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:05:45 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:09:02 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:09:12 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:09:30 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-08-31 17:12:36 Server:Workerman is starting ...
+2014-08-31 17:12:38 Server:[1A
+[KWorkerman start success ...[0m
+2014-08-31 17:12:44 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:12:47 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:12:48 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:13:16 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:20:33 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:45:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:46:08 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 17:46:18 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-08-31 18:36:21 Server:Workerman is starting ...
+2014-08-31 18:36:21 Server:[1A
+[KWorkerman start success ...[0m
+2014-08-31 18:36:24 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:36:25 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:36:26 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:37:20 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:16 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:17 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:18 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:19 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:21 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:22 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:23 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:24 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:25 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:26 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:45 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:46 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:57 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:42:59 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:43:00 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:43:01 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:43:57 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:43:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:43:59 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:44:00 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:44:01 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:44:35 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:44:37 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:44:44 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:44:46 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:48:51 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:48:52 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:48:53 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:48:55 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:48:57 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:48:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:48:59 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:58:41 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 18:59:10 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 19:16:43 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 19:16:44 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 19:17:00 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 19:17:01 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 19:21:49 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 19:21:56 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 19:51:40 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 19:51:41 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 21:25:44 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 21:25:57 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_WARNING file_get_contents(/var/run/workerman-chat.pid): failed to open stream: No such file or directory in /var/www/html/nws_v2/websocket/workerman/Core/Lib/Checker.php on line 276
+2014-08-31 21:25:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-08-31 21:25:58 Worker[FileMonitor]:terminal closed and reset workers fd

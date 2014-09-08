@@ -1,0 +1,39 @@
+2014-09-02 00:36:49 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_NOTICE Undefined index: key in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 184
+2014-09-02 00:36:49 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 00:36:49 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-09-02 09:23:46 Server:Workerman is starting ...
+2014-09-02 09:23:46 Server:[1A
+[KWorkerman start success ...[0m
+2014-09-02 09:23:51 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 09:24:10 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 09:24:13 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 09:24:15 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 09:24:20 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 09:48:16 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 09:50:24 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-09-02 17:48:38 Server:Workerman is starting ...
+2014-09-02 17:48:38 Server:[1A
+[KWorkerman start success ...[0m
+2014-09-02 19:33:04 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 19:33:07 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 21:06:51 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 21:07:43 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-09-02 23:38:22 Server:Workerman is starting ...
+2014-09-02 23:38:23 Server:[1A
+[KWorkerman start success ...[0m
+2014-09-02 23:38:26 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:38:38 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:38:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:38:59 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:39:08 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:39:49 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:40:16 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:40:21 Server:Workerman is starting ...
+2014-09-02 23:40:21 Server:[33;40mWorkerman already started[0m
+2014-09-02 23:40:32 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:41:03 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:41:39 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:44:02 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:44:03 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:44:07 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-02 23:44:08 /tmp/gateway.store.cache.php updated and reload workers
