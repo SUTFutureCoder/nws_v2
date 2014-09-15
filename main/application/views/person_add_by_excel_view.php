@@ -126,7 +126,7 @@ $(function(){
 
         var fd = new FormData();
         fd.append('userfile', fileList[0]);
-        fd.append('user_number', '<?= $user_number?>');
+        fd.append('user_id', '<?= $user_id?>');
         fd.append('user_key', '<?= $user_key?>');
         xhr.send(fd);
 
@@ -141,7 +141,7 @@ $(function(){
             var data = new Array();
             data['src'] = location.href;
             data['api'] = location.href + '/GetSectionConflict';
-            data['data'] = '{"user_key" : "<?= $user_key?>", "user_number" : "<?= $user_number ?>"}';
+            data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"}';
             parent.IframeSend(data);
         }); 
         
@@ -150,7 +150,7 @@ $(function(){
             var data = new Array();
             data['src'] = location.href;
             data['api'] = location.href + '/GetNewStat';
-            data['data'] = '{"user_key" : "<?= $user_key?>", "user_number" : "<?= $user_number ?>"}';
+            data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"}';
             parent.IframeSend(data);           
         });
     });   
@@ -251,11 +251,11 @@ $(function(){
 </script>
 <script>
     //判定部门
-    function ConflictJudge(user_conflict_number, user_section){
+    function ConflictJudge(user_conflict_id, user_section){
         var data = new Array();
             data['src'] = location.href;
             data['api'] = location.href + '/JudgeSectionConflict';
-            data['data'] = '{"user_key" : "<?= $user_key?>", "user_number" : "<?= $user_number?>", "user_conflict_number" : "' + user_conflict_number + '", "user_section" : "' + user_section + '"}';
+            data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id?>", "user_conflict_id" : "' + user_conflict_id + '", "user_section" : "' + user_section + '"}';
             parent.IframeSend(data);
     }
     //接收母窗口传来的值
@@ -266,17 +266,17 @@ $(function(){
                 var length = data[3]['user'].length; 
                 for (var i = 0; i < length; i++){
     //                console.log(data[3]['user']);
-                    $('#conflict').append('<div class=' + data[3]['user'][i]['user_number'] + '><table class="table table-hover" id="' + data[3]['user'][i]['user_number'] + '"></table></div>');                
-                    $('#' + data[3]['user'][i]['user_number']).append('<thead><tr style="font-size:20px"><th class="col-sm-1">' + data[3]['user'][i]['user_name'] + '</th><th class="col-sm-1">' + 
+                    $('#conflict').append('<div class=' + data[3]['user'][i]['user_id'] + '><table class="table table-hover" id="' + data[3]['user'][i]['user_id'] + '"></table></div>');                
+                    $('#' + data[3]['user'][i]['user_id']).append('<thead><tr style="font-size:20px"><th class="col-sm-1">' + data[3]['user'][i]['user_name'] + '</th><th class="col-sm-1">' + 
                             data[3]['user'][i]['user_major'] + '</th><th class="col-sm-2">' + data[3]['user'][i]['user_telephone']  + '</th><th  class="col-sm-8">' + 
                             data[3]['user'][i]['user_talent'] + '</th></tr></thead>');
-                    $('.' + data[3]['user'][i]['user_number']).append('<hr/>');
+                    $('.' + data[3]['user'][i]['user_id']).append('<hr/>');
                 }
 
                 var length = data[3]['section'].length; 
                 for (var i = 0; i < length; i++){
     //                console.log(data[3]['user']);
-                    $('#' + data[3]['section'][i]['user_number']).append('<tbody><tr style="font-size:18px;"><td colspan="2"><strong>' + data[3]['section'][i]['section_name'] + '</strong></td><td colspan="2"><button type="button" onclick="ConflictJudge(' + data[3]['section'][i]['user_number'] + ',\'' + data[3]['section'][i]['section_name'] + '\')" class="btn btn-danger btn-block">判定至' + data[3]['section'][i]['section_name'] + '</button></td></tr></tbody>');
+                    $('#' + data[3]['section'][i]['user_id']).append('<tbody><tr style="font-size:18px;"><td colspan="2"><strong>' + data[3]['section'][i]['section_name'] + '</strong></td><td colspan="2"><button type="button" onclick="ConflictJudge(' + data[3]['section'][i]['user_id'] + ',\'' + data[3]['section'][i]['section_name'] + '\')" class="btn btn-danger btn-block">判定至' + data[3]['section'][i]['section_name'] + '</button></td></tr></tbody>');
                 }
             break;
             
@@ -302,7 +302,7 @@ $(function(){
             case 21:
                 $("#new_sum").html();
                 $("#final_stat").append("<h3 class=\"text-center\">新生总人数:<a id=\"new_sum\">" + data[3]['new_person_sum'] + "</a></h3>");
-                $("#final_stat").append("<form action=\"<?= base_url('/index.php/person_add_by_excel/GetFinalExcelAll')?>\" method=\"post\"><input type=\"hidden\" name=\"user_number\" value=\"<?= $user_number?>\"><input type=\"hidden\" name=\"user_key\" value=\"<?= $user_key?>\"><input type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" value=\"获取全体新部员名单\"><br/></form><hr>");
+                $("#final_stat").append("<form action=\"<?= base_url('/index.php/person_add_by_excel/GetFinalExcelAll')?>\" method=\"post\"><input type=\"hidden\" name=\"user_id\" value=\"<?= $user_id?>\"><input type=\"hidden\" name=\"user_key\" value=\"<?= $user_key?>\"><input type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" value=\"获取全体新部员名单\"><br/></form><hr>");
                 
 //                var length = data[3]['section'].length;
 //                console.log(data[3]['section'][0]);

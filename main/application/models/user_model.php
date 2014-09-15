@@ -19,20 +19,70 @@ class User_model extends CI_Model{
     
     /**    
      *  @Purpose:    
+     *  验证学号是否重复   
+     *  @Method Name:
+     *  CheckNumberConflict($user_number)
+     *  @Parameter: 
+     *  $user_number 需检查的学号
+     *  @Return: 
+     *  1|重复
+     *  0|不重复
+     * 
+     *  :WARNING:在传参之前请务必进行安检
+    */ 
+    public function CheckNumberConflict($user_number){
+        $this->load->database();        
+        $this->db->select('user_number');
+        $this->db->where('user_number', $user_number);
+        $query = $this->db->get('user');        
+        return $query->num_rows();
+    }
+    
+    /**    
+     *  @Purpose:    
+     *  验证联系方式是否重复   
+     *  @Method Name:
+     *  CheckTeleConflict($user_id = null, $user_telephone)
+     *  @Parameter: 
+     *  $user_id 正常用户可能更新电话号码。必须把本人刨除
+     *  $user_telephone 需检查的手机号码
+     *  @Return: 
+     *  1|重复,返回冲突的user_id
+     *  0|不重复
+     * 
+     *  :WARNING:在传参之前请务必进行安检
+    */ 
+    public function CheckTeleConflict($user_id = NULL, $user_telephone){
+        $this->load->database();        
+        $this->db->select('user_telephone');
+        $this->db->select('user_id');
+        if ($user_id){
+            $this->db->where('user_id !=', $user_id);
+        } 
+        $this->db->where('user_telephone', $user_telephone);
+        $query = $this->db->get('user');        
+        if ($query->num_rows()){
+            return $query->row()->user_id;
+        }
+        return 0;
+    }
+    
+    /**    
+     *  @Purpose:    
      *  根据用户学号获取用户基础信息   
      *  @Method Name:
-     *  GetUserBasic($user_number)    
+     *  GetUserBasic($user_id)    
      *  @Parameter: 
-     *  $user_number 已安检用户学号 
+     *  $user_id 已安检用户账号
      *  @Return: 
      *  用户信息或0
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function GetUserBasic($user_number){
+    public function GetUserBasic($user_id){
         $this->load->database();
         $data = array();
-        $this->db->where('user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $query = $this->db->get('user');
         if ($query->num_rows()){
             $data = array_merge($data, $query->result_array());
@@ -48,18 +98,18 @@ class User_model extends CI_Model{
      *  @Purpose:    
      *  根据用户学号获取用户高级信息   
      *  @Method Name:
-     *  GetUserProperty($user_number)    
+     *  GetUserProperty($user_id)    
      *  @Parameter: 
-     *  $user_number 已安检用户学号 
+     *  $user_id 已安检用户学号 
      *  @Return: 
      *  用户信息或0
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function GetUserProperty($user_number){
+    public function GetUserProperty($user_id){
         $this->load->database();
         $data = array();
-        $this->db->where('user_pro_user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $query = $this->db->get('user_property');
         if ($query->num_rows()){
             $data = array_merge($data, $query->result_array());
@@ -73,20 +123,20 @@ class User_model extends CI_Model{
      *  @Purpose:    
      *  获取用户部门   
      *  @Method Name:
-     *  GetUserSection(user_number)    
+     *  GetUserSection(user_id)    
      *  @Parameter: 
-     *  $user_number 用户学号 
+     *  $user_id 用户账号 
      *  @Return: 
      *      0|失败
      *      部门名称|成功
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function GetUserSection($user_number){
+    public function GetUserSection($user_id){
         $this->load->database();        
         $this->db->from('re_user_section');
         $this->db->join('section', 'section.section_id = re_user_section.section_id');
-        $this->db->where('re_user_section.user_number', $user_number);
+        $this->db->where('re_user_section.user_id', $user_id);
         $query = $this->db->get();
         return $query->row()->section_name;
     }
@@ -95,19 +145,19 @@ class User_model extends CI_Model{
      *  @Purpose:    
      *  获取用户电话  
      *  @Method Name:
-     *  GetUserTelephone(user_number)    
+     *  GetUserTelephone(user_id)    
      *  @Parameter: 
-     *  $user_number 用户学号 
+     *  $user_id 用户账号 
      *  @Return: 
      *      0|失败
      *      电话号码|成功
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function GetUserTelephone($user_number){
+    public function GetUserTelephone($user_id){
         $this->load->database();        
         $this->db->select('user_telephone');
-        $this->db->where('user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $query = $this->db->get('user');
         return $query->row()->user_telephone;
     }
@@ -136,7 +186,7 @@ class User_model extends CI_Model{
         $data['new_person_sum'] = count($temp);        
         error_reporting(0);
         foreach ($temp as $temp_item){
-            $this->db->where('re_user_section.user_number', $temp_item['user_number']);
+            $this->db->where('re_user_section.user_id', $temp_item['user_id']);
             $this->db->from('re_user_section');
             $this->db->join('section', 'section.section_id = re_user_section.section_id');
             $query = $this->db->get();
@@ -152,9 +202,9 @@ class User_model extends CI_Model{
      *  @Purpose:    
      *  根据传入数组修改用户基础信息   
      *  @Method Name:
-     *  UpdateUserBasic($user_number, $data)    
+     *  UpdateUserBasic($user_id, $data)    
      *  @Parameter: 
-     *  $user_number 用户学号
+     *  $user_id 用户账号
      *  $data 已安检数据数组 
      *  @Return: 
      *      0|失败
@@ -162,9 +212,9 @@ class User_model extends CI_Model{
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function UpdateUserBasic($user_number, $data){
+    public function UpdateUserBasic($user_id, $data){
         $this->load->database();
-        $this->db->where('user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $this->db->update('user', $data);
         return $this->db->affected_rows();
     }
@@ -173,9 +223,9 @@ class User_model extends CI_Model{
      *  @Purpose:    
      *  根据传入数组修改用户高级信息   
      *  @Method Name:
-     *  UpdateUserProperty($user_number, $data)    
+     *  UpdateUserProperty($user_id, $data)    
      *  @Parameter: 
-     *  $user_number 用户学号
+     *  $user_id 用户账号
      *  $data 已安检数据数组 
      *  @Return: 
      *      0|失败
@@ -183,9 +233,9 @@ class User_model extends CI_Model{
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function UpdateUserProperty($user_number, $data){
+    public function UpdateUserProperty($user_id, $data){
         $this->load->database();
-        $this->db->where('user_pro_user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $this->db->update('user_property', $data);
         return $this->db->affected_rows();
     }
@@ -194,9 +244,9 @@ class User_model extends CI_Model{
      *  @Purpose:    
      *  根据传入数组设置用户部门关联   
      *  @Method Name:
-     *  SetUserSection($user_number, $user_section)    
+     *  SetUserSection($user_id, $user_section)    
      *  @Parameter: 
-     *  $user_number 用户学号
+     *  $user_id 用户账号
      *  $user_section 用户部门 （中文）
      *  @Return: 
      *      0|失败
@@ -204,19 +254,19 @@ class User_model extends CI_Model{
      * 
      *  :WARNING:在传参之前请务必对部门值进行安检
     */ 
-    public function SetUserSection($user_number, $user_section){
+    public function SetUserSection($user_id, $user_section){
         $this->load->database();
         $this->db->where('section_name', $user_section);
         $query = $this->db->get('section');
         $data = array(
             'section_id' => $query->row()->section_id,
-            'user_number' => $user_number
+            'user_id' => $user_id
         );
         if (!$data['section_id']){
             return 0;
         }
         //查询是否重复录入
-        $this->db->where('user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $this->db->where('section_id', $data['section_id']);
         $query = $this->db->get('re_user_section');
         if ($query->num_rows()){
@@ -232,9 +282,9 @@ class User_model extends CI_Model{
      *  @Purpose:    
      *  根据传入数组设置用户角色关联   
      *  @Method Name:
-     *  SetUserSection($user_number, $user_role)    
+     *  SetUserSection($user_id, $user_role)    
      *  @Parameter: 
-     *  $user_number 用户学号
+     *  $user_id 用户账号
      *  $user_role 角色名称（中文） 
      *  @Return: 
      *      0|失败
@@ -242,25 +292,25 @@ class User_model extends CI_Model{
      * 
      *  :WARNING:在传参之前请务必对部门值进行安检
     */ 
-    public function SetUserRole($user_number, $user_role){
+    public function SetUserRole($user_id, $user_role){
         $this->load->database();
         $this->db->where('role_name', $user_role);
         $query = $this->db->get('role');
         $data = array(
             'role_id' => $query->row()->role_id,
-            'user_number' => $user_number
+            'user_id' => $user_id
         );
         if (!$data['role_id']){
             return 0;
         }
         //查询是否重复录入
-        $this->db->where('user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $this->db->where('role_id', $data['role_id']);
         $query = $this->db->get('re_user_role');
         if ($query->num_rows()){
             return 1;
         }
-//        $this->db->where('user_number', $user_number);
+//        $this->db->where('user_id', $user_id);
 //        $this->db->set($data);
         $this->db->insert('re_user_role', $data);
         return $this->db->affected_rows();
@@ -270,9 +320,9 @@ class User_model extends CI_Model{
      *  @Purpose:    
      *  根据传入参数设置用户头像后缀名   
      *  @Method Name:
-     *  SetPhotoExt($user_number, $file_ext)    
+     *  SetPhotoExt($user_id, $file_ext)    
      *  @Parameter: 
-     *  $user_number 用户学号
+     *  $user_id 用户账号
      *  $file_ext    用户头像图片后缀名
      *  @Return: 
      *      0|失败
@@ -280,12 +330,18 @@ class User_model extends CI_Model{
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function SetPhotoExt($user_number, $file_ext){
+    public function SetPhotoExt($user_id, $file_ext){
         $this->load->database();
-        $this->db->where('user_pro_user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $this->db->update('user_property', array('user_pro_photo_ext' => $file_ext));       
     }
     
+    
+    /**
+     * 
+     * :NOTICE: 必须先执行SetUserBasic → SetUserRole → SetUserSection :NOTICE:
+     * 
+     */
     /**    
      *  @Purpose:    
      *  根据传入数组设置用户基本信息   
@@ -293,35 +349,37 @@ class User_model extends CI_Model{
      *  SetUserBasic($data)    
      *  @Parameter: 
      *  $data = array(
-     *      'user_number', 'user_name', 'user_telephone', 'user_qq', 'user_major', 'user_sex', 'user_talent', 'user_section', 'user_reg_time'
+     *      'user_id', 'user_name', 'user_telephone', 'user_qq', 'user_major', 'user_sex', 'user_talent', 'user_section', 'user_reg_time'
      *  )
      *  @Return: 
      *      0|失败
-     *      1|成功
+     *      1|成功,返回user_id
      *      2|以存在的部员
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
     public function SetUserBasic($data){
-        $this->load->database();
-        if (isset($data['user_section'])){
-            $this->SetUserSection($data['user_number'], $data['user_section']);
-        }
+        $this->load->database();    
         
-        $this->db->select('user_number');     
-        $this->db->where('user_number', $data['user_number']);
-        $query = $this->db->get('user');
-        if ($query->num_rows()){
-            //将password改为1代表有冲突
-            $this->db->where('user_number', $data['user_number']);
-            $this->db->update('user', array('user_password' => '1'));
-            return 2;
-        }
+//        
+//        if ($conflict_user_id = $this->CheckTeleConflict(NULL, $data['user_telephone'])){
+//            //将password改为1代表有冲突
+//            $this->db->where('user_id', $conflict_user_id);
+//            $this->db->where('user_telephone', );
+//            $this->db->update('user', array('user_password' => '1'));
+//            return 2;
+//        }    
+        
         
         unset($data['user_section']);
         $this->db->insert('user', $data);
-        $this->db->insert('user_property', array('user_pro_user_number' => $data['user_number']));
-        return $this->db->affected_rows();
+        //同时也直接生成高级信息
+        $this->db->insert('user_property', array('user_id' => $this->db->insert_id()));
+        if ($this->db->affected_rows()){
+            return $this->db->insert_id();
+        } else {
+            return 0;
+        }
     }
     
 }

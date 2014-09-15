@@ -34,7 +34,8 @@ class Setup extends CI_Controller{
      *  POST user_password 管理员密码
      *  POST user_password_confirm 管理员密码确认
      *  POST db_username 数据库账户
-     *  POST db_password 数据库密码    
+     *  POST db_password 数据库密码  
+     *  :NOTICE: 初始用户id从10000开始 :NOTICE:  
      *  @Return: 
      *  json 状态码及状态说明
      *      状态码|状态
@@ -54,6 +55,7 @@ class Setup extends CI_Controller{
      *      14|社团名称不应超过100个字符
      *      15|管理员电话号码出错，必须为11位
      *      16|姓名不能超过十个字符
+     
     */        
     public function SetupInit()
     {
@@ -254,12 +256,13 @@ class Setup extends CI_Controller{
                                 }
                             }
                             
+                            $clean['user_id'] = 10000;
                             //注册管理员账户（务必在更改完毕配置文件后进行）
                             $result = $this->setup_model->SetupInit($clean);
                             if ($result)
                             {
                                 $clean['result'][0] = 1;
-                                $clean['result'][1] = '恭喜，您已成功安装' . $clean['organ_name'] . '控制面板，非常感谢您的使用！';
+                                $clean['result'][1] = '恭喜，您已成功安装' . $clean['organ_name'] . '控制面板，非常感谢您的使用！\\n\\n\\n\\n您的账号为10000';
                                 $clean['result'][2] = $this->input->post('base_url', TRUE);
                                 echo json_encode($clean['result']);
                                 return 0;                                
@@ -274,7 +277,6 @@ class Setup extends CI_Controller{
 
                         }
                     }   
-                    
                 }
                 else
                 {

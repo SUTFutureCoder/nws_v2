@@ -18,7 +18,7 @@ class Basic
     public $organ_name = '沈阳工业大学网络管理中心';
     
     //学号长度
-    public $user_number_length = 11;
+    public $user_number_length = 9;
     
     //此处填写登录失败重试锁定次数
     public $login_error_lock = 30;

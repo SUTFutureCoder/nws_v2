@@ -38,14 +38,14 @@ class Control_center extends CI_Controller{
         $this->load->model('control_center_model');
         $this->load->model('message_model');
         $this->load->model('user_model');
-        if (empty($this->session->userdata('user_number'))){
+        if (empty($this->session->userdata('user_id'))){
             header("Content-Type: text/html;charset=utf-8");
             echo '<script>alert("会话已过期，请重新登录")</script>';
             echo '<script>window.location.href= \'' . base_url() . '\';</script>'; 
         }
         $init = $user_num_alert = $role_authorizee_alert = 0;
         //用于全体用户的提示信息        
-        !$this->control_center_model->GetUserPropertySet($this->session->userdata('user_number')) ? $user_property_alert = 1 : $user_property_alert = 0;
+        !$this->control_center_model->GetUserPropertySet($this->session->userdata('user_id')) ? $user_property_alert = 1 : $user_property_alert = 0;
         
         
         //推送信息
@@ -112,8 +112,8 @@ class Control_center extends CI_Controller{
         $this->load->library('secure');
         $this->load->library('encrypt');
         $this->load->model('control_center_model');        
-        $user_number = $this->encrypt->decode($this->input->post('user_key', TRUE));
-        if ('管理员' != $this->secure->CheckRole($user_number)){
+        $user_id = $this->encrypt->decode($this->input->post('user_key', TRUE));
+        if ('管理员' != $this->secure->CheckRole($user_id)){
             echo json_encode(array(
                     '0' => 'SetSectionList_2',
                     '1' => '身份验证失败'
@@ -164,8 +164,8 @@ class Control_center extends CI_Controller{
         $this->load->library('secure');
         $this->load->library('encrypt');
         $this->load->model('control_center_model');        
-        $user_number = $this->encrypt->decode($this->input->post('user_key', TRUE));
-        if ('管理员' != $this->secure->CheckRole($user_number) || !$user_number){
+        $user_id = $this->encrypt->decode($this->input->post('user_key', TRUE));
+        if ('管理员' != $this->secure->CheckRole($user_id) || !$user_id){
             echo json_encode(array(
                     '0' => 'SetRoleList_2',
                     '1' => '身份验证失败'
@@ -217,8 +217,8 @@ class Control_center extends CI_Controller{
         $this->load->library('encrypt');
         $this->load->model('control_center_model'); 
         $this->load->model('user_model');
-        $user_number = $this->encrypt->decode($this->input->post('user_key', TRUE));
-        if ('管理员' != $this->secure->CheckRole($user_number) || !$user_number){
+        $user_id = $this->encrypt->decode($this->input->post('user_key', TRUE));
+        if ('管理员' != $this->secure->CheckRole($user_id) || !$user_id){
             echo json_encode(array(
                     '0' => 'SetAdminInfo_2',
                     '1' => '身份验证失败'
@@ -234,7 +234,7 @@ class Control_center extends CI_Controller{
             return 0;
         }
         //设置部门关联
-        if (!$this->user_model->SetUserSection($user_number, $this->input->post('admin_section', TRUE))){
+        if (!$this->user_model->SetUserSection($user_id, $this->input->post('admin_section', TRUE))){
             echo json_encode(array(
                     '0' => 'SetAdminInfo_3',
                     '1' => '插入数据库失败'
@@ -264,7 +264,7 @@ class Control_center extends CI_Controller{
         );
        
         
-        if (!$this->control_center_model->SetAdminInfo($user_number, $data)){
+        if (!$this->control_center_model->SetAdminInfo($user_id, $data)){
             echo json_encode(array(
                     '0' => 'SetAdminInfo_3',
                     '1' => '插入数据库失败'

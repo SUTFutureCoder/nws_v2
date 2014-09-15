@@ -32,14 +32,14 @@ class Secure{
         $CI->load->library('encrypt');
         $CI->load->database();
         //检查是否存在此用户
-        $CI->db->where('user_number', $this->CheckUserKey($encrypted_key));
+        $CI->db->where('user_id', $this->CheckUserKey($encrypted_key));
         $query = $CI->db->get('user');        
         if (!$query->num_rows()){
             return 0;
         }
         //获取用户的角色
         $role = array();
-        $CI->db->where('user_number', $this->CheckUserKey($encrypted_key));
+        $CI->db->where('user_id', $this->CheckUserKey($encrypted_key));
         $CI->db->from('re_user_role');
         $CI->db->join('role', 'role.role_id = re_user_role.role_id');
         $query = $CI->db->get();
@@ -78,7 +78,7 @@ class Secure{
      *  $encrypted_key 用户密钥
      *  @Return: 
      *  0|已过期或是非法的用户密钥
-     *  $user_number|用户学号
+     *  $user_id|用户账户
     */ 
     public function CheckUserKey($encrypted_key){
         //在自定义类库中初始化CI资源
@@ -86,13 +86,14 @@ class Secure{
         $CI->load->library('encrypt');
         $CI->load->library('basic');
         $encrypted_time = substr($CI->encrypt->decode($encrypted_key), 0, strlen(time()));
+        //过期的密钥
         if (time() - $encrypted_time >= $CI->basic->user_key_life){
             return 0;
         }
-        $encrypted_user_number = substr($CI->encrypt->decode($encrypted_key), strlen(time()));
-        if ($CI->basic->user_number_length != strlen($encrypted_user_number)){
+        $encrypted_user_id = substr($CI->encrypt->decode($encrypted_key), strlen(time()));
+        if (!ctype_digit($encrypted_user_id)){
             return 0;
         }
-        return $encrypted_user_number;
+        return $encrypted_user_id;
     }
 }

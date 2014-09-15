@@ -42,25 +42,25 @@ class Section_model extends CI_Model{
      *  @Purpose:    
      *  裁决部门冲突录用
      *  @Method Name:
-     *  JudgeSectionConflict(user_number, user_section)    
+     *  JudgeSectionConflict(user_id, user_section)    
      *  @Parameter: 
-     *  user_number 用户学号
+     *  user_id 用户学号
      *  user_section 用户裁决目标部门
      *  @Return: 
      *     影响的表行数
      * 
      *  
     */ 
-    public function JudgeSectionConflict($user_number, $user_section){
+    public function JudgeSectionConflict($user_id, $user_section){
         $this->load->database();
-        $this->db->where('user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $this->db->delete('re_user_section');
-        $this->db->where('user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $this->db->update('user', array(
             'user_password' => 0
         ));
         $this->db->insert('re_user_section', array(
-            'user_number' => $user_number,
+            'user_id' => $user_id,
             'section_id' => $this->GetSectionId($user_section)
         ));
         return $this->db->affected_rows();
@@ -121,14 +121,14 @@ class Section_model extends CI_Model{
         $this->load->database();
         $data['user'] = array();
         $data['section'] = array();
-//        $this->db->select('user_number');
+//        $this->db->select('user_id');
         $this->db->where('user_password', 1);
         $query = $this->db->get('user');
         $data['user'] = array_merge($data['user'], $query->result_array());
         foreach ($data['user'] as $conflict_user){
             $this->db->from('re_user_section');
             $this->db->join('section', 'section.section_id = re_user_section.section_id');
-            $this->db->where('re_user_section.user_number', $conflict_user['user_number']);
+            $this->db->where('re_user_section.user_id', $conflict_user['user_id']);
             $query = $this->db->get();
             $data['section'] = array_merge($data['section'], $query->result_array());
         }

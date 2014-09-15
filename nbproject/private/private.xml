@@ -2,6 +2,24 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/var/www/html/nws_v2/main/application/controllers/index.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/models/section_model.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/models/user_model.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/models/control_center_model.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/controllers/person_add_by_excel.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/models/index_model.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/controllers/index.html</file>
+            <file>file:/var/www/html/nws_v2/main/application/models/message_model.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/controllers/control_center.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/controllers/daily_me.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/models/role_model.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/views/login_view.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/controllers/setup.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/models/setup_model.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/views/daily_me_view.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/views/person_add_by_excel_view.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/controllers/person_add.php</file>
+        </group>
     </open-files>
 </project-private>

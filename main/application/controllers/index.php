@@ -34,9 +34,7 @@ class Index extends CI_Controller{
         $this->load->model('index_model');
         if (!file_exists('application/config/database.php'))
         {
-            $clean = array();
-            $clean['result'] = '';
-            $this->load->view('setup_view', $clean);
+            $this->load->view('setup_view');
             return 0;
         }      
         //$index['organ_name'] = $this->basic->organ_name;
@@ -49,7 +47,7 @@ class Index extends CI_Controller{
      *  @Method Name:
      *  PassCheck()    
      *  @Parameter: 
-     *  post user_number 用户学号
+     *  post user_mixed 用户账户或手机号码
      *  post user_password 用户密码    
      *  @Return: 
      *  json 状态码及状态说明
@@ -57,20 +55,19 @@ class Index extends CI_Controller{
     public function PassCheck(){
         $this->load->library('basic');
         $this->load->model('index_model');
-        if ($this->input->post('user_number',TRUE) && $this->input->post('user_password', TRUE))
+        if ($this->input->post('user_mixed',TRUE) && $this->input->post('user_password', TRUE))
         {
             $clean = array();
-            if (ctype_digit($this->input->post('user_number', TRUE)) && strlen($this->input->post('user_number', TRUE)) == $this->basic->user_number_length)
+            if (ctype_digit($this->input->post('user_mixed', TRUE)) && 11 >= strlen($this->input->post('user_mixed', TRUE)))
             {
-                $clean['user_number'] = $this->input->post('user_number', TRUE);
-            }           
-            else
-            {
+                $clean['user_mixed'] = $this->input->post('user_mixed', TRUE);
+            }else {
                 $clean['result'][0] = 0;
-                $clean['result'][1] = '您输入的工号必须是' . $this->basic->user_number_length . '的整数';
+                $clean['result'][1] = '您输入的账号或手机号码必须是小于等于11位的的整数';
                 echo json_encode($clean['result']);
                 return 0;
             }
+            
             if (iconv_strlen($this->input->post('user_password', TRUE), 'utf-8') <= 20)
             {
                 $clean['user_password'] = $this->input->post('user_password', TRUE);
@@ -99,7 +96,7 @@ class Index extends CI_Controller{
                     $realip = getenv("REMOTE_ADDR");
                 }
             }
-            $this->index_model->Login($clean['user_number'], $clean['user_password'], $realip);
+            $this->index_model->Login($clean['user_mixed'], $clean['user_password'], ip2long($realip));
             return 0;
         }        
     }

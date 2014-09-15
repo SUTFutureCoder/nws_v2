@@ -36,6 +36,7 @@ class Setup_model extends CI_Model{
         
         $this->load->database();
         $data = array(
+            'user_id' => 10000,
             'user_number' => $clean['user_number'],
             'user_password' => $clean['user_password'],
             'user_telephone' => $clean['user_telephone'],
@@ -44,9 +45,13 @@ class Setup_model extends CI_Model{
             'user_qq' => '0'
         );
         $this->db->where('user_number', $data['user_number']);
+        $this->db->or_where('user_id', 10000);
         $query = $this->db->get('user');
         if ($query->num_rows())
         {
+            $clean['result'][0] = 12;
+            $clean['result'][1] = '管理员账户添加失败,请检查数据库数据是否重复或非初始数据库';
+            echo json_encode($clean['result']);
             return 0;
         }
         else
@@ -59,10 +64,10 @@ class Setup_model extends CI_Model{
                 $this->db->select('role_id');
                 $this->db->where('role_name', '管理员');
                 $query = $this->db->get('role');                
-                $role = array_merge($role, $query->result_array());
+                $role = $query->result_array();
                 $re_u_r = array(
                     'role_id' => $role[0]['role_id'],
-                    'user_number' => $data['user_number']
+                    'user_id' => $data['user_id']
                 );
                 $this->db->insert('re_user_role', $re_u_r);
                 $result = $this->db->affected_rows();  

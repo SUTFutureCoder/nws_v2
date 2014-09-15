@@ -125,7 +125,7 @@ $(function(){
 
         var fd = new FormData();
         fd.append('userfile', fileList[0]);
-        fd.append('user_number', '<?= $user_number?>');
+        fd.append('user_id', '<?= $user_id?>');
         fd.append('user_key', '<?= $user_key?>');
         xhr.send(fd);
 
@@ -140,7 +140,7 @@ $(function(){
             var data = new Array();
             data['src'] = location.href;
             data['api'] = location.href + '/GetSectionConflict';
-            data['data'] = '{"user_key" : "<?= $user_key?>", "user_number" : "<?= $user_number ?>"}';
+            data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"}';
             parent.IframeSend(data);
         }); 
     });   
@@ -256,7 +256,7 @@ $(function(){
         var data = new Array();
         data['src'] = location.href;
         data['api'] = location.href + '/AddPersonNormal';                
-        data['data'] = '{"user_key" : "<?= $user_key?>", "user_number" : "<?= $user_number ?>", "add_user_telephone" : "' + $("#user_telephone").val() + '"';
+        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>", "add_user_telephone" : "' + $("#user_telephone").val() + '"';
         data['data'] += ', "add_user_qq" : "' + $("#user_qq").val() + '", "add_user_talent" : "' + $("#user_talent").val() + '"';
         data['data'] += ', "add_user_role" : "' + $("#user_role").val() + '", "add_user_section" : "' + $("#user_section").val() + '"';
         data['data'] += ', "add_user_number" : "' + $("#user_number").val() + '", "add_user_name" : "' + $("#user_name").val() + '"';

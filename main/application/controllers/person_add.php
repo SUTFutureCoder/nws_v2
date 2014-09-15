@@ -23,13 +23,13 @@ class Person_add extends CI_Controller{
         $this->load->library('encrypt');
         $this->load->model('role_model');
         $this->load->model('section_model');
-        if (!$this->session->userdata('user_number')){
+        if (!$this->session->userdata('user_id')){
             header('Location: ' . base_url());
             return 0;
         }        
         
         $this->load->view('person_add_view', array(
-            'user_number' => $this->session->userdata('user_number'),
+            'user_id' => $this->session->userdata('user_id'),
             'user_key' => $this->encrypt->encode($this->session->userdata('user_key')),
             'role' => $this->role_model->GetRoleNameList(),
             'section' => $this->section_model->GetSectionNameList()
@@ -43,7 +43,7 @@ class Person_add extends CI_Controller{
      *  @Method Name:
      *  AddPersonNormal()    
      *  @Parameter: 
-     *  POST $user_number 用户学号
+     *  POST $user_id 用户账号
      *  POST $user_key 用户密钥
      *  POST $add_user_role 添加用户角色
      *  POST $add_user_section 添加用户部门
@@ -57,26 +57,20 @@ class Person_add extends CI_Controller{
      *  @Return: 
      *  iframe|目标|状态码|状态说明|出错id
      *  iframe| |0|密钥无法通过检查
-     *  iframe| |1|成功更新
+     *  iframe| |1|添加成功
      *  iframe| |2|学号位数不合法|
-     *  iframe| |3|用户权限不足
-     *  iframe| |4|QQ号为不能超过15位的整数|
-     *  iframe| |5|用户特长必须在998个字符以内|
-     *  iframe| |6|可被好友搜索到传值错误
-     *  iframe| |7|日期必须为用-分割的三组数字|
-     *  iframe| |8|日期格式不合法|
-     *  iframe| |9|年龄不能超过3位数|
-     *  iframe| |10|家乡不能超过98个字符|
-     *  iframe| |11|请输入英文字符的血型且不能查过2个字符|
-     *  iframe| |12|昵称不能超过98个字符|
-     *  iframe| |13|网名不能超过98个字符|
-     *  iframe| |14|主页地址不能超过998个字符|
-     *  iframe| |15|掌握语言不能超过98个字符|
-     *  iframe| |16|自我介绍不能超过398个字符|
-     *  iframe| |17|高级信息隐私锁传值错误
-     *  iframe| |18|用户基础信息已最新
-     *  iframe| |19|用户高级信息已最新
-     * 
+     *  iframe| |3|检测到学号重复|
+     *  iframe| |4|用户权限不足
+     *  iframe| |5|用户社团角色错误
+     *  iframe| |6|联系方式需要为11位数字|
+     *  iframe| |7|联系方式检测到重复|
+     *  iframe| |8|QQ号码为不超过15位的数字|
+     *  iframe| |9|特长不能超过398个字符|
+     *  iframe| |10|姓名不能超过10个字符|
+     *  iframe| |11|性别不能超过4个字符|    
+     *  iframe| |12|用户部门参数错误
+     *  iframe| |13|用户部门关联设置错误
+     *  
      * :NOTICE:用户权限必须为管理员
      * 
     */   
@@ -84,118 +78,62 @@ class Person_add extends CI_Controller{
         $this->load->library('encrypt');
         $this->load->library('basic');
         $this->load->library('secure');
+        $this->load->library('data');
         $this->load->model('section_model');
         $this->load->model('role_model');
         $this->load->model('user_model');
         $clean  = array();
-        if ($this->input->post('user_number', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 0,
-                '3' => '密钥无法通过安检'
-            ));
-            return 0;
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 0, '密钥无法通过安检');
         }
         
-        if ($this->basic->user_number_length != strlen($this->input->post('user_number', TRUE)) || 
-                !ctype_digit($this->input->post('user_number', TRUE)) ||
+        if (10 < strlen($this->input->post('user_id', TRUE)) || 
+                !ctype_digit($this->input->post('user_id', TRUE)) ||
                 $this->basic->user_number_length != strlen($this->input->post('add_user_number', TRUE)) || 
                 !ctype_digit($this->input->post('add_user_number', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 2,
-                '3' => '学号位数不合法，应为' . $this->basic->user_number_length . '位'
-            ));
-            return 0;
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 2, '学号位数不合法，应为' . $this->basic->user_number_length . '位', 'user_number');            
         }
         
-        if ('管理员' != $this->secure->CheckRole($this->input->post('user_number', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 3,
-                '3' => '用户权限不足'
-            ));
-            return 0;
+        if ($this->user_model->CheckNumberConflict($this->input->post('add_user_number', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 3, '检测到学号重复', 'user_number');
+        }
+        
+        if ('管理员' != $this->secure->CheckRole($this->input->post('user_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 4, '用户权限不足');            
         }
 //        $clean['basic']['user_number'] = $this->input->post('user_number', TRUE);
         $clean['basic']['user_number'] = $this->input->post('add_user_number', TRUE);
         
         //开始检验正常传入表单
-        if (20 < strlen($this->input->post('add_user_role', TRUE)) || 
-                !$this->user_model->SetUserRole($this->input->post('add_user_number', TRUE), $this->input->post('add_user_role', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 4,
-                '3' => '用户社团角色错误'
-            ));
-            return 0;
+        if (11 != strlen($this->input->post('add_user_telephone', TRUE)) ||
+            !ctype_digit($this->input->post('add_user_telephone', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 6, '联系方式需要为11位数字', 'user_telephone'); 
         }
         
-//        $this->user_model->SetUserRole($this->input->post('add_user_number', TRUE), $this->input->post('add_user_role', TRUE));
-        $this->user_model->SetUserSection($this->input->post('add_user_number', TRUE), $this->input->post('add_user_section', TRUE));
-            if (11 != strlen($this->input->post('add_user_telephone', TRUE)) ||
-                !ctype_digit($this->input->post('add_user_telephone', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 5,
-                '3' => '联系方式需要为11位数字',
-                '4' => 'user_telephone'
-            ));
-            return 0;
+        if ($this->user_model->CheckTeleConflict(NULL, $this->input->post('add_user_telephone', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 7, '联系方式检测到重复', 'user_telephone');             
         }
         $clean['basic']['user_telephone'] = $this->input->post('add_user_telephone', TRUE);
         
         if (15 < strlen($this->input->post('add_user_qq', TRUE)) ||
                 !ctype_digit($this->input->post('add_user_qq', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 6,
-                '3' => 'QQ号码为不超过15位的数字',
-                '4' => 'user_qq'
-            ));
-            return 0;
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 8, 'QQ号码为不超过15位的数字', 'user_qq'); 
         }
         $clean['basic']['user_qq'] = $this->input->post('add_user_qq', TRUE);
         
         if (398 < iconv_strlen($this->input->post('add_user_talent', TRUE), 'utf-8')){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 7,
-                '3' => '特长不能超过398个字符',
-                '4' => 'user_talent'
-            ));
-            return 0;
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 9, '特长不能超过398个字符', 'user_talent'); 
         }
         $clean['basic']['user_talent'] = $this->input->post('add_user_talent', TRUE);
         
         if (10 < iconv_strlen($this->input->post('add_user_name', TRUE), 'utf-8')){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 8,
-                '3' => '姓名不能超过10个字符',
-                '4' => 'user_name'
-            ));
-            return 0;
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 10, '姓名不能超过10个字符', 'user_name'); 
         }
         $clean['basic']['user_name'] = $this->input->post('add_user_name', TRUE);
         
         if (4 < iconv_strlen($this->input->post('add_user_sex', TRUE), 'utf-8') ||
                 !$this->input->post('add_user_sex', TRUE)){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 9,
-                '3' => '性别不能超过4个字符',
-            ));
-            return 0;
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 11, '性别不能超过4个字符');
         }
         $clean['basic']['user_sex'] = $this->input->post('add_user_sex', TRUE);
         
@@ -203,14 +141,21 @@ class Person_add extends CI_Controller{
         $clean['basic']['user_password'] = $this->encrypt->encode($this->input->post('add_user_number', TRUE) . substr($this->input->post('add_user_telephone', TRUE), 7, 4));
         //此处可更改
 //        $clean['basic']['user_section'] = $this->input->post('add_user_section', TRUE);
-        if ($this->user_model->SetUserBasic($clean['basic'])){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 1,
-                '3' => '添加成功'
-            ));
-            return 0;
-        }
+        if ($user_id = $this->user_model->SetUserBasic($clean['basic'])){
+            if (20 < strlen($this->input->post('add_user_role', TRUE)) || 
+                !$this->user_model->SetUserRole($user_id, $this->input->post('add_user_role', TRUE))){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), 5, '用户社团角色错误');
+            }
+            //        $this->user_model->SetUserRole($this->input->post('add_user_number', TRUE), $this->input->post('add_user_role', TRUE));
+            if (!$this->section_model->CheckSectionExist($this->input->post('add_user_section', TRUE))){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), 12, '用户部门参数错误');                
+            }
+            
+            if (!$this->user_model->SetUserSection($user_id, $this->input->post('add_user_section', TRUE))){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), 13, '用户部门关联设置失败，请勿重复关联'); 
+            }
+            
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 1, '添加成功');            
+        }        
     }
 }

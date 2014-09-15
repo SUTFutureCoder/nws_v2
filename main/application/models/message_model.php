@@ -22,12 +22,12 @@ class Message_model extends CI_Model{
      *  获取推送消息
      *  
      *  @Method Name:
-     *  GetMessagePush($user_number)    
+     *  GetMessagePush($user_id)    
      *  @Parameter: 
      *     
      *  @Return: 
      *  array(
-     *  'mess_push_id', 'mess_push_user_number', 'mess_push_section_limit', 'mess_push_title',
+     *  'mess_push_id', 'mess_push_user_id', 'mess_push_section_limit', 'mess_push_title',
      *  'mess_push_title', 'mess_push_content', 'mess_push_style', 'mess_push_time', 'mess_push_end_time', 'mess_push_dele',
      *  'mess_push_dele_time'
      * );
@@ -35,7 +35,7 @@ class Message_model extends CI_Model{
     */
     public function GetMessagePush(){
         //building
-        //通过user_number获取用户权限
+        //通过user_id获取用户权限
         //↑$this->load->library('secure');
         //authorizee中包含：阅读所有推送信息、阅读本部推送信息的1/0字段
         //目前无条件获取所有推送

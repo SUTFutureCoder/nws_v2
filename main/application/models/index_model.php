@@ -24,7 +24,7 @@ class Index_model extends CI_Model{
      *  @Method Name:
      *  Login()    
      *  @Parameter: 
-     *  u 工号
+     *  mixed 账号/手机号码
      *  p 密码
      *  ip 用户ip
      *  @Return: 
@@ -34,21 +34,23 @@ class Index_model extends CI_Model{
      *  2|用户已被安全锁定，请联系管理员解锁
      *  3|请等待5秒钟后重试
      *  4|密码有误
-     *  5|权限不足
+     *  5|无法获取用户权限
      *  6|查无此人
     */   
-    function Login($u, $p, $ip)
+    function Login($mixed, $p, $ip)
     {
         $this->load->library('basic');
         $this->load->library('session');
         $this->load->library('encrypt');    
         $this->load->database();
-        $this->db->where('user_number', $u);
+        $this->db->where('user_id', $mixed);
+        $this->db->or_where('user_telephone', $mixed);
         $query = $this->db->get('user');
         $result = array();
         $role = array();
+        //$data主要插入至loginlog表
         $data = array(
-            'user_number' => $u,
+            'user_mixed' => $mixed,
             'login_time' => date("Y-m-d H:i:s"),
             'login_ip' => $ip,
             'login_pass' => 0
@@ -57,7 +59,7 @@ class Index_model extends CI_Model{
         {
             foreach ($query->result_array() as $row)
             {              
-                if ($u == $row['user_number']) {
+                if ($mixed == $row['user_id'] || $mixed == $row['user_telephone']) {
                     if($row['user_locked'])
                     {
                         $result[0] = 2;
@@ -78,17 +80,26 @@ class Index_model extends CI_Model{
                     {
                         return 5;   //权限不足
                     }*///三表联合查询
+                   
+                    
                     if ($p == $this->encrypt->decode($row['user_password'])) {
-                        $this->session->set_userdata('user_number', $u);
+                        $this->session->set_userdata('user_id', $row['user_id']);
                         //开始生成用户密钥
-                        $user_key = time() . $u;
+                        $user_key = time() . $row['user_id'];
                         $this->session->set_userdata('user_key', $user_key);
                         $this->session->set_userdata('user_name', $row['user_name']);
                         //查询权限
-                        $this->db->where('user_number', $row['user_number']);
+                        $this->db->where('user_id', $row['user_id']);
                         $this->db->from('re_user_role');
                         $this->db->join('role', 'role.role_id = re_user_role.role_id');
                         $query = $this->db->get();
+                        if (!$query->num_rows()){
+                            $result[0] = 5;
+                            $result[1] = '无法获取用户权限';
+                            echo json_encode($result);
+                            $this->db->close();
+                            return 0;
+                        }
                         $role = array_merge($role, $query->result_array());
                         $this->session->set_userdata('user_role', $role[0]['role_name']);                        
                         
@@ -96,7 +107,7 @@ class Index_model extends CI_Model{
                         if ($row['user_continuity_fail'])
                         {
                             $repair['user_continuity_fail'] = 0;
-                            $this->db->where('user_number', $row['user_number']);
+                            $this->db->where('user_id', $row['user_id']);
                             $this->db->update('user', $repair);
                         }
                     } else {    //验证失败
@@ -110,7 +121,7 @@ class Index_model extends CI_Model{
                         {
                             $logfail['user_locked'] = 1;
                         }
-                        $this->db->where('user_number', $row['user_number']);
+                        $this->db->where('user_id', $row['user_id']);
                         $this->db->update('user', $logfail);
                         $data['login_pass'] = 0;
                     }

@@ -124,16 +124,16 @@ class Control_center_model extends CI_Model{
      *  @Method Name:
      *  GetUserPropertySet()    
      *  @Parameter: 
-     *  $user_number 用户学号   
+     *  $user_id 用户账号   
      *  @Return: 
      *  用户表表行数
      *  0——提示设置
      *  1——无需设置
      *
     */
-    public function GetUserPropertySet($user_number){
+    public function GetUserPropertySet($user_id){
         $this->load->database();
-        $this->db->where('user_pro_user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $query = $this->db->get('user_property');
         return $query->num_rows();
     }
@@ -193,7 +193,7 @@ class Control_center_model extends CI_Model{
      *  设置管理员基础信息
      *  
      *  @Method Name:
-     *  SetAdminInfo($user_number, $data)   
+     *  SetAdminInfo($user_id, $data)   
      *  @Parameter: 
      *  $data =array(
      *      'user_section', 'user_sex', 'user_major'
@@ -202,9 +202,9 @@ class Control_center_model extends CI_Model{
      *  操作影响的数据库行数（0行为不正常）
      *
     */
-    public function SetAdminInfo($user_number, $data){
+    public function SetAdminInfo($user_id, $data){
         $this->load->database();
-        $this->db->where('user_number', $user_number);
+        $this->db->where('user_id', $user_id);
         $this->db->update('user', $data);
         return $this->db->affected_rows();
     }

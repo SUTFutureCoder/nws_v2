@@ -114,10 +114,10 @@ $(function(){
                     alert(result[1]);
                 }else {
                     if ($("#user_photo").length > 0){                        
-                        $("#user_photo").attr("src", "<?= base_url('upload/photo/' . $user_number) ?>" + result[1] + "?t=" + Math.random());
+                        $("#user_photo").attr("src", "<?= base_url('upload/photo/' . $user_id) ?>" + result[1] + "?t=" + Math.random());
                     }else {
                         $("#user_photo_legend").after("<img id=\"user_photo\" style=\"max-width:100%\">");
-                        $("#user_photo").attr("src", "<?= base_url('upload/photo/' . $user_number) ?>" + result[1] + "?t=" + Math.random());
+                        $("#user_photo").attr("src", "<?= base_url('upload/photo/' . $user_id) ?>" + result[1] + "?t=" + Math.random());
                     }
                 }
                 
@@ -129,7 +129,7 @@ $(function(){
 
         var fd = new FormData();
         fd.append('userfile', fileList[0]);
-        fd.append('user_number', '<?= $user_number?>');
+        fd.append('user_id', '<?= $user_id?>');
         fd.append('user_key', '<?= $user_key?>');
         xhr.send(fd);
 
@@ -253,7 +253,7 @@ $(function(){
             <div class="form-group">
                 <label for="user_pro_homepage" class="col-sm-2 control-label">个人主页</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" value="http://<?= $user_pro_homepage ?>" id="user_pro_homepage">
+                    <input type="text" class="form-control" value="<?php if (!strpos($user_pro_homepage, 'ttp://'))  {echo 'http://';}?><?= $user_pro_homepage ?>" id="user_pro_homepage">
                 </div>
                 <button type="button" onclick="TestUrl()" class="btn btn-success">测试链接</button>
             </div>
@@ -277,7 +277,7 @@ $(function(){
             </div> 
             <legend id="user_photo_legend">上传与更新照片</legend>
             <?php if($user_pro_photo_ext):?>
-            <img id="user_photo" style="max-width:100%" src="<?= base_url('upload/photo/' . $user_number . $user_pro_photo_ext) ?>"/><br/>
+            <img id="user_photo" style="max-width:100%" src="<?= base_url('upload/photo/' . $user_id . $user_pro_photo_ext) ?>"/><br/>
             <?php else:?>
             <a style="color: blue">你知道吗？<br/><h5>大多数人都会有不同程度的认脸困难症(脸盲)或是懒得记脸，为了让学长更好地关照你，最好还是上传一张照片吧</h5></a><br/>
             <?php endif; ?>
@@ -297,7 +297,7 @@ $(function(){
                 var data = new Array();
                 data['src'] = location.href;
                 data['api'] = location.href + '/SetUserInfo';                
-                data['data'] = '{"user_key" : "<?= $user_key?>", "user_number" : "<?= $user_number ?>", "user_telephone" : "' + $("#user_telephone").val() + '"';
+                data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>", "user_telephone" : "' + $("#user_telephone").val() + '"';
                 data['data'] += ', "user_qq" : "' + $("#user_qq").val() + '", "user_talent" : "' + $("#user_talent").val() + '", "user_friendsearch_enable" : "' + $("#user_friendsearch_enable").is(':checked') + '"'
                 data['data'] += ', "user_pro_birthday" : "' + $("#user_pro_birthday").val() + '", "user_pro_old" : "' + $("#user_pro_old").val() + '", "user_pro_hometown" : "' + $("#user_pro_hometown").val() + '"'; 
                 data['data'] += ', "user_pro_bloodtype" : "' + $("#user_pro_bloodtype").val() + '", "user_pro_nick" : "' + $("#user_pro_nick").val() + '", "user_pro_ename" : "' + $("#user_pro_ename").val() + '"';

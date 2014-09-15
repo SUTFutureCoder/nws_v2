@@ -112,9 +112,9 @@
                             break;
                         case 5:
                         case 6:
-                            $("#user_number").val("");
+                            $("#user_mixed").val("");
                             $("#user_password").val("");
-                            $("#user_number").focus();
+                            $("#user_mixed").focus();
                             break;
                     }    
                     
@@ -137,7 +137,7 @@
         <h2 class="form-signin-heading">欢迎使用<?= $organ_name?>控制面板</h2>
         <br/>
         <div class="form-group">            
-        <input type="text" name="user_number" id="user_number" class="form-control " placeholder="工号" required="" autofocus="">
+        <input type="text" name="user_mixed" id="user_mixed" class="form-control " placeholder="账号/手机号码" required="" autofocus="">
         <input type="password" name="user_password" id="user_password" class="form-control" placeholder="密码" required="">            
         </div>
         <br/>

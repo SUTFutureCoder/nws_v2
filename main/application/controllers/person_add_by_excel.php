@@ -22,12 +22,12 @@ class Person_add_by_excel extends CI_Controller{
     public function index(){
         $this->load->library('encrypt');
         $this->load->library('session');
-        if (!$this->session->userdata('user_number')){
+        if (!$this->session->userdata('user_id')){
             header('Location: ' . base_url());
             return 0;
         }
         $this->load->view('person_add_by_excel_view', array(
-            'user_number' => $this->session->userdata('user_number'),
+            'user_id' => $this->session->userdata('user_id'),
             'user_key' => $this->encrypt->encode($this->session->userdata('user_key'))
         ));
     }
@@ -50,14 +50,14 @@ class Person_add_by_excel extends CI_Controller{
         $this->load->library('PHPExcel');
         $excel = new PHPExcel();
         $clean = array();
-        if (!$this->session->userdata('user_number')){
+        if (!$this->session->userdata('user_id')){
             header('Location: ' . base_url());
             return 0;
         }      
         $clean['user_name'] = $this->session->userdata('user_name');
-        $clean['user_number'] = $this->session->userdata('user_number');
-        $clean['user_section'] = $this->user_model->GetUserSection($this->session->userdata('user_number'));
-        $clean['user_telephone'] = $this->user_model->GetUserTelephone($this->session->userdata('user_number'));
+        $clean['user_id'] = $this->session->userdata('user_id');
+        $clean['user_section'] = $this->user_model->GetUserSection($this->session->userdata('user_id'));
+        $clean['user_telephone'] = $this->user_model->GetUserTelephone($this->session->userdata('user_id'));
         $clean['date'] = date("Y-m-d H:i:s");
         
         $excel_writer = new PHPExcel_Writer_Excel2007($excel);                
@@ -71,20 +71,19 @@ class Person_add_by_excel extends CI_Controller{
                     ->setCellValue('B1', $clean['user_section'])
                     ->setCellValue('C1', '负责人')
                     ->setCellValue('D1', $clean['user_name'])
-                    ->setCellValue('E1', '学号')
-                    ->setCellValue('F1', $clean['user_number'])
+                    ->setCellValue('E1', '账号')
+                    ->setCellValue('F1', $clean['user_id'])
                     ->setCellValue('G1', '联系方式')
                     ->setCellValue('H1', $clean['user_telephone'])
     //              ->mergeCells('I1:J1')
-                    ->setCellValue('A2', '学号')
-                    ->setCellValue('B2', '姓名')
-                    ->setCellValue('C2', '电话')
-                    ->setCellValue('D2', 'QQ')
-                    ->setCellValue('E2', '专业')
-                    ->setCellValue('F2', '性别')
-                    ->setCellValue('G2', '特长')
-                    //->setCellValue('H2', '密码')
-                    ->setCellValue('H2', '打分');
+                    ->setCellValue('A2', '姓名')
+                    ->setCellValue('B2', '电话')
+                    ->setCellValue('C2', 'QQ')
+                    ->setCellValue('D2', '专业')
+                    ->setCellValue('E2', '性别')
+                    ->setCellValue('F2', '特长')
+                    //->setCellValue('G2', '密码')
+                    ->setCellValue('G2', '打分');
             
             $excel->getActiveSheet()->getStyle('A1')->getFont()->setBold(TRUE);
             $excel->getActiveSheet()->getStyle('C1')->getFont()->setBold(TRUE);
@@ -92,7 +91,7 @@ class Person_add_by_excel extends CI_Controller{
             $excel->getActiveSheet()->getStyle('G1')->getFont()->setBold(TRUE);
 
 
-            $excel->setActiveSheetIndex(0)->getColumnDimension('F')->setAutoSize(TRUE);
+//            $excel->setActiveSheetIndex(0)->getColumnDimension('E')->setAutoSize(TRUE);
             $excel->setActiveSheetIndex(0)->getColumnDimension('H')->setAutoSize(TRUE);
 
 
@@ -127,14 +126,14 @@ class Person_add_by_excel extends CI_Controller{
         $this->load->library('PHPExcel');
         $this->load->model('user_model');
         $this->load->model('section_model');
-        if ($this->input->post('user_number', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
             echo json_encode('密钥无法通过安检');
             return 0;
         }
         
         $excel = new PHPExcel();
         $clean = array();
-        if (!$this->session->userdata('user_number')){
+        if (!$this->session->userdata('user_id')){
             header('Location: ' . base_url());
             return 0;
         }              
@@ -222,7 +221,7 @@ class Person_add_by_excel extends CI_Controller{
         $this->load->helper('url');
         $this->load->model('user_model');
         
-        if ($this->input->post('user_number', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
             echo json_encode('密钥无法通过安检');
             return 0;
         }
@@ -255,7 +254,7 @@ class Person_add_by_excel extends CI_Controller{
                 }
             }
             
-            $clean['user_number'] = $this->input->post('user_number', TRUE);
+            $clean['user_id'] = $this->input->post('user_id', TRUE);
             
             $clean['date'] = date("Y-m-d H:i:s");           
              
@@ -282,30 +281,12 @@ class Person_add_by_excel extends CI_Controller{
                     $val[$i] = $current_sheet->getCellByColumnAndRow($i, $current_row)->getValue();
                 }
                 
-                $val[0] = (int)$val[0];
+                                
                 if($val[0])
                 {
-                    if(ctype_digit($val[0]) && strlen($val[0]) == $this->basic->user_number_length)
+                    if(iconv_strlen($val[0], 'utf-8') <= 8)
                     {
-                        $upload['user_number'] = $val[0];
-                    }
-                    else
-                    {
-                        echo json_encode($current_row . '行学号不合法:必须为' . $this->basic->user_number_length . '位数');
-                        return 0;
-                    }
-                }
-                else
-                {
-                    echo json_encode($current_row . '行学号不能为空');
-                    return 0;
-                }
-                
-                if($val[1])
-                {
-                    if(iconv_strlen($val[1], 'utf-8') <= 8)
-                    {
-                        $upload['user_name'] = $val[1];
+                        $upload['user_name'] = $val[0];
                     }
                     else
                     {
@@ -319,12 +300,12 @@ class Person_add_by_excel extends CI_Controller{
                     return 0;
                 }
                 
-                $val[2] = (int)$val[2];
-                if($val[2])
+                $val[1] = (int)$val[1];
+                if($val[1])
                 {
-                    if(ctype_digit((int)$val[2]) && strlen($val[2]) == 11)
+                    if(ctype_digit((int)$val[1]) && strlen($val[1]) == 11)
                     {
-                        $upload['user_telephone'] = $val[2];
+                        $upload['user_telephone'] = $val[1];
                     }
                     else
                     {
@@ -338,12 +319,12 @@ class Person_add_by_excel extends CI_Controller{
                     return 0;
                 }
                 
-                $val[3] = (int)$val[3];
-                if($val[3])
+                $val[2] = (int)$val[2];
+                if($val[2])
                 {
-                    if(ctype_digit((int)$val[3]) && strlen($val[3]) <= 14)
+                    if(ctype_digit((int)$val[2]) && strlen($val[2]) <= 14)
                     {
-                        $upload['user_qq'] = $val[3];
+                        $upload['user_qq'] = $val[2];
                     }
                     else
                     {
@@ -352,11 +333,11 @@ class Person_add_by_excel extends CI_Controller{
                     }
                 }
 
-                if($val[4])
+                if($val[3])
                 {
-                    if(iconv_strlen($val[4], 'utf-8') <= 48)
+                    if(iconv_strlen($val[3], 'utf-8') <= 48)
                     {
-                        $upload['user_major'] = $val[4];
+                        $upload['user_major'] = $val[3];
                     }
                     else
                     {
@@ -370,11 +351,11 @@ class Person_add_by_excel extends CI_Controller{
                     return 0;
                 }
                 
-                if($val[5])
+                if($val[4])
                 {
-                    if(iconv_strlen($val[5], 'utf-8') <= 2)
+                    if(iconv_strlen($val[4], 'utf-8') <= 2)
                     {
-                        $upload['user_sex'] = $val[5];
+                        $upload['user_sex'] = $val[4];
                     }
                     else
                     {
@@ -388,11 +369,11 @@ class Person_add_by_excel extends CI_Controller{
                     return 0;
                 }
                 
-                if($val[6])
+                if($val[5])
                 {
-                    if(iconv_strlen($val[6], 'utf-8') <= 998)
+                    if(iconv_strlen($val[5], 'utf-8') <= 998)
                     {
-                        $upload['user_talent'] = $val[6];
+                        $upload['user_talent'] = $val[5];
                     }
                     else
                     {
@@ -453,7 +434,7 @@ class Person_add_by_excel extends CI_Controller{
      *  GetSectionConflict()    
      *  @Parameter: 
      *  POST user_key 用户密钥
-     *  POST user_number 用户学号
+     *  POST user_id  用户id
      *  @Return: 
      *  iframe|目标|状态码|返回值
      *   | |0|密钥无法通过安检
@@ -466,46 +447,23 @@ class Person_add_by_excel extends CI_Controller{
     public function GetSectionConflict(){
         $this->load->library('encrypt');
         $this->load->library('secure');
+        $this->load->library('data');
         $this->load->model('user_model');
         $this->load->model('section_model');
-        if ($this->input->post('user_number', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 0,
-                '3' => '密钥无法通过安检'
-            ));
-            return 0;
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 0, '密钥无法通过安检');             
         }
         
-        if ($this->basic->user_number_length != strlen($this->input->post('user_number', TRUE)) || 
-                !ctype_digit($this->input->post('user_number', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 2,
-                '3' => '学号位数不合法，应为' . $this->basic->user_number_length . '位'
-            ));
-            return 0;
+        if (!ctype_digit($this->input->post('user_id', TRUE)) || 
+               10 < strlen($this->input->post('user_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 2, '账号位数不合法，应为小于等于10位的整数'); 
         }
         
         $conflict = array();
-        if ($conflict = $this->section_model->GetSectionConflict($this->input->post('user_number', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 1,
-                '3' => $conflict
-            ));
-            return 0;     
+        if ($conflict = $this->section_model->GetSectionConflict($this->input->post('user_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 1, $conflict);                 
         }else {
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 3,
-                '3' => '无部门录用冲突记录'
-            ));
-            return 0;
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 3, '无部门录用冲突记录');
         }
            
     }
@@ -517,7 +475,7 @@ class Person_add_by_excel extends CI_Controller{
      *  GetNewStat()    
      *  @Parameter: 
      *  POST user_key 用户密钥
-     *  POST user_number 用户学号
+     *  POST user_id  用户账号
      *  @Return: 
      *  iframe|目标|状态码|返回值
      *   | |0|密钥无法通过安检
@@ -529,39 +487,21 @@ class Person_add_by_excel extends CI_Controller{
     public function GetNewStat(){
         $this->load->library('encrypt');
         $this->load->library('secure');
+        $this->load->library('data');
         $this->load->model('user_model');
         $this->load->model('section_model');
-        if ($this->input->post('user_number', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 0,
-                '3' => '密钥无法通过安检'
-            ));
-            return 0;
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 0, '密钥无法通过安检');
         }
         
-        if ($this->basic->user_number_length != strlen($this->input->post('user_number', TRUE)) || 
-                !ctype_digit($this->input->post('user_number', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 2,
-                '3' => '学号位数不合法，应为' . $this->basic->user_number_length . '位'
-            ));
-            return 0;
+        if (10 < strlen($this->input->post('user_id', TRUE)) || 
+                !ctype_digit($this->input->post('user_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 2, '账号位数不合法，应为小于等于10位的整数');            
         }
         
         $final = array();
         $final = $this->user_model->GetNewStat();
-        echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 21,
-                '3' => $final
-            ));
-            return 0;
-        
+        $this->data->Out('iframe', $this->input->post('src', TRUE), 21, $final);
            
     }
     
@@ -572,11 +512,11 @@ class Person_add_by_excel extends CI_Controller{
      *  JudgeSectionConflict()    
      *  @Parameter: 
      *  POST user_key 用户密钥
-     *  POST user_number 用户学号
+     *  POST user_id  用户账号
      *  @Return: 
      *  iframe|目标|状态码|返回值
      *   | |0|密钥无法通过安检
-     *   | |2|学号位数不合法
+     *   | |2|账号位数不合法
      *   | |11|裁决成功的用户学号
      *   | |12|裁决失败
      *   | |13|传入的部门值错误
@@ -586,59 +526,29 @@ class Person_add_by_excel extends CI_Controller{
     public function JudgeSectionConflict(){
         $this->load->library('encrypt');
         $this->load->library('secure');
+        $this->load->library('data');
         $this->load->model('user_model');
         $this->load->model('section_model');
-        if ($this->input->post('user_number', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 0,
-                '3' => '密钥无法通过安检'
-            ));
-            return 0;
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 0, '密钥无法通过安检');
         }
         
-        if ($this->basic->user_number_length != strlen($this->input->post('user_number', TRUE)) || 
-                !ctype_digit($this->input->post('user_number', TRUE)) || 
-                $this->basic->user_number_length != strlen($this->input->post('user_conflict_number', TRUE)) ||
-                !ctype_digit($this->input->post('user_conflict_number', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 2,
-                '3' => '学号位数不合法，应为' . $this->basic->user_number_length . '位'
-            ));
-            return 0;
+        if (10 < strlen($this->input->post('user_id', TRUE)) || 
+                !ctype_digit($this->input->post('user_id', TRUE)) || 
+                10 < strlen($this->input->post('user_conflict_id', TRUE)) ||
+                !ctype_digit($this->input->post('user_conflict_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 2, '账号位数不合法，应为小于等于10位的整数');
         }
         
         if (iconv_strlen($this->input->post('user_section', TRUE), 'utf-8') >= 30  || 
                 !$this->section_model->CheckSectionExist($this->input->post('user_section', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 13,
-                '3' => '传入的部门值错误'
-            ));
-            return 0;
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 13, '传入的部门值错误');
         }
         
-        if (!$this->section_model->JudgeSectionConflict($this->input->post('user_conflict_number', TRUE), $this->input->post('user_section', TRUE))){
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 12,
-                '3' => '裁决失败'
-            ));
-            return 0;
+        if (!$this->section_model->JudgeSectionConflict($this->input->post('user_conflict_id', TRUE), $this->input->post('user_section', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 12, '裁决失败');
         }else {
-            echo json_encode(array(
-                '0' => 'iframe',
-                '1' => $this->input->post('src', TRUE),
-                '2' => 11,
-//                '3' => '裁决成功'
-                '3' => $this->input->post('user_conflict_number', TRUE)
-            ));
-            return 0;
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 11, $this->input->post('user_conflict_id', TRUE));
         }
            
     }
