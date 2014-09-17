@@ -10,6 +10,7 @@
     <script src="<?= base_url('js/jquery-migrate-1.1.1.js') ?>"></script> 
     <script type="text/javascript" src="<?= base_url('js/jquery-ui-slide.min.js') ?>"></script>
     <script type="text/javascript" src="<?= base_url('js/jquery-ui-timepicker-addon.js') ?>"></script>   
+    <link rel="stylesheet" type="text/css" href="<?= base_url('css/jquery-ui.css') ?>"/> 
 </head>
 <style>
     .ui-timepicker-div .ui-widget-header { margin-bottom: 8px; } 
@@ -23,33 +24,86 @@
 </style>
 <script>
     $(function(){
-        $('#TimeStart, #TimeEnd').datetimepicker({
+        $('#act_start, #act_end').datetimepicker({
             showSecond: true, 
             timeFormat: 'hh:mm:ss'
         }); 
     });
 </script>
 <body>
+    <br/>
     <form class="form-horizontal" role="form">      
-    <hr>         
     <div class="form-group">
-        <label for="user_password_old" class="col-sm-2 control-label">原密码</label>
+        <label for="act_name" class="col-sm-2 control-label">活动名称</label>
         <div class="col-sm-9">
-            <input type="password" class="form-control" id="user_password_old">
+            <input type="text" class="form-control" id="act_name">
         </div>
     </div>
     <div class="form-group">
-        <label for="user_password_new" class="col-sm-2 control-label">新密码</label>
-        <div class="col-sm-9">                      
-            <input type="password" class="form-control" id="user_password_new">
+        <label for="act_type" class="col-sm-2 control-label">活动类别</label>
+        <div class="col-sm-9">
+            <select class="form-control" id="act_type">
+                <?php foreach ($type as $type_item):?>
+                    <option><?= $type_item['activity_type_name']?></option>
+                <?php endforeach; ?>
+            </select> 
         </div>
     </div>
     <div class="form-group">
-        <label for="user_password_confirm" class="col-sm-2 control-label">密码确认</label>
-        <div class="col-sm-9">                      
-            <input type="password" class="form-control" id="TimeEnd"class="hasDatepicker" name="TimeStart">
+        <label for="act_section_only" class="col-sm-2 control-label">部门限制</label>
+        <div class="col-sm-9">
+            <select class="form-control" id="act_section_only">
+                <option>不限制</option>
+                <?php foreach ($section as $section_item):?>
+                    <option><?= $section_item['section_name']?></option>
+                <?php endforeach; ?>
+            </select> 
         </div>
-    </div>    
+    </div>  
+    <hr>    
+    <div class="form-group">
+        <label for="act_content" class="col-sm-2 control-label">活动描述</label>
+        <div class="col-sm-9">
+            <textarea class="form-control" rows="3" id="act_content"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="act_warn" class="col-sm-2 control-label">活动注意事项</label>
+        <div class="col-sm-9">
+            <textarea class="form-control" rows="3" placeholder="选填" id="act_warn"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="act_start" class="col-sm-2 control-label">活动开始时间</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" class="hasDatepicker" placeholder="例：2014-08-20 20:05:01" id="act_start">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="act_end" class="col-sm-2 control-label">活动结束时间</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" class="hasDatepicker" id="act_end">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="act_money" class="col-sm-2 control-label">活动需要资金/人</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="选填" id="act_money">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="act_position" class="col-sm-2 control-label">活动地点</label>
+        <div class="col-sm-9">
+            <textarea class="form-control" rows="3" id="act_position"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="act_member_sum" class="col-sm-2 control-label">总人数</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="选填" id="act_member_sum">
+        </div>
+    </div>
     <hr>
     <div class="col-sm-10 col-sm-offset-1">
         <input class="form-control btn btn-success" id="submit" onclick="MotherIframeSend()" value="提交">

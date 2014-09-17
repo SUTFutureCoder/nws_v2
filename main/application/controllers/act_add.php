@@ -21,15 +21,18 @@ class Act_add extends CI_Controller{
     public function index(){
         $this->load->library('session');
         $this->load->library('encrypt');
+        $this->load->model('act_model');
+        $this->load->model('section_model');
         if (!$this->session->userdata('user_id')){
             header('Location: ' . base_url());
             return 0;
         }
         $this->load->view('act_add_view', array(
             'user_id' => $this->session->userdata('user_id'),
-            'user_key' => $this->encrypt->encode($this->session->userdata('user_key'))
+            'user_key' => $this->encrypt->encode($this->session->userdata('user_key')),
+            'type' => $this->act_model->GetActTypeList(),
+            'section' => $this->section_model->GetSectionNameList()
         ));
     }
-    
     
 }
