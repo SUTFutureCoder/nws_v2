@@ -19,6 +19,36 @@ class User_model extends CI_Model{
     
     /**    
      *  @Purpose:    
+     *  手机号码转用户id
+     *  @Method Name:
+     *  TeleToId($user_tele)
+     *  @Parameter: 
+     *  $user_tele 用户手机号码
+     *  @Return: 
+     *  0|失败，传入手机号码不存在或非法
+     *  $user_id|用户$user_id
+     * 
+     *  :WARNING:在传参之前请务必进行安检
+    */ 
+    public function TeleToId($user_tele){
+        $this->load->database();        
+        
+        if (!$user_tele || !ctype_digit($user_tele) || 11 != strlen($user_tele)){
+            return 0;
+        }
+        $this->db->select('user_id');
+        $this->db->where('user_telephone', $user_tele);
+        $query = $this->db->get('user');        
+        if ($query->num_rows()){
+            return $query->row()->user_id;
+        } else {
+            return 0;
+        }
+    }
+    
+    
+    /**    
+     *  @Purpose:    
      *  验证学号是否重复   
      *  @Method Name:
      *  CheckNumberConflict($user_number)

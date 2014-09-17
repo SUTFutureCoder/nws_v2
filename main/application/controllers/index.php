@@ -53,7 +53,7 @@ class Index extends CI_Controller{
      *  json 状态码及状态说明
     */
     public function PassCheck(){
-        $this->load->library('basic');
+        $this->load->library('basic');        
         $this->load->model('index_model');
         if ($this->input->post('user_mixed',TRUE) && $this->input->post('user_password', TRUE))
         {

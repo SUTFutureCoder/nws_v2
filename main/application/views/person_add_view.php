@@ -133,18 +133,6 @@ $(function(){
 	
 });
 </script>
-<script>
-    $(function(){
-        $("#conflict_tab").click(function(){
-            $("#conflict").empty();
-            var data = new Array();
-            data['src'] = location.href;
-            data['api'] = location.href + '/GetSectionConflict';
-            data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"}';
-            parent.IframeSend(data);
-        }); 
-    });   
-</script>
 </head>
 <body>
 <ul class="nav nav-tabs" role="tablist" id="myTab">
@@ -267,6 +255,11 @@ $(function(){
     //接收母窗口传来的值
     function MotherResultRec(data){
         //console.log(data);
+        if (1 == data[2]){
+            $("form").each(function() {   
+                this.reset();
+            });   
+        }
         alert(data[3]);
         if (data[4]){
             $("#" + data[4]).focus();

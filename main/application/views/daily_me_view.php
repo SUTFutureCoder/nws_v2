@@ -309,6 +309,11 @@ $(function(){
             //接收母窗口传来的值
             function MotherResultRec(data){
                 //console.log(data);
+                if (1 == data[2]){
+                    $("form").each(function() {   
+                        this.reset();
+                    });   
+                }
                 alert(data[3]);
                 if (data[4]){
                     $("#" + data[4]).focus();

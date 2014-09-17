@@ -217,6 +217,7 @@ class Control_center extends CI_Controller{
         $this->load->library('encrypt');
         $this->load->model('control_center_model'); 
         $this->load->model('user_model');
+        $this->load->model('section_model');
         $user_id = $this->encrypt->decode($this->input->post('user_key', TRUE));
         if ('管理员' != $this->secure->CheckRole($user_id) || !$user_id){
             echo json_encode(array(
@@ -226,7 +227,7 @@ class Control_center extends CI_Controller{
             return 0;
         }      
         $clean = array();
-        if (!($this->input->post('admin_section', TRUE) && $this->secure->CheckSection($this->input->post('admin_section', TRUE)))){
+        if (!($this->input->post('admin_section', TRUE) && $this->section->CheckSectionExist($this->input->post('admin_section', TRUE)))){
             echo json_encode(array(
                     '0' => 'SetAdminInfo_4',
                     '1' => '管理员部门信息有误'

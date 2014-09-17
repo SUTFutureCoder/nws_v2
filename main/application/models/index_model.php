@@ -84,7 +84,7 @@ class Index_model extends CI_Model{
                     
                     if ($p == $this->encrypt->decode($row['user_password'])) {
                         $this->session->set_userdata('user_id', $row['user_id']);
-                        //开始生成用户密钥
+                        //开始生成用户角色
                         $user_key = time() . $row['user_id'];
                         $this->session->set_userdata('user_key', $user_key);
                         $this->session->set_userdata('user_name', $row['user_name']);
@@ -95,12 +95,12 @@ class Index_model extends CI_Model{
                         $query = $this->db->get();
                         if (!$query->num_rows()){
                             $result[0] = 5;
-                            $result[1] = '无法获取用户权限';
+                            $result[1] = '无法获取用户角色';
                             echo json_encode($result);
                             $this->db->close();
                             return 0;
                         }
-                        $role = array_merge($role, $query->result_array());
+                        $role = $query->result_array();
                         $this->session->set_userdata('user_role', $role[0]['role_name']);                        
                         
                         $data['login_pass'] = 1;

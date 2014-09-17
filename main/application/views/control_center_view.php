@@ -172,7 +172,7 @@ function getping(){
                             
 				<div title="活动相关">
                                     	<a href="javascript:void(0);" src="index.php/act_list" class="cs-navi-tab">活动列表</a></p>
-					<a href="javascript:void(0);" src="index.php/act_add" class="cs-navi-tab">添加活动</a></p>
+					<a href="javascript:void(0);" src="<?= base_url('index.php/act_add') ?>" class="cs-navi-tab">添加活动</a></p>
 					<a href="javascript:void(0);" src="index.php/act_dele_ed_list" class="cs-navi-tab">已注销的活动</a></p>
 					<a href="javascript:void(0);" src="index.php/act_propagator" class="cs-navi-tab">课表录入</a></p>
 				</div>
@@ -188,7 +188,7 @@ function getping(){
 					<a href="javascript:void(0);" src="index.php/person_stat" class="cs-navi-tab">统计部员专业分布</a></p> -->
 				</div>
 				<div title="权限相关">
-					<a href="javascript:void(0);" src="index.php/changepass" class="cs-navi-tab">更改密码</a></p>
+					<a href="javascript:void(0);" src="<?= base_url('index.php/daily_change_pass');?>" class="cs-navi-tab">更改密码</a></p>
 					<a href="javascript:void(0);" src="index.php/authorizee_promote" class="cs-navi-tab">部员晋升</a></p>
 				</div>
                             

@@ -1,0 +1,13 @@
+2014-09-16 00:10:18 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-16 00:10:18 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-09-16 08:50:23 Server:Workerman is starting ...
+2014-09-16 08:50:23 can not create socket tcp://0.0.0.0:55858 info:0 Address already in use	Server start fail
+2014-09-16 08:50:56 Server:Workerman is starting ...
+2014-09-16 08:50:56 Server:[1A
+[KWorkerman start success ...[0m
+2014-09-16 08:51:14 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-16 08:51:18 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-16 09:33:08 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-16 09:33:11 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-16 11:55:28 /tmp/gateway.store.cache.php updated and reload workers
+2014-09-16 11:55:36 Worker[FileMonitor]:terminal closed and reset workers fd
