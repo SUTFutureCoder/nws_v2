@@ -53,8 +53,8 @@ class Role_model extends CI_Model{
     public function CheckRoleName($role_name){
         $this->load->database();
         $this->db->where('role_name', $role_name);
-        $query = $this->db->get('role');        
-        return $query->num_rows();
+        $this->db->from('role');        
+        return $this->db->count_all_results();
     }
     
 }

@@ -62,10 +62,9 @@ class User_model extends CI_Model{
     */ 
     public function CheckNumberConflict($user_number){
         $this->load->database();        
-        $this->db->select('user_number');
         $this->db->where('user_number', $user_number);
-        $query = $this->db->get('user');        
-        return $query->num_rows();
+        $this->db->from('user');        
+        return $this->db->count_all_results();
     }
     
     /**    

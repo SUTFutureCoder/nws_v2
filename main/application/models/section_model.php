@@ -34,8 +34,8 @@ class Section_model extends CI_Model{
     public function CheckSectionExist($section_name){
         $this->load->database();
         $this->db->where('section_name', $section_name);
-        $query = $this->db->get('section');
-        return $query->num_rows();
+        $this->db->from('section');
+        return $this->db->count_all_results();
     }
     
     /**    

@@ -119,10 +119,14 @@
     function MotherIframeSend(){
         var data = new Array();
         data['src'] = location.href;
-        data['api'] = location.href + '/ChangePass';          
-        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>", "user_mixed" : "' + $("#user_mixed").val() + '"';
-        data['data'] += ', "user_password_old" : "' + $("#user_password_old").val() + '", "user_password_new" : "' + $("#user_password_new").val() + '"';
-        data['data'] += ', "user_password_confirm" : "' + $("#user_password_confirm").val() + '"}';            
+        data['api'] = location.href + '/ActAdd';          
+        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
+        data['data'] += ', "act_name" : "' + $("#act_name").val() + '", "act_type" : "' + $("#act_type").val() + '"';
+        data['data'] += ', "act_content" : "' + $("#act_content").val() + '", "act_warn" : "' + $("#act_warn").val() + '"';
+        data['data'] += ', "act_start" : "' + $("#act_start").val() + '", "act_end" : "' + $("#act_end").val() + '"';
+        data['data'] += ', "act_money" : "' + $("#act_money").val() + '", "act_position" : "' + $("#act_position").val() + '"';
+        data['data'] += ', "act_member_sum" : "' + $("#act_member_sum").val() + '"';
+        data['data'] += ', "act_section_only" : "' + $("#act_section_only").val() + '"}';            
         //console.log(data);
         parent.IframeSend(data);
     }

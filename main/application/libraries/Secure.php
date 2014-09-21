@@ -17,6 +17,25 @@ class Secure{
     
     /**    
      *  @Purpose:    
+     *  验证传入的时间是否正确   
+     *  @Method Name:
+     *  CheckDateTime($date_time)
+     *  @Parameter: 
+     *  $date_time 需要检测的date('Y-m-d H:i:s')时间 
+     *  @Return: 
+     *      0|不正确
+     *      时间戳|正确
+    */ 
+    public function CheckDateTime($date_time){
+        if (!preg_match("/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/",$date_time)){
+            return 0;
+        } else {
+            return strtotime($date_time);            
+        }
+    }
+    
+    /**    
+     *  @Purpose:    
      *  根据用户密钥获取用户角色   
      *  @Method Name:
      *  CheckRole($encrypted_key)    
