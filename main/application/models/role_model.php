@@ -57,4 +57,25 @@ class Role_model extends CI_Model{
         return $this->db->count_all_results();
     }
     
+    /**    
+     *  @Purpose:    
+     *  通过user_id获得角色id
+     *  @Method Name:
+     *  GetRoleId($user_id)    
+     *  @Parameter: 
+     *  $user_id 用户id
+     *  @Return: 
+     *      0|查询失败
+     *      role_id|角色id
+     * 
+     *  
+    */ 
+    public function GetRoleId($user_id){
+        $this->load->database();
+        $this->db->select('role_id');
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get('re_user_role');
+        return $query->row()->role_id;
+    }   
+    
 }

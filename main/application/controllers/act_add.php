@@ -21,12 +21,19 @@ class Act_add extends CI_Controller{
     public function index(){
         $this->load->library('session');
         $this->load->library('encrypt');
+        $this->load->library('authorizee');
         $this->load->model('act_model');
         $this->load->model('section_model');
         if (!$this->session->userdata('user_id')){
             header('Location: ' . base_url());
             return 0;
         }
+        
+        if (!$this->authorizee->CheckAuthorizee('act_add', $this->session->userdata('user_id'))){
+            echo ('<script>alert(\'用户无权限\')</script>');
+            return 0;            
+        }
+        
         $this->load->view('act_add_view', array(
             'user_id' => $this->session->userdata('user_id'),
             'user_key' => $this->encrypt->encode($this->session->userdata('user_key')),
@@ -65,6 +72,7 @@ class Act_add extends CI_Controller{
      *      10|活动地点不能超过198个字符
      *      11|加入人数限制必须为小于10位的数字
      *      12|添加失败
+     *      13|用户无权限
      *      
      * 
     */
@@ -72,11 +80,17 @@ class Act_add extends CI_Controller{
         $this->load->library('encrypt');
         $this->load->library('secure');  
         $this->load->library('data');
+        $this->load->library('authorizee');
         $this->load->model('act_model');
         $this->load->model('section_model');
         if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 0, '密钥无法通过安检');
         }
+        
+        if (!$this->authorizee->CheckAuthorizee('act_add', $this->input->post('user_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 13, '用户无权限');
+        }
+        
         $data = array();
         $data['activity']['act_user_id'] = $this->input->post('user_id');
         
