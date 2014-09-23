@@ -24,6 +24,7 @@ class Act_add extends CI_Controller{
         $this->load->library('authorizee');
         $this->load->model('act_model');
         $this->load->model('section_model');
+        $this->load->model('user_model');
         if (!$this->session->userdata('user_id')){
             header('Location: ' . base_url());
             return 0;
@@ -34,11 +35,18 @@ class Act_add extends CI_Controller{
             return 0;            
         }
         
+        $section_select = '';
+        if (!$this->authorizee->CheckAuthorizee('act_global_add', $this->session->userdata('user_id'))){
+            $section_select = $this->user_model->GetUserSection($this->session->userdata('user_id'));
+        }
+        
         $this->load->view('act_add_view', array(
             'user_id' => $this->session->userdata('user_id'),
             'user_key' => $this->encrypt->encode($this->session->userdata('user_key')),
             'type' => $this->act_model->GetActTypeList(),
-            'section' => $this->section_model->GetSectionNameList()
+            'section' => $this->section_model->GetSectionNameList(),
+            'authorizee_act_global_add' => $this->user_model->GetUserSection($this->session->userdata('user_id')),
+            'section_select' => $section_select
         ));
     }
     
@@ -73,6 +81,7 @@ class Act_add extends CI_Controller{
      *      11|加入人数限制必须为小于10位的数字
      *      12|添加失败
      *      13|用户无权限
+     *      14|用户无添加其他部门活动的权限
      *      
      * 
     */
@@ -83,6 +92,7 @@ class Act_add extends CI_Controller{
         $this->load->library('authorizee');
         $this->load->model('act_model');
         $this->load->model('section_model');
+        $this->load->model('user_model');
         if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 0, '密钥无法通过安检');
         }
@@ -110,9 +120,14 @@ class Act_add extends CI_Controller{
                 '不限制' != $this->input->post('act_section_only', TRUE))){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 4, '部门名称不存在或超过28个字符');
         }
+        
         if ('不限制' == $this->input->post('act_section_only', TRUE)){
             $data['re_activity_section']['section_id'] = 0;
         } else {
+            if (!$this->authorizee->CheckAuthorizee('act_global_add', $this->session->userdata('user_id')) && 
+                $this->user_model->GetUserSection($this->session->userdata('user_id')) != $this->input->post('act_section_only', TRUE)){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), 14, '用户无添加其他部门活动的权限');
+            }
             $data['re_activity_section']['section_id'] = $this->section_model->GetSectionId($this->input->post('act_section_only', TRUE));
         }
         

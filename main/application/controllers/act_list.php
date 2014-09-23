@@ -21,13 +21,20 @@ class Act_list extends CI_Controller{
     public function index(){
         $this->load->library('session');
         $this->load->library('encrypt');
+        $this->load->library('authorizee');
         if (!$this->session->userdata('user_id')){
             header('Location: ' . base_url());
             return 0;
         }
+        //权限获取
+        
         $this->load->view('daily_change_pass_view', array(
             'user_id' => $this->session->userdata('user_id'),
-            'user_key' => $this->encrypt->encode($this->session->userdata('user_key'))
+            'user_key' => $this->encrypt->encode($this->session->userdata('user_key')),
+            'authorizee_act_update' => $this->authorizee->CheckAuthorizee('act_update', $this->session->userdata('user_id')),
+            'authorizee_act_dele' => $this->authorizee->CheckAuthorizee('act_dele', $this->session->userdata('user_id')),
+            'authorizee_act_global_list' => $this->authorizee->CheckAuthorizee('act_global_list', $this->session->userdata('user_id')),
+            'authorizee_act_propagator' => $this->authorizee->CheckAuthorizee('act_propagator', $this->session->userdata('user_id'))
         ));
     }
 }

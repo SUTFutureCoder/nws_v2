@@ -45,7 +45,7 @@ class Index_model extends CI_Model{
         $this->load->database();
         $this->db->where('user_id', $mixed);
         $this->db->or_where('user_telephone', $mixed);
-        $query = $this->db->get('user');
+        $query = $this->db->get('user');        
         $result = array();
         $role = array();
         //$data主要插入至loginlog表
@@ -111,6 +111,11 @@ class Index_model extends CI_Model{
                             $this->db->update('user', $repair);
                         }
                     } else {    //验证失败
+//                            $result[0] = 4;
+//                            $result[1] = $this->encrypt->decode($row['user_password']);             
+//                            echo json_encode($result);
+//                            $this->db->close();
+//                            return 0;
                         $continuity_fail = ++$row['user_continuity_fail'];
                         $logfail = array(
                             'user_last_failure' => time(),

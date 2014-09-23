@@ -21,13 +21,15 @@ class Daily_change_pass extends CI_Controller{
     public function index(){
         $this->load->library('session');
         $this->load->library('encrypt');
+        $this->load->library('authorizee');
         if (!$this->session->userdata('user_id')){
             header('Location: ' . base_url());
             return 0;
         }
         $this->load->view('daily_change_pass_view', array(
             'user_id' => $this->session->userdata('user_id'),
-            'user_key' => $this->encrypt->encode($this->session->userdata('user_key'))
+            'user_key' => $this->encrypt->encode($this->session->userdata('user_key')),
+            'authorizee_update_password' => $this->authorizee->CheckAuthorizee('authorizee_update_password', $this->session->userdata('user_id'))
         ));        
     }
     
@@ -55,12 +57,14 @@ class Daily_change_pass extends CI_Controller{
      *  6|
      *  7|新密码不能超过18个字符
      *  8|
+     *  9|没有更改其他用户密码的权限
      *  
     */       
     public function ChangePass(){
         $this->load->library('encrypt');
         $this->load->library('data');
         $this->load->library('secure');
+        $this->load->library('authorizee');
         $this->load->model('user_model');
         
         if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
@@ -75,10 +79,29 @@ class Daily_change_pass extends CI_Controller{
         }       
                 
         //权限判断
+        
         //高权限允许更改其他用户密码
-        if ($this->input->post('user_mixed', TRUE)){
+        if ($this->input->post('user_mixed', TRUE) != 'undefined'){
+            if (!$this->authorizee->CheckAuthorizee('authorizee_update_password', $this->input->post('user_id', TRUE))){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), 9, $this->input->post('user_mixed', TRUE));
+            }
             if (ctype_digit($this->input->post('user_mixed', TRUE))){                
-                $user_mixed = $this->input->post('user_mixed', TRUE);                            
+                $user_mixed = $this->input->post('user_mixed', TRUE);  
+                if (18 < strlen($this->input->post('user_password_new_other', TRUE))){
+                    $this->data->Out('iframe', $this->input->post('src', TRUE), 7, '新密码不能超过18个字符', 'user_password_new_other');
+                } else {
+                    $update_pass_result = $this->secure->UpdateUserPass($user_mixed, $this->input->post('user_password_new_other', TRUE));
+                    switch ($update_pass_result[0]){
+                        case 0:
+                        case 2:
+                            $this->data->Out('iframe', $this->input->post('src', TRUE), 8, $update_pass_result[1],'user_password_new_other');
+                        break;
+
+                        case 1:
+                            $this->data->Out('iframe', $this->input->post('src', TRUE), 1, $update_pass_result[1]); //密钥不需要
+                        break;
+                    }
+                }                
             } else {
                 $this->data->Out('iframe', $this->input->post('src', TRUE), 3, '目标用户账户不合法', 'user_mixed');
             }

@@ -35,6 +35,7 @@ class Control_center extends CI_Controller{
         $this->load->library('basic');
         $this->load->library('session');
         $this->load->library('encrypt');
+        $this->load->library('authorizee');
         $this->load->model('control_center_model');
         $this->load->model('message_model');
         $this->load->model('user_model');
@@ -47,6 +48,9 @@ class Control_center extends CI_Controller{
         //用于全体用户的提示信息        
         !$this->control_center_model->GetUserPropertySet($this->session->userdata('user_id')) ? $user_property_alert = 1 : $user_property_alert = 0;
         
+        //获取权限列表
+        $authorizee_list = array();
+        $authorizee_list = $this->authorizee->GetAuthorizeeList($this->session->userdata('user_id'));
         
         //推送信息
         $mess_push = array();
@@ -78,7 +82,8 @@ class Control_center extends CI_Controller{
             'role_authorizee_alert' => $role_authorizee_alert,
             'user_num_alert' => $user_num_alert,
             'user_property_alert' => $user_property_alert,
-            'mess_push' => $mess_push
+            'mess_push' => $mess_push,
+            'authorizee_list' => $authorizee_list
             //'release_time' => $section[0]['section_name']
         ));   
         

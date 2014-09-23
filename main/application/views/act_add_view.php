@@ -54,9 +54,13 @@
         <div class="col-sm-9">
             <select class="form-control" id="act_section_only">
                 <option>不限制</option>
-                <?php foreach ($section as $section_item):?>
-                    <option><?= $section_item['section_name']?></option>
-                <?php endforeach; ?>
+                <?php if (!$authorizee_act_global_add): ?>
+                    <option><?= $section_select ?></option>
+                <?php else: ?>
+                    <?php foreach ($section as $section_item):?>
+                        <option><?= $section_item['section_name']?></option>
+                    <?php endforeach; ?>
+                <?php endif;?>
             </select> 
         </div>
     </div>  

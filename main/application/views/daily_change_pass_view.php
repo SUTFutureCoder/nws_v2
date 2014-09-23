@@ -10,7 +10,9 @@
 <body>
 <ul class="nav nav-tabs" role="tablist" id="myTab">
 <li class="active"><a href="#UpdatePass" role="tab" data-toggle="tab">更改密码</a></li>
+<?php if ($authorizee_update_password): ?>
 <li><a href="#UpdateOtherPass" role="tab" data-toggle="tab">更改其他用户密码</a></li>
+<?php endif; ?>
 </ul>
 
 <div class="tab-content">
@@ -45,8 +47,8 @@
     </form>
 </div>
 
+<?php if ($authorizee_update_password): ?>
 <div class="tab-pane fade" id="UpdateOtherPass">
-    <!--
     <form class="form-horizontal" role="form">      
     <hr>    
     <div class="form-group">
@@ -56,15 +58,15 @@
         </div>
     </div>       
     <div class="form-group">
-        <label for="user_password_new" class="col-sm-2 control-label">新密码</label>
+        <label for="user_password_new_other" class="col-sm-2 control-label">新密码</label>
         <div class="col-sm-9">                      
-            <input type="password" class="form-control" id="user_password_new">
+            <input type="password" class="form-control" id="user_password_new_other">
         </div>
     </div>
     <div class="form-group">
-        <label for="user_password_confirm" class="col-sm-2 control-label">密码确认</label>
+        <label for="user_password_confirm_other" class="col-sm-2 control-label">密码确认</label>
         <div class="col-sm-9">                      
-            <input type="password" class="form-control" id="user_password_confirm">
+            <input type="password" class="form-control" id="user_password_confirm_other">
         </div>
     </div>    
     <hr>
@@ -75,8 +77,8 @@
     <br/>
     <hr>
     </form>
-!-->
-</div>  
+</div>
+<?php endif; ?>
 </div>
 </body>
 
@@ -88,6 +90,7 @@
         data['api'] = location.href + '/ChangePass';          
         data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>", "user_mixed" : "' + $("#user_mixed").val() + '"';
         data['data'] += ', "user_password_old" : "' + $("#user_password_old").val() + '", "user_password_new" : "' + $("#user_password_new").val() + '"';
+        data['data'] += ', "user_password_new_other" : "' + $("#user_password_new_other").val() + '", "user_password_confirm_other" : "' + $("#user_password_confirm_other").val() + '"';
         data['data'] += ', "user_password_confirm" : "' + $("#user_password_confirm").val() + '"}';            
         //console.log(data);
         parent.IframeSend(data);
