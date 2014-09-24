@@ -82,6 +82,7 @@ class Act_add extends CI_Controller{
      *      12|添加失败
      *      13|用户无权限
      *      14|用户无添加其他部门活动的权限
+     *      15|内部活动传值错误
      *      
      * 
     */
@@ -109,6 +110,12 @@ class Act_add extends CI_Controller{
         }
         $data['activity']['act_name'] = $this->input->post('act_name', TRUE);
         
+        if (!is_bool(settype($this->input->post('act_private', TRUE), 'bool'))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 15, gettype($this->input->post('act_private', TRUE)));
+        } 
+        $data['activity']['act_private'] = settype($this->input->post('act_private', TRUE), 'bool');
+        
+        
         if (!$this->input->post('act_type', TRUE) && 48 < iconv_strlen($this->input->post('act_type', TRUE), 'utf-8') ||
                 !$this->act_model->CheckTypeExist($this->input->post('act_type', TRUE))){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 3, '活动类型不存在或超过48个字符');
@@ -124,8 +131,8 @@ class Act_add extends CI_Controller{
         if ('不限制' == $this->input->post('act_section_only', TRUE)){
             $data['re_activity_section']['section_id'] = 0;
         } else {
-            if (!$this->authorizee->CheckAuthorizee('act_global_add', $this->session->userdata('user_id')) && 
-                $this->user_model->GetUserSection($this->session->userdata('user_id')) != $this->input->post('act_section_only', TRUE)){
+            if (!$this->authorizee->CheckAuthorizee('act_global_add', $this->input->post('user_id', TRUE)) && 
+                $this->user_model->GetUserSection($this->input->post('user_id', TRUE)) != $this->input->post('act_section_only', TRUE)){
                 $this->data->Out('iframe', $this->input->post('src', TRUE), 14, '用户无添加其他部门活动的权限');
             }
             $data['re_activity_section']['section_id'] = $this->section_model->GetSectionId($this->input->post('act_section_only', TRUE));

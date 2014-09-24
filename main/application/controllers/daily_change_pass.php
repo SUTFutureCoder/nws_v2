@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
  * 修改密码
  * 
  * 
- *
+ * 
  * @copyright  版权所有(C) 2014-2014 沈阳工业大学ACM实验室 沈阳工业大学网络管理中心 *Chen
  * @license    http://www.gnu.org/licenses/gpl-3.0.txt   GPL3.0 License
  * @version    2.0

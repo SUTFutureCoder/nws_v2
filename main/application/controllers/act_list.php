@@ -28,7 +28,7 @@ class Act_list extends CI_Controller{
         }
         //权限获取
         
-        $this->load->view('daily_change_pass_view', array(
+        $this->load->view('act_list_view', array(
             'user_id' => $this->session->userdata('user_id'),
             'user_key' => $this->encrypt->encode($this->session->userdata('user_key')),
             'authorizee_act_update' => $this->authorizee->CheckAuthorizee('act_update', $this->session->userdata('user_id')),

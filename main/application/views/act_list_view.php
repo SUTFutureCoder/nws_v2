@@ -32,11 +32,39 @@
 </script>
 <body>
     <br/>
+    <form class="form-inline" role="form">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail2">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">@</div>
+      <input class="form-control" type="email" placeholder="Enter email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword2">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Sign in</button>
+</form>
     <form class="form-horizontal" role="form">      
     <div class="form-group">
         <label for="act_name" class="col-sm-2 control-label">活动名称</label>
         <div class="col-sm-9">
             <input type="text" class="form-control" id="act_name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="act_user_id" class="col-sm-2 control-label">发起者</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="act_user_id">
         </div>
     </div>
     <div class="form-group">
@@ -60,29 +88,12 @@
         <div class="col-sm-9">
             <select class="form-control" id="act_section_only">
                 <option>不限制</option>
-                <?php if (!$authorizee_act_global_add): ?>
-                    <option><?= $section_select ?></option>
-                <?php else: ?>
-                    <?php foreach ($section as $section_item):?>
-                        <option><?= $section_item['section_name']?></option>
-                    <?php endforeach; ?>
-                <?php endif;?>
+                <?php foreach ($section as $section_item):?>
+                    <option><?= $section_item['section_name']?></option>
+                <?php endforeach; ?>
             </select> 
         </div>
     </div>  
-    <hr>    
-    <div class="form-group">
-        <label for="act_content" class="col-sm-2 control-label">活动描述</label>
-        <div class="col-sm-9">
-            <textarea class="form-control" rows="3" id="act_content"></textarea>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="act_warn" class="col-sm-2 control-label">活动注意事项</label>
-        <div class="col-sm-9">
-            <textarea class="form-control" rows="3" placeholder="选填" id="act_warn"></textarea>
-        </div>
-    </div>
     <div class="form-group">
         <label for="act_start" class="col-sm-2 control-label">活动开始时间</label>
         <div class="col-sm-9">
@@ -93,25 +104,6 @@
         <label for="act_end" class="col-sm-2 control-label">活动结束时间</label>
         <div class="col-sm-9">
             <input type="text" class="form-control" class="hasDatepicker" id="act_end">
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label for="act_money" class="col-sm-2 control-label">活动需要资金/人</label>
-        <div class="col-sm-9">
-            <input type="text" class="form-control" placeholder="选填" id="act_money">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="act_position" class="col-sm-2 control-label">活动地点</label>
-        <div class="col-sm-9">
-            <textarea class="form-control" rows="3" id="act_position"></textarea>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="act_member_sum" class="col-sm-2 control-label">总人数</label>
-        <div class="col-sm-9">
-            <input type="text" class="form-control" placeholder="选填" id="act_member_sum">
         </div>
     </div>
     <hr>

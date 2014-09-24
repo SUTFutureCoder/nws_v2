@@ -171,7 +171,7 @@ function getping(){
 				</div>
                             
 				<div title="活动相关">
-                                    	<a href="javascript:void(0);" src="index.php/act_list" class="cs-navi-tab">活动列表</a></p>
+                                    	<a href="javascript:void(0);" src="<?= base_url('index.php/act_list') ?>" class="cs-navi-tab">活动列表</a></p>
 					<a href="javascript:void(0);" src="<?= base_url('index.php/act_add') ?>" class="cs-navi-tab">添加活动</a></p>
 					<a href="javascript:void(0);" src="index.php/act_dele_ed_list" class="cs-navi-tab">已注销的活动</a></p>
 					<a href="javascript:void(0);" src="index.php/act_propagator" class="cs-navi-tab">课表录入</a></p>

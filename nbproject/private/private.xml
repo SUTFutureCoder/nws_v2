@@ -5,6 +5,7 @@
         <group>
             <file>file:/var/www/html/nws_v2/main/application/controllers/index.php</file>
             <file>file:/var/www/html/nws_v2/main/application/models/section_model.php</file>
+            <file>file:/var/www/html/nws_v2/mobile/index.html</file>
             <file>file:/var/www/html/nws_v2/main/application/views/daily_change_pass_view.php</file>
             <file>file:/var/www/html/nws_v2/main/application/controllers/daily_change_pass.php</file>
             <file>file:/var/www/html/nws_v2/main/application/models/user_model.php</file>
@@ -13,6 +14,7 @@
             <file>file:/var/www/html/nws_v2/main/application/models/message_model.php</file>
             <file>file:/var/www/html/nws_v2/main/application/controllers/daily_me.php</file>
             <file>file:/var/www/html/nws_v2/main/application/controllers/setup.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/views/act_list_view.php</file>
             <file>file:/var/www/html/nws_v2/main/application/models/setup_model.php</file>
             <file>file:/var/www/html/nws_v2/main/application/views/daily_me_view.php</file>
             <file>file:/var/www/html/nws_v2/main/application/controllers/test.php</file>
@@ -24,7 +26,9 @@
             <file>file:/var/www/html/nws_v2/main/application/libraries/Basic.php</file>
             <file>file:/var/www/html/nws_v2/main/application/controllers/act_add.php</file>
             <file>file:/var/www/html/nws_v2/main/application/controllers/index.html</file>
+            <file>file:/var/www/html/nws_v2/main/application/controllers/act_list.php</file>
             <file>file:/var/www/html/nws_v2/main/application/controllers/control_center.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/views/control_center_view.php</file>
             <file>file:/var/www/html/nws_v2/main/application/models/role_model.php</file>
             <file>file:/var/www/html/nws_v2/main/application/models/act_model.php</file>
             <file>file:/var/www/html/nws_v2/main/application/views/person_add_by_excel_view.php</file>

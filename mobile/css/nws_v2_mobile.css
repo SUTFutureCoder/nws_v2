@@ -1,0 +1,20 @@
+#copy_right{
+    text-align: center;    
+}
+
+#nws_logo_large{   
+    text-align: center;
+    border-radius:100px;
+    -moz-border-radius:100px; /* Old Firefox */
+    box-shadow:  -1px #888888;
+}
+
+
+#nws_logo{
+	width: 18px;
+	height: 23px;
+	margin-bottom: -5px;
+}
+
+
+
