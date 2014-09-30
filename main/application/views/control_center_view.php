@@ -34,7 +34,7 @@ var ws, ping, name = 'null', user_list={};
 
     // 当socket连接打开时，输入用户名
     ws.onopen = function() {              
-        //ws.send(JSON.stringify({"type":"noajax","name":name}));
+        ws.send(JSON.stringify({"type":"login","name":<?= $user_id ?>}));
         setInterval("getping()",1000);
     };
 

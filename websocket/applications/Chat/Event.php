@@ -15,6 +15,10 @@ use \Protocols\WebSocket;
 
 class Event
 {
+    //用户分组
+    //$group[$group_name][$uid] = $name;
+    public $group = array();
+    
     /**
      * 网关有消息时，判断消息是否完整
      */
@@ -85,7 +89,7 @@ class Event
    {
        // [这步是必须的]删除这个用户的gateway通信地址
        Gateway::deleteUidAddress($uid);
-
+       
        // 从用户列表中删除
        self::delUserFromList($uid);
 
@@ -124,24 +128,25 @@ class Event
             // 用户登录 message格式: {type:login, name:xx} ，添加到用户，广播给所有用户xx进入聊天室
             case 'login':
                 // 存储当前用户到用户列表
-                self::addUserToList($uid, htmlspecialchars($message_data['name']));
+                //name为user_id
+                self::addUserToList($uid, htmlspecialchars($message_data['name']), $message_data['group']);
                 // 获取用户列表
-                $user_list = self::getUserList();
-                // 整理用户列表以便显示
-                $all_users = array();
-                if($user_list)
-                {
-                    foreach($user_list as $tmp_uid=>$name)
-                    {
-                        $all_users[] = array('uid'=>$tmp_uid, 'name'=>$name);
-                    }
-                }
-                
-                // 发送给当前用户 内容是用户列表 message: {type:user_list, user_list:xxxx}
-                Gateway::sendToUid($uid, WebSocket::encode(json_encode(array('type'=>'user_list', 'user_list'=> $all_users))));
-                
-                // 转播给所有用户，xx进入聊天室 message {type:login, uid:xx, name:xx} 
-                Gateway::sendToAll(WebSocket::encode(json_encode(array('type'=>'login', 'uid'=>$uid, 'name'=>htmlspecialchars($message_data['name']), 'time'=>date('Y-m-d H:i:s')))));
+//                $user_list = self::getUserList();
+//                // 整理用户列表以便显示
+//                $all_users = array();
+//                if($user_list)
+//                {
+//                    foreach($user_list as $tmp_uid=>$name)
+//                    {
+//                        $all_users[] = array('uid'=>$tmp_uid, 'name'=>$name);
+//                    }
+//                }
+//                
+//                // 发送给当前用户 内容是用户列表 message: {type:user_list, user_list:xxxx}
+//                Gateway::sendToUid($uid, WebSocket::encode(json_encode(array('type'=>'user_list', 'user_list'=> $all_users))));
+//                
+//                // 转播给所有用户，xx进入聊天室 message {type:login, uid:xx, name:xx} 
+//                Gateway::sendToAll(WebSocket::encode(json_encode(array('type'=>'login', 'uid'=>$uid, 'name'=>htmlspecialchars($message_data['name']), 'time'=>date('Y-m-d H:i:s')))));
                 return;
                 
             // 用户发言 message: {type:say, to_uid:xx, content:xx}
@@ -219,6 +224,12 @@ class Event
        $user_list = self::getUserList();
        if(isset($user_list[$uid]))
        {
+           foreach ($group as $group_name => $group_name_value){
+               if (isset($group[$group_name][$uid])){
+                   unset($group[$group_name][$uid]);
+                   break;
+               }               
+           }
            unset($user_list[$uid]);
            return Store::instance('gateway')->set($key, $user_list);
        }
@@ -230,12 +241,13 @@ class Event
     * @param int $uid
     * @param string $name
     */
-   public static function addUserToList($uid, $name)
-   {
-       $key = 'alluserlist';
+   public static function addUserToList($uid, $name, $group_name = NULL)
+   {       
+       $key = 'alluserlist';       
        $user_list = self::getUserList();
        if(!isset($user_list[$uid]))
        {
+           $group[$group_name][$uid] = $name;
            $user_list[$uid] = $name;
            return Store::instance('gateway')->set($key, $user_list);
        }
@@ -258,6 +270,4 @@ class Event
         curl_close($ch);   
         return $handles;
     }
-
-   
 }

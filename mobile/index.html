@@ -27,26 +27,28 @@
         </div>
         
         <div data-role="page" id="guest_index">
-            <div data-role="header">
+            <div data-role="header" data-position="fixed" >
                 <h1>工大<img src="images/s.png" id="nws_logo">网管</h1>
                 <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
             </div>
-            <div data-role="content">
-                <ul data-role="listview">
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                      </li>
+            <div data-role="content">                
+                <ul data-role="listview" id="guest_act_list">                        
+                    <li>
+                        <a href="#">
+                        <h2>Google Chrome</h2>
+                        <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
+                        <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
+                        </a>
+                    </li>
+                        
                 </ul>                
             </div>
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                     <ul>
-                    <li><a href="#" class="ui-btn-active ui-state-persist"  data-icon="grid">网管动态</a></li>
-                    <li><a href="#" data-icon="grid">网管记忆</a></li>
-                    <li><a href="#" data-icon="grid">网管介绍</a></li>			
+                    <li><a href="#" class="ui-btn-active ui-state-persist"  data-icon="grid">动态</a></li>
+                    <li><a href="#" data-icon="grid"></a></li>
+                    <li><a href="#" data-icon="grid">功能</a></li>			
                     </ul>			
                 </div>
             </div>

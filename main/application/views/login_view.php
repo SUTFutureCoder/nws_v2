@@ -32,7 +32,7 @@
         
         //connect();
         //function connect(){
-            ws = new WebSocket("ws://"+document.domain+":8080/");   
+            ws = new WebSocket("ws://192.168.1.108:8080/");   
         //}
         
         

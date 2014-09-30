@@ -5,6 +5,7 @@
         <group>
             <file>file:/var/www/html/nws_v2/main/application/controllers/index.php</file>
             <file>file:/var/www/html/nws_v2/main/application/models/section_model.php</file>
+            <file>file:/var/www/html/nws_v2/mobile/js/nws_v2_mobile.js</file>
             <file>file:/var/www/html/nws_v2/mobile/index.html</file>
             <file>file:/var/www/html/nws_v2/main/application/views/daily_change_pass_view.php</file>
             <file>file:/var/www/html/nws_v2/main/application/controllers/daily_change_pass.php</file>

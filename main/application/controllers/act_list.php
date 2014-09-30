@@ -37,4 +37,44 @@ class Act_list extends CI_Controller{
             'authorizee_act_propagator' => $this->authorizee->CheckAuthorizee('act_propagator', $this->session->userdata('user_id'))
         ));
     }
+    
+    /**    
+     *  @Purpose:    
+     *  移动端活动列表查询
+     *  
+     *  @Method Name:
+     *  MobileGetActList()    
+     *  @Parameter: 
+     *  POST array(
+     *      'user_key' 用户识别码
+     *      array data_data(
+     *          array(
+     *              
+     *          )
+     *      )
+     *  )   
+     *  @Return: 
+     *  状态码|状态
+     *      0|密钥无法通过安检
+     *      1|添加成功
+     *      2|活动名称不可为空或超过198个字符
+     *      3|活动类型不存在或超过48个字符
+     *      4|部门名称不存在或超过28个字符
+     *      5|活动描述不可为空或超过998个字符
+     *      6|活动注意事项超过998个字符
+     *      7|活动开始时间不合法，请尝试把输入法关闭
+     *      8|活动结束时间不合法，请尝试把输入法关闭
+     *      9|需要资金格式为小于10位的整数
+     *      10|活动地点不能超过198个字符
+     *      11|加入人数限制必须为小于10位的数字
+     *      12|添加失败
+     *      13|用户无权限
+     *      14|用户无添加其他部门活动的权限
+     *      15|内部活动传值错误
+     *      
+     * 
+    */
+    public function MobileGetActList(){
+        
+    }
 }
