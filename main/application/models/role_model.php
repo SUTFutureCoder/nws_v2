@@ -78,4 +78,25 @@ class Role_model extends CI_Model{
         return $query->row()->role_id;
     }   
     
+    /**    
+     *  @Purpose:    
+     *  通过role_name获得角色id
+     *  @Method Name:
+     *  Name2Id($role_name)   
+     *  @Parameter: 
+     *  $role_name 角色名称
+     *  @Return: 
+     *      0|查询失败
+     *      role_id|角色id
+     * 
+     *  
+    */ 
+    public function Name2Id($role_name){
+        $this->load->database();
+        $this->db->select('role_id');
+        $this->db->where('role_name', $role_name);
+        $query = $this->db->get('role');
+        return $query->row()->role_id;
+    }   
+    
 }

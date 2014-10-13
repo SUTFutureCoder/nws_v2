@@ -22,7 +22,6 @@
     }
 </style>
 <script>
-
 if (typeof console == "undefined") {    this.console = { log: function (msg) {  } };}
 WEB_SOCKET_SWF_LOCATION = "swf/WebSocketMain.swf";
 WEB_SOCKET_DEBUG = true;
@@ -33,8 +32,8 @@ var ws, ping, name = 'null', user_list={};
     
 
     // 当socket连接打开时，输入用户名
-    ws.onopen = function() {              
-        ws.send(JSON.stringify({"type":"login","name":<?= $user_id ?>}));
+    ws.onopen = function() {               
+        ws.send('{"type":"login","name":<?= $user_id ?>,"group":"desktop"}');
         setInterval("getping()",1000);
     };
 
@@ -188,6 +187,7 @@ function getping(){
 					<a href="javascript:void(0);" src="index.php/person_stat" class="cs-navi-tab">统计部员专业分布</a></p> -->
 				</div>
 				<div title="权限相关">
+					<a href="javascript:void(0);" src="<?= base_url('index.php/authorizee_manage');?>" class="cs-navi-tab">权限管理</a></p>
 					<a href="javascript:void(0);" src="<?= base_url('index.php/daily_change_pass');?>" class="cs-navi-tab">更改密码</a></p>
 					<a href="javascript:void(0);" src="index.php/authorizee_promote" class="cs-navi-tab">部员晋升</a></p>
 				</div>

@@ -23,8 +23,25 @@ class Test extends CI_Controller{
         $this->authorizee->CheckAuthorizee('act_add', 1);
     }
     
-    public function TestGetAuthorizeeList(){
+    public function TestGetUserAuthorizeeList(){
         $this->load->library('authorizee');
-        $this->authorizee->GetAuthorizeeList(1);
+        $this->authorizee->GetUserAuthorizeeList(1);
+    }
+    
+    public function TestGetAuthorizeeTypeList(){
+        $this->load->model('authorizee_model');
+        header('Content-type: text/html; charset=utf-8');
+        var_dump($this->authorizee_model->GetAuthorizeeTypeList());        
+    }
+    
+    public function TestGetAuthorizeeList(){
+        $this->load->model('authorizee_model');
+        header('Content-type: text/html; charset=utf-8');
+        var_dump($this->authorizee_model->GetAuthorizeeList());        
+    }
+    
+    public function TestGetRoleAuthorizeeList(){
+        $this->load->library('authorizee');
+        var_dump($this->authorizee->GetRoleAuthorizeeList('管理员'));
     }
 }

@@ -50,7 +50,7 @@ class Control_center extends CI_Controller{
         
         //获取权限列表
         $authorizee_list = array();
-        $authorizee_list = $this->authorizee->GetAuthorizeeList($this->session->userdata('user_id'));
+        $authorizee_list = $this->authorizee->GetUserAuthorizeeList($this->session->userdata('user_id'));
         
         //推送信息
         $mess_push = array();
@@ -72,6 +72,7 @@ class Control_center extends CI_Controller{
         }  
             //if (!isset($section[0]))
         $this->load->view('control_center_view', array(
+            'user_id' => $this->session->userdata('user_id'),
             'user_role' => $this->session->userdata('user_role'),
             'user_key' => $this->encrypt->encode($this->session->userdata('user_key')),
             'user_name' => $this->session->userdata('user_name'),

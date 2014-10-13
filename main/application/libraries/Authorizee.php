@@ -49,7 +49,7 @@ class Authorizee{
      *  获取用户权限列表
      *  
      *  @Method Name:
-     *  GetAuthorizeeList($user_id)    
+     *  GetUserAuthorizeeList($user_id)    
      *  @Parameter: 
      *  $user_id        用户id  
      *  @Return: 
@@ -58,12 +58,42 @@ class Authorizee{
      *      );
      * 
     */
-    public function GetAuthorizeeList($user_id){
+    public function GetUserAuthorizeeList($user_id){
         $CI =& get_instance();
         $data = array();
         $CI->load->model('role_model');
         $CI->load->database();  
         $CI->db->where('re_role_authorizee.' . $CI->role_model->GetRoleId($user_id) . ' !=', 0);
+        $CI->db->from('re_role_authorizee');
+        $CI->db->join('authorizee', 'authorizee.authorizee_id = re_role_authorizee.authorizee_id');
+        $CI->db->select('authorizee_name');
+        $query = $CI->db->get();
+        foreach ($query->result_array() as $key => $value){
+            $data[$value['authorizee_name']] = 1;
+        }
+        return $data;
+    }
+    
+    /**    
+     *  @Purpose:    
+     *  获取角色权限列表
+     *  
+     *  @Method Name:
+     *  GetRoleAuthorizeeList($role_name)    
+     *  @Parameter: 
+     *  $role_name      角色名字  
+     *  @Return: 
+     *     array(
+     *          '' => 1, '' => 1
+     *      );
+     * 
+    */
+    public function GetRoleAuthorizeeList($role_name){
+        $CI =& get_instance();
+        $data = array();
+        $CI->load->model('role_model');
+        $CI->load->database();  
+        $CI->db->where('re_role_authorizee.' . $CI->role_model->Name2Id($role_name) . ' !=', 0);
         $CI->db->from('re_role_authorizee');
         $CI->db->join('authorizee', 'authorizee.authorizee_id = re_role_authorizee.authorizee_id');
         $CI->db->select('authorizee_name');
