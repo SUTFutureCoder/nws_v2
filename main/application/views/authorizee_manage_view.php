@@ -13,15 +13,43 @@
         <label for="role_type" class="col-sm-2 control-label">角色类型</label>
         <div class="col-sm-9">
             <select class="form-control" id="role_type">
+                <option></option>
                 <?php foreach ($role as $role_item):?>
                     <option><?= $role_item['role_name']?></option>
                 <?php endforeach; ?>
             </select> 
         </div>
-    </div>        
+    </div>
+    <hr>
+    <div class="form-group">
+    <div class="col-sm-10 col-sm-offset-1">
+        <?php foreach ($type as $type_item): ?>
+        <div class="panel panel-primary ">        
+            <div class="panel-heading"><?= $type_item['authorizee_column_name'] ?></div>
+            <?php if (isset($authorizee_group[$type_item['authorizee_column_id']])): ?>
+            <?php foreach ($authorizee_group[$type_item['authorizee_column_id']] as $authorizee_group_item): ?>
+            <table class="table table-striped table-hover" id="type<?= $type_item['authorizee_column_id'] ?>">
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" id="authorizee<?= $authorizee_group_item['authorizee_id']?>" num="<?= $authorizee_group_item['authorizee_id'] ?>"><?= $authorizee_group_item['authorizee_describe'] ?>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    </div>
     <hr>
     <div class="col-sm-10 col-sm-offset-1">
-        <input class="form-control btn btn-success" id="submit" onclick="MotherIframeSend()" value="提交">
+        <input class="form-control btn btn-danger" id="submit" onclick="MotherIframeSend()" value="确认">
     </div>
     <br/>
     <br/>
@@ -30,39 +58,52 @@
 </body>
 <script>
 $(function(){
-    $("#role_type").change(function (){
-        var data = new Array();
-        data['src'] = location.href;
-        data['api'] = location.href + '/GetRoleAuthorizeeList';
-        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
-        data['data'] += ', "role_type" : "' + $("#role_type").val() + '"}'; 
-        console.log(data);
-        parent.IframeSend(data);
+    $("#role_type").change(function (){    
+        //重置
+        $("input[type=checkbox]").each(function(){
+            $(this).prop("checked", false);
+        });
+        if ($("#role_type").val()){
+            var data = new Array();
+            data['src'] = location.href;
+            data['api'] = location.href + '/GetRoleAuthorizeeList';
+            data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
+            data['data'] += ', "role_type" : "' + $("#role_type").val() + '"}'; 
+            console.log(data);
+            parent.IframeSend(data);
+        }
     });
 });
 </script>
 <script>
 //发送到母窗口
-    function MotherIframeSend(){      
+    function MotherIframeSend(){  
+        if (!$("#role_type").val()){
+            alert("请选择一个角色进行操作");
+            return 0;
+        }
+        var authorizee_list = new Array();
+        $("input[type=checkbox]:checked").each(function(){
+            authorizee_list.push($(this).attr("num"));
+        });
+        //console.log(authorizee_list);
         var data = new Array();
         data['src'] = location.href;
-        data['api'] = location.href + '/ActAdd';          
-        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
-        data['data'] += ', "act_name" : "' + $("#act_name").val() + '", "act_type" : "' + $("#act_type").val() + '"';
-        data['data'] += ', "act_content" : "' + $("#act_content").val() + '", "act_warn" : "' + $("#act_warn").val() + '"';
-        data['data'] += ', "act_start" : "' + $("#act_start").val() + '", "act_end" : "' + $("#act_end").val() + '"';
-        data['data'] += ', "act_money" : "' + $("#act_money").val() + '", "act_position" : "' + $("#act_position").val() + '"';
-        data['data'] += ', "act_member_sum" : "' + $("#act_member_sum").val() + '", "act_private" : "' + $("#act_private").prop("checked") + '"';
-        data['data'] += ', "act_section_only" : "' + $("#act_section_only").val() + '"}';            
-        //console.log(data);
+        data['api'] = location.href + '/SetRoleAuthorizee';          
+        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';        
+        data['data'] += ', "role_type" : "' + $("#role_type").val() + '", "authorizee_list" : "' + authorizee_list + '"}';            
         parent.IframeSend(data);
     }
     //接收母窗口传来的值
     function MotherResultRec(data){
-//        console.log(data);       
-        alert(data[3]);
-        if (data[4]){
-            $("#" + data[4]).focus();
+//        console.log(data); 
+        if (data[4] != 'GetRoleAuthorizee'){
+            alert(data[3]);        
+        } else {
+            //开始打钩
+            for (var n in data[3]){                
+                $("#authorizee" + n).prop("checked", true);
+            }
         }
     }
 </script>

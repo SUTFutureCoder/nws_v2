@@ -47,15 +47,43 @@ class Authorizee_model extends CI_Model{
      *  
      *  @Return: 
      *  array 权限列表
-     * 
      *  
     */ 
     public function GetAuthorizeeList(){
         $this->load->database();
-        $this->db->select('authorizee_describe, authorizee_column_id');
+        $this->db->select('authorizee_id, authorizee_describe, authorizee_column_id');
         $query = $this->db->get('authorizee');
         return $query->result_array();
     }
     
-    
+    /**    
+     *  @Purpose:    
+     *  修改（设置）角色权限
+     *  @Method Name:
+     *  UpdateRoleAuthorizee($role_id, $authorizee_list)    
+     *  @Parameter: 
+     *  $role_id         角色类型
+     *  $authorizee_list 修改的权限列表
+     *  @Return: 
+     *  0|失败
+     *  1|成功
+     *  
+    */ 
+    public function UpdateRoleAuthorizee($role_id, $authorizee_list){
+        $this->load->database();
+        $pre_data = array(
+            $role_id => 0
+        );
+        $this->db->update('re_role_authorizee', $pre_data);
+        
+        $data = array(
+            $role_id => 1                
+        );
+        foreach ($authorizee_list as $authorizee_list_item){
+            $this->db->where('authorizee_id', $authorizee_list_item);
+            $this->db->update('re_role_authorizee', $data);
+        }
+        
+        return $this->db->affected_rows();
+    }  
 }

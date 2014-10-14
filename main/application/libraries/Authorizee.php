@@ -103,4 +103,33 @@ class Authorizee{
         }
         return $data;
     }
+    
+    /**    
+     *  @Purpose:    
+     *  获取角色权限列表[ID]
+     *  
+     *  @Method Name:
+     *  GetRoleAuthorizeeListId($role_name)    
+     *  @Parameter: 
+     *  $role_name      角色名字  
+     *  @Return: 
+     *     array(
+     *          '' => 1, '' => 1
+     *      );
+     * 
+    */
+    public function GetRoleAuthorizeeListId($role_name){
+        $CI =& get_instance();
+        $data = array();
+        $CI->load->model('role_model');
+        $role_id = $CI->role_model->Name2Id($role_name);
+        $CI->load->database();  
+        $CI->db->select('authorizee_id, ' . $role_id);
+        $CI->db->where($role_id . ' !=', 0);
+        $query = $CI->db->get('re_role_authorizee');
+        foreach ($query->result_array() as $key => $value){
+            $data[$value['authorizee_id']] = 1;
+        }
+        return $data;
+    }
 }
