@@ -18,9 +18,9 @@
             <file>file:/var/www/html/nws_v2/main/application/views/login_view.php</file>
             <file>file:/var/www/html/nws_v2/main/application/views/act_list_view.php</file>
             <file>file:/var/www/html/nws_v2/main/application/views/daily_me_view.php</file>
-            <file>file:/var/www/html/nws_v2/main/application/controllers/authorizee_manage.php</file>
             <file>file:/var/www/html/nws_v2/main/application/controllers/person_add.php</file>
             <file>file:/var/www/html/nws_v2/main/application/libraries/Data.php</file>
+            <file>file:/var/www/html/nws_v2/main/application/controllers/authorizee_manage.php</file>
             <file>file:/var/www/html/nws_v2/main/application/views/act_add_view.php</file>
             <file>file:/var/www/html/nws_v2/main/application/libraries/Secure.php</file>
             <file>file:/var/www/html/nws_v2/main/application/models/control_center_model.php</file>

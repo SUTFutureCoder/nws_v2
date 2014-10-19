@@ -103,18 +103,23 @@ class Act_add extends CI_Controller{
         }
         
         $data = array();
-        $data['activity']['act_user_id'] = $this->input->post('user_id');
+        $data['activity']['act_user_id'] = $this->input->post('user_id', TRUE);
         
         if (!$this->input->post('act_name', TRUE) && 198 < iconv_strlen($this->input->post('act_name', TRUE), 'utf-8')){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 2, '活动名称不可为空或超过198个字符');
         }
         $data['activity']['act_name'] = $this->input->post('act_name', TRUE);
         
-        if (!is_bool(settype($this->input->post('act_private', TRUE), 'bool'))){
-            $this->data->Out('iframe', $this->input->post('src', TRUE), 15, gettype($this->input->post('act_private', TRUE)));
-        } 
-        $data['activity']['act_private'] = settype($this->input->post('act_private', TRUE), 'bool');
-        
+        switch ($this->input->post('act_private', TRUE)){
+            case 'true':
+                $data['activity']['act_private'] = 1;
+                break;
+            case 'false':
+                $data['activity']['act_private'] = 0;
+                break;
+            default :
+                $this->data->Out('iframe', $this->input->post('src', TRUE), 15, '社团内部活动传值错误');
+        }        
         
         if (!$this->input->post('act_type', TRUE) && 48 < iconv_strlen($this->input->post('act_type', TRUE), 'utf-8') ||
                 !$this->act_model->CheckTypeExist($this->input->post('act_type', TRUE))){
@@ -129,7 +134,8 @@ class Act_add extends CI_Controller{
         }
         
         if ('不限制' == $this->input->post('act_section_only', TRUE)){
-            $data['re_activity_section']['section_id'] = 0;
+            $data['re_activity_section']['section_id'] = $this->user_model->GetUserSectionId($this->input->post('user_id', TRUE));
+            $data['activity']['act_global'] = 1;
         } else {
             if (!$this->authorizee->CheckAuthorizee('act_global_add', $this->input->post('user_id', TRUE)) && 
                 $this->user_model->GetUserSection($this->input->post('user_id', TRUE)) != $this->input->post('act_section_only', TRUE)){

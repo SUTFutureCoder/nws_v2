@@ -46,8 +46,7 @@ class Setup_model extends CI_Model{
         );
         $this->db->where('user_number', $data['user_number']);
         $this->db->or_where('user_id', 10000);
-        $query = $this->db->get('user');
-        if ($query->num_rows())
+        if ($this->db->count_all_results('user'))
         {
             $clean['result'][0] = 12;
             $clean['result'][1] = '管理员账户添加失败,请检查数据库数据是否重复或非初始数据库';

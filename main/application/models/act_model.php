@@ -18,7 +18,6 @@ class Act_model extends CI_Model{
         parent::__construct();
     }
     
-    
     /**    
      *  @Purpose:    
      *  获取活动类型列表   
@@ -36,6 +35,38 @@ class Act_model extends CI_Model{
     public function GetActTypeList(){
         $this->load->database();
         $query = $this->db->get('activity_type');
+        return $query->result_array();
+    }
+    
+    /**    
+     *  @Purpose:    
+     *  获取活动详情   
+     *  @Method Name:
+     *  GetActInfo($act_id)    
+     *  @Parameter: 
+     *  $act_id 活动id
+     *  @Return: 
+     *     array(
+     *      
+     *     ));
+     * 
+     *  
+    */ 
+    public function GetActInfo($act_id){
+        $this->load->database();
+        $this->db->select('activity.act_id, activity.act_content, activity.act_warn, activity.act_money, activity.act_position,'
+                . 'activity.act_private, activity.act_start, activity.act_end, '
+                . 'user.user_name, user.user_telephone, user.user_qq, '
+                . 'activity_type.activity_type_name, section.section_name, activity.act_global, activity.act_private, activity.act_defunct');
+        $this->db->where('activity.act_id', $act_id);
+        $this->db->from('activity');
+        $this->db->join('re_activity_type', 're_activity_type.act_id = activity.act_id');
+        $this->db->join('activity_type', 'activity_type.activity_type_id = re_activity_type.type_id');
+        $this->db->join('user', 'user.user_id = activity.act_user_id');
+        $this->db->join('re_activity_section', 're_activity_section.act_id = activity.act_id');
+        $this->db->join('section', 'section.section_id = re_activity_section.section_id');
+        
+        $query = $this->db->get();
         return $query->result_array();
     }
     
@@ -60,6 +91,7 @@ class Act_model extends CI_Model{
         return $query->row()->activity_type_id;
     }
     
+    
     /**    
      *  @Purpose:    
      *  根据传入类型字符串验证类型是否存在   
@@ -76,8 +108,26 @@ class Act_model extends CI_Model{
     public function CheckTypeExist($type_name){
         $this->load->database();
         $this->db->where('activity_type_name', $type_name);
-        $this->db->from('activity_type');
-        return $this->db->count_all_results();
+        return $this->db->count_all_results('activity_type');
+    }
+    
+    /**    
+     *  @Purpose:    
+     *  检查活动id是否存在   
+     *  @Method Name:
+     *  CheckIdExist($act_id)    
+     *  @Parameter: 
+     *  $act_id 待检验id
+     *  @Return: 
+     *  0|无此id
+     *  1|有此id
+     * 
+     *  :WARNING:在传参之前请务必进行安检
+    */ 
+    public function CheckIdExist($act_id){
+        $this->load->database();
+        $this->db->where('act_id', $act_id);
+        return $this->db->count_all_results('activity');
     }
     
     /**    
@@ -110,5 +160,57 @@ class Act_model extends CI_Model{
         if (!$this->db->affected_rows()){
             return 1;
         }
+    }
+    
+    /**    
+     *  @Purpose:    
+     *  获取活动列表   
+     *  @Method Name:
+     *  GetActList($start_id, $offset_num, $type, $section, $keyword)    
+     *  @Parameter: 
+     *  $start_id   起始id
+     *  $offset_num 偏移量【默认为10】
+     *  $type       活动类型
+     *  $section    部门限制
+     *  $keyword    查询字段
+     *  @Return: 
+     *  
+     * 
+     *  :WARNING:在传参之前请务必进行安检
+    */ 
+    public function GetActList($start_id, $offset_num = 10, $type = NULL, $section = NULL, $keyword = NULL){
+        $this->load->database();  
+        $this->db->select('activity.act_id, activity.act_name, activity.act_private, '
+                . 'activity.act_private, activity.act_start, activity.act_end, '
+                . 'activity_type.activity_type_name, section.section_name, activity.act_global');
+        
+        //注意，section.section_name, activity.act_global的处理方式可能不是最优化
+
+        $this->db->from('activity');
+        $this->db->limit($offset_num, $start_id);        
+        $this->db->where('activity.act_defunct !=', 1);
+        $this->db->order_by('activity.act_end', 'desc');
+        
+        $this->db->join('re_activity_type', 're_activity_type.act_id = activity.act_id');
+        $this->db->join('activity_type', 'activity_type.activity_type_id = re_activity_type.type_id');
+        
+        if (NULL != $type){
+            $this->db->where('activity_type.activity_type_name', $type);            
+        }
+        
+        $this->db->join('re_activity_section', 're_activity_section.act_id = activity.act_id');
+        $this->db->join('section', 'section.section_id = re_activity_section.section_id');
+        
+        
+        if (NULL != $section){
+            $this->db->where('section.section_name', $section);            
+        }    
+        
+        if (NULL != $keyword){            
+            $this->db->like('activity.act_name', $keyword);
+        }
+        
+        $query = $this->db->get();
+        return $query->result_array();
     }
 }

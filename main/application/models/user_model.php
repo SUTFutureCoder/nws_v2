@@ -172,6 +172,28 @@ class User_model extends CI_Model{
     
     /**    
      *  @Purpose:    
+     *  获取用户部门id   
+     *  @Method Name:
+     *  GetUserSectionId(user_id)    
+     *  @Parameter: 
+     *  $user_id 用户账号 
+     *  @Return: 
+     *      0|失败
+     *      部门id|成功
+     * 
+     *  :WARNING:在传参之前请务必进行安检
+    */ 
+    public function GetUserSectionId($user_id){
+        $this->load->database();        
+        $this->db->from('re_user_section');
+        $this->db->join('section', 'section.section_id = re_user_section.section_id');
+        $this->db->where('re_user_section.user_id', $user_id);
+        $query = $this->db->get();
+        return $query->row()->section_id;
+    }
+    
+    /**    
+     *  @Purpose:    
      *  获取用户电话  
      *  @Method Name:
      *  GetUserTelephone(user_id)    

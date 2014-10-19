@@ -134,8 +134,7 @@ class Control_center_model extends CI_Model{
     public function GetUserPropertySet($user_id){
         $this->load->database();
         $this->db->where('user_id', $user_id);
-        $query = $this->db->get('user_property');
-        return $query->num_rows();
+        return $this->db->count_all_results('user_property');
     }
     
     /**    

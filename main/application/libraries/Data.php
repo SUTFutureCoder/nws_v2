@@ -29,13 +29,13 @@ class Data{
      *  @Return: 
      *  
     */
-    public function Out($pipe = NULL, $aim = NULL, $code = NULL, $describe = NULL, $err_id = NULL){
+    public function Out($pipe = NULL, $aim = NULL, $code = NULL, $describe = NULL, $data_or_err_id = NULL){
         echo json_encode(array(
             '0' => $pipe,
             '1' => $aim,
             '2' => $code,
             '3' => $describe,
-            '4' => $err_id
+            '4' => $data_or_err_id
         ));
         exit();        
     }
