@@ -17,7 +17,7 @@ class Event
 {
     //用户分组
     //$group[$group_name][$uid] = $name;
-    public $group = array();
+//    public $group = array();
     
     /**
      * 网关有消息时，判断消息是否完整
@@ -173,6 +173,7 @@ class Event
                     'time'=>date('Y-m-d :i:s'),
                 );
                 
+                
                 return Gateway::sendToAll(WebSocket::encode(json_encode($new_message)));
                 
             case 'func':
@@ -191,16 +192,34 @@ class Event
                 //$new_message[0] = 'iframe';
                 //将数据部分放入result[1]
 //                $new_message[1] = self::getApiData($url, $data, $key);     
-                $new_message = self::getApiData($url, $data, $key);     
+                $new_message = self::getApiData($url, $data, $key);
+                
                 //选择器索引放入result[2]
 //                $new_message[2] = $message_data['src'];
                 return Gateway::sendToUid($uid, WebSocket::encode($new_message));
                 
+            //广播，慎用，必须验证权限
+            case 'group':
+                $url = $message_data['api'];
+                $data = $message_data['data'];
+                $data['src'] = $message_data['src'];                
+                $data['group'] = $message_data['group'];
+                $message_data['key'] ? $key = $message_data['key'] : $key = null;   
+                $new_message = self::getApiData($url, $data, $key);
+                //注意，getApiData不要json_encode!在确认无误后              
+                foreach (self::getGroupUserList() as $key => $value){
+                    if ($data['group'] == $key){
+                        foreach ($value as $uid => $user_id)
+                        Gateway::sendToUid($uid, WebSocket::encode('helloworld'));
+                    }                    
+                }
+                return TRUE;
+                
             case 'ping':
                 // 存储当前用户到用户列表
                 $ping = "p";
+//                var_dump(self::getGroupUserList());
                 return Gateway::sendToUid($uid, WebSocket::encode(json_encode($ping)));
-                
         }
    }
    
@@ -215,26 +234,39 @@ class Event
    }
    
    /**
+    * 获得群组用户列表
+    * @todo 保存有限个
+    */
+   public static function getGroupUserList()
+   {       
+       $key = 'group';
+       return Store::instance('group')->get($key);
+   }
+   
+   /**
     * 从用户列表中删除一个用户
     * @param int $uid
     */
    public static function delUserFromList($uid)
    {
        $key = 'alluserlist';
-       $user_list = self::getUserList();
+       $user_list = self::getUserList();      
+       $user_group_list = self::getGroupUserList();
        if(isset($user_list[$uid]))
        {
-           foreach ($group as $group_name => $group_name_value){
-               if (isset($group[$group_name][$uid])){
-                   unset($group[$group_name][$uid]);
+           foreach ($user_group_list as $group_name => $group_name_value){
+               if (isset($user_group_list[$group_name][$uid])){
+                   unset($user_group_list[$group_name][$uid]);
                    break;
                }               
            }
            unset($user_list[$uid]);
+           Store::instance('group')->set('group', $user_group_list);
            return Store::instance('gateway')->set($key, $user_list);
        }
        return true;
    }
+   
    
    /**
     * 添加到用户列表中
@@ -244,11 +276,14 @@ class Event
    public static function addUserToList($uid, $name, $group_name = NULL)
    {       
        $key = 'alluserlist';       
-       $user_list = self::getUserList();
+       $user_list = self::getUserList();   
+       $user_group_list = self::getGroupUserList();
        if(!isset($user_list[$uid]))
        {
-           $group[$group_name][$uid] = $name;
-           $user_list[$uid] = $name;
+           
+           $user_group_list[$group_name][$uid] = $name;
+           $user_list[$uid] = $name; 
+           Store::instance('group')->set('group', $user_group_list);
            return Store::instance('gateway')->set($key, $user_list);
        }
        return true;
@@ -258,7 +293,7 @@ class Event
         $ch = curl_init();
         $timeout = 300;
         curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_REFERER, "http://acm.sut.edu.cn/");   //构造来路    
+        curl_setopt($ch, CURLOPT_REFERER, $_SERVER['REMOTE_ADDR']);   //构造来路    
         curl_setopt($ch, CURLOPT_POST, true);   
         var_dump($data);
 //        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);      

@@ -139,7 +139,7 @@ class Act_model extends CI_Model{
      *  $data 活动数据数组
      *  @Return: 
      *  0|添加失败
-     *  1|添加成功
+     *  $data['re_activity_section']['act_id'](添加成功)
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
@@ -158,8 +158,9 @@ class Act_model extends CI_Model{
         
         $this->db->insert('re_activity_section', $data['re_activity_section']);
         if (!$this->db->affected_rows()){
-            return 1;
+            return 0;
         }
+        return $data['re_activity_section']['act_id'];
     }
     
     /**    
@@ -170,6 +171,7 @@ class Act_model extends CI_Model{
      *  @Parameter: 
      *  $start_id   起始id
      *  $offset_num 偏移量【默认为10】
+     *  $old_max_id 之前拉取的最大活动id
      *  $type       活动类型
      *  $section    部门限制
      *  $keyword    查询字段
@@ -178,7 +180,7 @@ class Act_model extends CI_Model{
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function GetActList($start_id, $offset_num = 10, $type = NULL, $section = NULL, $keyword = NULL){
+    public function GetActList($start_id, $offset_num = 10, $old_max_id = NULL, $type = NULL, $section = NULL, $keyword = NULL){
         $this->load->database();  
         $this->db->select('activity.act_id, activity.act_name, activity.act_private, '
                 . 'activity.act_private, activity.act_start, activity.act_end, '
@@ -190,6 +192,9 @@ class Act_model extends CI_Model{
         $this->db->limit($offset_num, $start_id);        
         $this->db->where('activity.act_defunct !=', 1);
         $this->db->order_by('activity.act_end', 'desc');
+        if (NULL != $old_max_id){
+            $this->db->where('activity.act_id >', $old_max_id);
+        }
         
         $this->db->join('re_activity_type', 're_activity_type.act_id = activity.act_id');
         $this->db->join('activity_type', 'activity_type.activity_type_id = re_activity_type.type_id');

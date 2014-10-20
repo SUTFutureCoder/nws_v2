@@ -48,7 +48,7 @@ class Test extends CI_Controller{
     public function TestGetActGlobeInit(){
         $this->load->model('act_model');
         header("Content-type:text/html;charset=utf-8");
-        var_dump($this->act_model->GetActList(0));
+        var_dump($this->act_model->GetActList(0, 10, 13));
     }
     public function TestGetActInfo(){
         $this->load->model('act_model');

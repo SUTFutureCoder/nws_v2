@@ -87,7 +87,6 @@ class Act_add extends CI_Controller{
      * 
     */
     public function ActAdd(){
-        $this->load->library('encrypt');
         $this->load->library('secure');  
         $this->load->library('data');
         $this->load->library('authorizee');
@@ -188,10 +187,64 @@ class Act_add extends CI_Controller{
             $data['activity']['act_member_sum'] = $this->input->post('act_member_sum', TRUE);
         }
         
-        if (!$this->act_model->AddAct($data)){
-            $this->data->Out('iframe', $this->input->post('src', TRUE), 1, '添加成功');
-        } else {
+        $act_id = $this->act_model->AddAct($data);
+        if (!$act_id){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 12, '添加失败');
+        } else {
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 1, '添加成功', $act_id);
+        }
+    }
+    
+    /**    
+     *  @Purpose:    
+     *  广播_实时活动插入
+     *  
+     *  @Method Name:
+     *  B_ActListInsert()    
+     *  @Parameter: 
+     *  POST array(
+     *      'user_key' 用户识别码
+     *      array data_data(
+     *          array(
+     *              
+     *          )
+     *      )
+     *  )   
+     *  @Return: 
+     *  状态码|状态
+     * 
+     *      
+     *      
+     * :NOTICE:禁止错误反馈:NOTICE:
+     * :NOTICE:用户要有创建活动的权限:NOTICE:
+    */
+    public function B_ActListInsert(){
+        $this->load->library('secure');  
+        $this->load->library('data');
+        $this->load->library('authorizee');
+        $this->load->model('act_model');
+        $this->load->model('section_model');
+        $this->load->model('user_model');
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+            return 0;
+        }
+        
+        if (!ctype_digit($this->input->post('act_id', TRUE))){
+            return 0;
+        }
+        
+        if (!$this->authorizee->CheckAuthorizee('act_add', $this->input->post('user_id', TRUE))){
+            return 0;
+        }        
+        
+        if (!$this->act_model->CheckIdExist($this->input->post('act_id', TRUE))){
+            return 0;
+        }
+        
+        $act_data = $this->act_model->GetActList(0, 1, $this->input->post('act_id', TRUE));
+        
+        if ($act_data){
+            $this->data->OutUncode('group', $this->input->post('src', TRUE), 1, 'B_ActListInsert' ,$act_data);
         }
     }
     

@@ -96,6 +96,7 @@ var ws, ping, name = 'null', user_list={};
             break;
                 
         case "iframe":
+        case "group":
             $("iframe[src='" + result[1] + "']")[0].contentWindow.MotherResultRec(result);
             /*if ($("iframe[src='" + result[1] + "']"))
             {
@@ -115,8 +116,14 @@ ws.onerror = function() {
 
 </script>
 <script>                                    
-function IframeSend(data) { 
-    ws.send('{"type":"iframe","api":"' + data['api'] +'","src":"' + data['src'] +'","data":' + data['data'] + '}'); 
+function IframeSend(data, type) { 
+    type = arguments[1] ? arguments[1] : "iframe";
+    if (!data['group']){
+        ws.send('{"type":"' + type + '","api":"' + data['api'] + '","src":"' + data['src'] + '","data":' + data['data'] + '}');
+    } else {        
+        ws.send('{"type":"' + type + '","api":"' + data['api'] + '","src":"' + data['src'] + '","data":' + data['data'] + '","group":"' + data['group'] + '"}');
+    }
+    
 }
 function getping(){ 
     var date = new Date();

@@ -25,7 +25,7 @@ class Data{
      *  $aim  目标地址
      *  $code 状态码
      *  $describe 状态描述
-     *  $err_id 出错前端表单id，用于智能聚焦
+     *  $data_or_err_id 出错前端表单id，用于智能聚焦.兼容数据传输功能
      *  @Return: 
      *  
     */
@@ -37,6 +37,32 @@ class Data{
             '3' => $describe,
             '4' => $data_or_err_id
         ));
+        exit();        
+    }
+    
+    /**    
+     *  @Purpose:    
+     *  输出数据 (未json_encode)  
+     *  @Method Name:
+     *  OutUncode($pipe = NULL, $aim = NULL, $code = NULL, $describe = NULL, $err_id = NULL)
+     *  @Parameter: 
+     *  $pipe 传输媒介，例如：group
+
+     *  $aim  目标地址
+     *  $code 状态码
+     *  $describe 状态描述
+     *  $data_or_err_id 出错前端表单id，用于智能聚焦.兼容数据传输功能
+     *  @Return: 
+     *  
+    */
+    public function OutUncode($pipe = NULL, $aim = NULL, $code = NULL, $describe = NULL, $data_or_err_id = NULL){
+        echo array(
+            '0' => $pipe,
+            '1' => $aim,
+            '2' => $code,
+            '3' => $describe,
+            '4' => $data_or_err_id
+        );
         exit();        
     }
             

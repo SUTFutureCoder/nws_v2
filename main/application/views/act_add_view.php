@@ -142,11 +142,18 @@
     }
     //接收母窗口传来的值
     function MotherResultRec(data){
-//        console.log(data);
         if (1 == data[2]){
             $("form").each(function() {   
                 this.reset();
             });   
+            //广播自动添加最新活动
+            var B_data = new Array();
+            B_data['src'] = location.href + '/../act_list';
+            B_data['api'] = location.href + '/B_ActListInsert';          
+            B_data['group'] = "desktop";
+            B_data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
+            B_data['data'] += ', "act_id" : "' + data[4] + '"}';   
+            parent.IframeSend(B_data, 'group');
         }
         alert(data[3]);
         if (data[4]){

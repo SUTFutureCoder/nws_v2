@@ -91,14 +91,14 @@ $(function(){
         var act_list = new Array();
         act_list = JSON.parse($.LS.get("act_list"));
         var max_act_id = $.LS.get("max_act_id");
-//        var data = new Array();
-//        data['src'] = location.href;
-//        data['api'] = location.href + '/RedrawActList';          
-//        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
-//        data['data'] += ', "max_act_id" : "' + max_act_id + '"}';  
-//        parent.IframeSend(data);
-        console.log(act_list);
-        list_draw(act_list);
+        var data = new Array();
+        data['src'] = location.href;
+        data['api'] = location.href + '/RedrawActList';          
+        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
+        data['data'] += ', "max_act_id" : "' + max_act_id + '"}';  
+        parent.IframeSend(data);
+//        console.log(act_list);
+        list_draw(act_list, max_act_id, 'append');
     }
 })
 </script>
@@ -112,7 +112,7 @@ function MotherResultRec(data){
     switch (data[3]){
         case 'GetActGlobeInit': 
             //开始绘制列表页面,并设置最大值 
-            var max_act_id = list_draw(data[4])
+            var max_act_id = list_draw(data[4], 0, 'append');
             $.LS.set("act_list", JSON.stringify(data[4]));
             $.LS.set("max_act_id", max_act_id);
             break;
@@ -121,6 +121,17 @@ function MotherResultRec(data){
             //开始绘制面板                
             info_draw(data[4]);
             $.LS.set("act_info_" + data[4]['act_id'], JSON.stringify(data[4]));
+            break;
+            
+        case 'RedrawActList':
+        case 'B_ActListInsert':
+            //活动的更新、删除
+            if (data[4]){
+                console.log(data[4]);
+                var max_act_id = list_draw(data[4], $.LS.get("max_act_id"), 'prepend');      
+                $.LS.set("act_list", JSON.stringify(data[4].concat(JSON.parse($.LS.get("act_list")))));
+                $.LS.set("max_act_id", max_act_id);     
+            }  
             break;
     }
 }
@@ -174,13 +185,25 @@ function act_deal(act_id, method){
 }
 
 //遍历数组绘制活动列表
-function list_draw(data){
-    var max_act_id = 1;    
+//@para
+//data 要遍历绘制的数组
+//max_act_id 当前最大的活动id值
+//insert_position 如有更新的插入位置（append/prepend）
+function list_draw(data, max_act_id, insert_position){    
     $.each(data, function(i, item){
         if (item['act_id'] * 1 >= max_act_id){
             max_act_id = item['act_id'] * 1;
         } 
-        $("#act_list").append("<tr data-toggle=\"modal\" data-target=\"#act_info\" onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\">");
+        
+        switch (insert_position){
+            case "append":
+                $("#act_list").append("<tr data-toggle=\"modal\" data-target=\"#act_info\" onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\">");
+                break;
+                
+            case "prepend":
+                $("#act_list").prepend("<tr data-toggle=\"modal\" data-target=\"#act_info\" onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\">");
+                break;
+        }
         $("#" + item['act_id']).append("<td>" + item['activity_type_name'] + "</td>");
         $("#" + item['act_id']).append("<td>" + item['act_name'] + "</td>");
         if ("0" == item['act_global']){
@@ -190,7 +213,8 @@ function list_draw(data){
         }
         $("#" + item['act_id']).append("<td>" + item['act_start'] + "</td>");
         $("#" + item['act_id']).append("<td>" + item['act_end'] + "</td>");
-        $("#" + item['act_id']).append("</tr>");                
+        $("#" + item['act_id']).append("</tr>");  
+               
     });
     return max_act_id;
 }

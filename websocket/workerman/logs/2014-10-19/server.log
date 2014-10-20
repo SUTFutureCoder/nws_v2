@@ -6,3 +6,1105 @@
 2014-10-19 10:14:18 /tmp/gateway.store.cache.php updated and reload workers
 2014-10-19 10:14:19 /tmp/gateway.store.cache.php updated and reload workers
 2014-10-19 11:36:02 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 15:45:24 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 15:45:26 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 15:45:28 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 17:40:51 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 17:40:57 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 17:41:12 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 17:41:33 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 17:42:42 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:46:03 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:49:11 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:49:16 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:50:06 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:50:07 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:07 Server:worker[2277:BusinessWorker] exit with status 65280
+2014-10-19 21:50:08 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:08 Server:worker[2287:BusinessWorker] exit with status 65280
+2014-10-19 21:50:09 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:09 Server:worker[2280:BusinessWorker] exit with status 65280
+2014-10-19 21:50:10 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:10 Server:worker[2322:BusinessWorker] exit with status 65280
+2014-10-19 21:50:11 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:11 Server:worker[2332:BusinessWorker] exit with status 65280
+2014-10-19 21:50:12 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:12 Server:worker[2276:BusinessWorker] exit with status 65280
+2014-10-19 21:50:13 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:13 Server:worker[2303:BusinessWorker] exit with status 65280
+2014-10-19 21:50:14 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:14 Server:worker[2365:BusinessWorker] exit with status 65280
+2014-10-19 21:50:15 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:15 Server:worker[2350:BusinessWorker] exit with status 65280
+2014-10-19 21:50:16 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:16 Server:worker[2375:BusinessWorker] exit with status 65280
+2014-10-19 21:50:17 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '=', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 15
+2014-10-19 21:50:17 Server:worker[2342:BusinessWorker] exit with status 65280
+2014-10-19 21:50:17 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:50:18 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '=', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 15
+2014-10-19 21:50:18 Server:worker[2415:BusinessWorker] exit with status 65280
+2014-10-19 21:50:19 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '=', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 15
+2014-10-19 21:50:19 Server:worker[2422:BusinessWorker] exit with status 65280
+2014-10-19 21:50:20 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:20 Server:worker[2434:BusinessWorker] exit with status 65280
+2014-10-19 21:50:20 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:50:21 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:21 Server:worker[2474:BusinessWorker] exit with status 65280
+2014-10-19 21:50:22 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:22 Server:worker[2485:BusinessWorker] exit with status 65280
+2014-10-19 21:50:23 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:23 Server:worker[2496:BusinessWorker] exit with status 65280
+2014-10-19 21:50:24 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:24 Server:worker[2471:BusinessWorker] exit with status 65280
+2014-10-19 21:50:25 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:25 Server:worker[2504:BusinessWorker] exit with status 65280
+2014-10-19 21:50:26 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:26 Server:worker[2524:BusinessWorker] exit with status 65280
+2014-10-19 21:50:27 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:27 Server:worker[2470:BusinessWorker] exit with status 65280
+2014-10-19 21:50:28 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:28 Server:worker[2534:BusinessWorker] exit with status 65280
+2014-10-19 21:50:29 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:29 Server:worker[2514:BusinessWorker] exit with status 65280
+2014-10-19 21:50:30 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:30 Server:worker[2560:BusinessWorker] exit with status 65280
+2014-10-19 21:50:31 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:31 Server:worker[2468:BusinessWorker] exit with status 65280
+2014-10-19 21:50:32 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:32 Server:worker[2552:BusinessWorker] exit with status 65280
+2014-10-19 21:50:33 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:33 Server:worker[2588:BusinessWorker] exit with status 65280
+2014-10-19 21:50:34 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:34 Server:worker[2596:BusinessWorker] exit with status 65280
+2014-10-19 21:50:35 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:35 Server:worker[2570:BusinessWorker] exit with status 65280
+2014-10-19 21:50:36 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:36 Server:worker[2618:BusinessWorker] exit with status 65280
+2014-10-19 21:50:37 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:37 Server:worker[2628:BusinessWorker] exit with status 65280
+2014-10-19 21:50:38 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:38 Server:worker[2610:BusinessWorker] exit with status 65280
+2014-10-19 21:50:39 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:39 Server:worker[2636:BusinessWorker] exit with status 65280
+2014-10-19 21:50:40 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:40 Server:worker[2647:BusinessWorker] exit with status 65280
+2014-10-19 21:50:41 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:41 Server:worker[2542:BusinessWorker] exit with status 65280
+2014-10-19 21:50:42 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:42 Server:worker[2656:BusinessWorker] exit with status 65280
+2014-10-19 21:50:43 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:43 Server:worker[2684:BusinessWorker] exit with status 65280
+2014-10-19 21:50:44 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:44 Server:worker[2692:BusinessWorker] exit with status 65280
+2014-10-19 21:50:45 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:45 Server:worker[2666:BusinessWorker] exit with status 65280
+2014-10-19 21:50:46 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:46 Server:worker[2578:BusinessWorker] exit with status 65280
+2014-10-19 21:50:47 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:47 Server:worker[2702:BusinessWorker] exit with status 65280
+2014-10-19 21:50:48 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:48 Server:worker[2736:BusinessWorker] exit with status 65280
+2014-10-19 21:50:49 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:49 Server:worker[2744:BusinessWorker] exit with status 65280
+2014-10-19 21:50:50 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:50 Server:worker[2726:BusinessWorker] exit with status 65280
+2014-10-19 21:50:51 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:51 Server:worker[2674:BusinessWorker] exit with status 65280
+2014-10-19 21:50:52 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:52 Server:worker[2714:BusinessWorker] exit with status 65280
+2014-10-19 21:50:53 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:53 Server:worker[2754:BusinessWorker] exit with status 65280
+2014-10-19 21:50:54 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:54 Server:worker[2772:BusinessWorker] exit with status 65280
+2014-10-19 21:50:55 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:55 Server:worker[2762:BusinessWorker] exit with status 65280
+2014-10-19 21:50:56 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:56 Server:worker[2808:BusinessWorker] exit with status 65280
+2014-10-19 21:50:57 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting function (T_FUNCTION) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:57 Server:worker[2798:BusinessWorker] exit with status 65280
+2014-10-19 21:50:58 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:58 Server:worker[2818:BusinessWorker] exit with status 65280
+2014-10-19 21:50:58 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:50:59 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:50:59 Server:worker[2862:BusinessWorker] exit with status 65280
+2014-10-19 21:51:00 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:00 Server:worker[2857:BusinessWorker] exit with status 65280
+2014-10-19 21:51:01 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:01 Server:worker[2863:BusinessWorker] exit with status 65280
+2014-10-19 21:51:02 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:02 Server:worker[2859:BusinessWorker] exit with status 65280
+2014-10-19 21:51:03 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:03 Server:worker[2874:BusinessWorker] exit with status 65280
+2014-10-19 21:51:04 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:04 Server:worker[2919:BusinessWorker] exit with status 65280
+2014-10-19 21:51:05 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:05 Server:worker[2927:BusinessWorker] exit with status 65280
+2014-10-19 21:51:06 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:06 Server:worker[2937:BusinessWorker] exit with status 65280
+2014-10-19 21:51:07 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:07 Server:worker[2945:BusinessWorker] exit with status 65280
+2014-10-19 21:51:08 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:08 Server:worker[2906:BusinessWorker] exit with status 65280
+2014-10-19 21:51:09 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:09 Server:worker[2894:BusinessWorker] exit with status 65280
+2014-10-19 21:51:10 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:10 Server:worker[2955:BusinessWorker] exit with status 65280
+2014-10-19 21:51:11 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:11 Server:worker[2885:BusinessWorker] exit with status 65280
+2014-10-19 21:51:12 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:12 Server:worker[2976:BusinessWorker] exit with status 65280
+2014-10-19 21:51:13 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:13 Server:worker[2966:BusinessWorker] exit with status 65280
+2014-10-19 21:51:14 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:14 Server:worker[2994:BusinessWorker] exit with status 65280
+2014-10-19 21:51:15 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:15 Server:worker[3004:BusinessWorker] exit with status 65280
+2014-10-19 21:51:16 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:16 Server:worker[2986:BusinessWorker] exit with status 65280
+2014-10-19 21:51:17 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:17 Server:worker[3022:BusinessWorker] exit with status 65280
+2014-10-19 21:51:18 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:18 Server:worker[3030:BusinessWorker] exit with status 65280
+2014-10-19 21:51:19 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:19 Server:worker[3012:BusinessWorker] exit with status 65280
+2014-10-19 21:51:20 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:20 Server:worker[3040:BusinessWorker] exit with status 65280
+2014-10-19 21:51:21 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:21 Server:worker[3078:BusinessWorker] exit with status 65280
+2014-10-19 21:51:22 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:22 Server:worker[3089:BusinessWorker] exit with status 65280
+2014-10-19 21:51:23 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:23 Server:worker[3058:BusinessWorker] exit with status 65280
+2014-10-19 21:51:24 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:24 Server:worker[3097:BusinessWorker] exit with status 65280
+2014-10-19 21:51:25 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:25 Server:worker[3107:BusinessWorker] exit with status 65280
+2014-10-19 21:51:26 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:26 Server:worker[3050:BusinessWorker] exit with status 65280
+2014-10-19 21:51:27 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:27 Server:worker[3125:BusinessWorker] exit with status 65280
+2014-10-19 21:51:28 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:28 Server:worker[3143:BusinessWorker] exit with status 65280
+2014-10-19 21:51:29 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:29 Server:worker[3135:BusinessWorker] exit with status 65280
+2014-10-19 21:51:30 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:30 Server:worker[3068:BusinessWorker] exit with status 65280
+2014-10-19 21:51:31 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:31 Server:worker[3161:BusinessWorker] exit with status 65280
+2014-10-19 21:51:32 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:32 Server:worker[3117:BusinessWorker] exit with status 65280
+2014-10-19 21:51:33 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:33 Server:worker[3171:BusinessWorker] exit with status 65280
+2014-10-19 21:51:34 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:34 Server:worker[3181:BusinessWorker] exit with status 65280
+2014-10-19 21:51:35 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:35 Server:worker[3209:BusinessWorker] exit with status 65280
+2014-10-19 21:51:36 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:36 Server:worker[3217:BusinessWorker] exit with status 65280
+2014-10-19 21:51:37 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:37 Server:worker[3227:BusinessWorker] exit with status 65280
+2014-10-19 21:51:38 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:38 Server:worker[3189:BusinessWorker] exit with status 65280
+2014-10-19 21:51:39 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:39 Server:worker[3245:BusinessWorker] exit with status 65280
+2014-10-19 21:51:40 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:40 Server:worker[3253:BusinessWorker] exit with status 65280
+2014-10-19 21:51:41 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:41 Server:worker[3153:BusinessWorker] exit with status 65280
+2014-10-19 21:51:42 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:42 Server:worker[3199:BusinessWorker] exit with status 65280
+2014-10-19 21:51:43 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:43 Server:worker[3263:BusinessWorker] exit with status 65280
+2014-10-19 21:51:44 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:44 Server:worker[3282:BusinessWorker] exit with status 65280
+2014-10-19 21:51:45 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:45 Server:worker[3235:BusinessWorker] exit with status 65280
+2014-10-19 21:51:46 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:46 Server:worker[3292:BusinessWorker] exit with status 65280
+2014-10-19 21:51:47 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:47 Server:worker[3320:BusinessWorker] exit with status 65280
+2014-10-19 21:51:48 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:48 Server:worker[3274:BusinessWorker] exit with status 65280
+2014-10-19 21:51:49 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:49 Server:worker[3300:BusinessWorker] exit with status 65280
+2014-10-19 21:51:50 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:50 Server:worker[3338:BusinessWorker] exit with status 65280
+2014-10-19 21:51:51 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:51 Server:worker[3328:BusinessWorker] exit with status 65280
+2014-10-19 21:51:52 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:52 Server:worker[3310:BusinessWorker] exit with status 65280
+2014-10-19 21:51:53 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:53 Server:worker[3374:BusinessWorker] exit with status 65280
+2014-10-19 21:51:54 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:54 Server:worker[3346:BusinessWorker] exit with status 65280
+2014-10-19 21:51:55 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:55 Server:worker[3392:BusinessWorker] exit with status 65280
+2014-10-19 21:51:56 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:56 Server:worker[3382:BusinessWorker] exit with status 65280
+2014-10-19 21:51:57 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:57 Server:worker[3364:BusinessWorker] exit with status 65280
+2014-10-19 21:51:58 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:58 Server:worker[3401:BusinessWorker] exit with status 65280
+2014-10-19 21:51:59 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:51:59 Server:worker[3419:BusinessWorker] exit with status 65280
+2014-10-19 21:52:00 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:00 Server:worker[3356:BusinessWorker] exit with status 65280
+2014-10-19 21:52:01 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:01 Server:worker[3448:BusinessWorker] exit with status 65280
+2014-10-19 21:52:02 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:02 Server:worker[3429:BusinessWorker] exit with status 65280
+2014-10-19 21:52:03 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:03 Server:worker[3466:BusinessWorker] exit with status 65280
+2014-10-19 21:52:04 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:04 Server:worker[3474:BusinessWorker] exit with status 65280
+2014-10-19 21:52:05 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:05 Server:worker[3484:BusinessWorker] exit with status 65280
+2014-10-19 21:52:06 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:06 Server:worker[3494:BusinessWorker] exit with status 65280
+2014-10-19 21:52:07 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:07 Server:worker[3502:BusinessWorker] exit with status 65280
+2014-10-19 21:52:08 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:08 Server:worker[3437:BusinessWorker] exit with status 65280
+2014-10-19 21:52:09 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:09 Server:worker[3411:BusinessWorker] exit with status 65280
+2014-10-19 21:52:10 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:10 Server:worker[3512:BusinessWorker] exit with status 65280
+2014-10-19 21:52:11 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:11 Server:worker[3520:BusinessWorker] exit with status 65280
+2014-10-19 21:52:12 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:12 Server:worker[3540:BusinessWorker] exit with status 65280
+2014-10-19 21:52:13 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:13 Server:worker[3456:BusinessWorker] exit with status 65280
+2014-10-19 21:52:14 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:14 Server:worker[3569:BusinessWorker] exit with status 65280
+2014-10-19 21:52:15 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:15 Server:worker[3530:BusinessWorker] exit with status 65280
+2014-10-19 21:52:16 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:16 Server:worker[3582:BusinessWorker] exit with status 65280
+2014-10-19 21:52:17 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:17 Server:worker[3590:BusinessWorker] exit with status 65280
+2014-10-19 21:52:18 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:18 Server:worker[3560:BusinessWorker] exit with status 65280
+2014-10-19 21:52:19 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:19 Server:worker[3622:BusinessWorker] exit with status 65280
+2014-10-19 21:52:20 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:20 Server:worker[3630:BusinessWorker] exit with status 65280
+2014-10-19 21:52:21 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:21 Server:worker[3550:BusinessWorker] exit with status 65280
+2014-10-19 21:52:22 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:22 Server:worker[3640:BusinessWorker] exit with status 65280
+2014-10-19 21:52:23 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:23 Server:worker[3649:BusinessWorker] exit with status 65280
+2014-10-19 21:52:24 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:24 Server:worker[3612:BusinessWorker] exit with status 65280
+2014-10-19 21:52:25 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:25 Server:worker[3679:BusinessWorker] exit with status 65280
+2014-10-19 21:52:26 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:26 Server:worker[3600:BusinessWorker] exit with status 65280
+2014-10-19 21:52:27 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:27 Server:worker[3702:BusinessWorker] exit with status 65280
+2014-10-19 21:52:28 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:28 Server:worker[3690:BusinessWorker] exit with status 65280
+2014-10-19 21:52:29 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:29 Server:worker[3716:BusinessWorker] exit with status 65280
+2014-10-19 21:52:30 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'global' (T_GLOBAL), expecting variable (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 20
+2014-10-19 21:52:30 Server:worker[3659:BusinessWorker] exit with status 65280
+2014-10-19 21:52:31 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:52:55 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:53:10 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:53:18 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 21:53:20 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 21:53:23 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 21:53:44 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:53:49 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 21:55:28 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:56:03 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:56:07 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:56:09 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:56:31 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:56:53 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:57:15 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 21:57:16 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 21:58:04 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:58:20 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:58:30 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 21:58:58 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 21:59:57 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:01:01 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:01:06 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:01:07 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:01:40 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:01:47 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:01:52 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:02:10 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:04:30 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:07:24 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:07:32 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:07:44 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:08:28 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:08:36 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:08:45 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:09:09 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:09:14 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:09:23 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:14:41 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:21:18 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:21:48 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:22:22 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:22:44 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:22:45 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:22:55 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:22:56 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:23:22 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:23:26 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:24:11 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:30:25 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:30:26 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:26 Server:worker[21723:BusinessWorker] exit with status 65280
+2014-10-19 22:30:27 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:27 Server:worker[21705:BusinessWorker] exit with status 65280
+2014-10-19 22:30:28 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:28 Server:worker[21716:BusinessWorker] exit with status 65280
+2014-10-19 22:30:29 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:29 Server:worker[21727:BusinessWorker] exit with status 65280
+2014-10-19 22:30:30 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:30 Server:worker[21747:BusinessWorker] exit with status 65280
+2014-10-19 22:30:31 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:31 Server:worker[21768:BusinessWorker] exit with status 65280
+2014-10-19 22:30:32 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:32 Server:worker[21778:BusinessWorker] exit with status 65280
+2014-10-19 22:30:33 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:33 Server:worker[21717:BusinessWorker] exit with status 65280
+2014-10-19 22:30:34 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:34 Server:worker[21735:BusinessWorker] exit with status 65280
+2014-10-19 22:30:35 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:35 Server:worker[21796:BusinessWorker] exit with status 65280
+2014-10-19 22:30:36 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:36 Server:worker[21786:BusinessWorker] exit with status 65280
+2014-10-19 22:30:37 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:37 Server:worker[21824:BusinessWorker] exit with status 65280
+2014-10-19 22:30:38 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:38 Server:worker[21814:BusinessWorker] exit with status 65280
+2014-10-19 22:30:39 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:39 Server:worker[21832:BusinessWorker] exit with status 65280
+2014-10-19 22:30:40 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:40 Server:worker[21842:BusinessWorker] exit with status 65280
+2014-10-19 22:30:41 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:41 Server:worker[21806:BusinessWorker] exit with status 65280
+2014-10-19 22:30:42 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:42 Server:worker[21850:BusinessWorker] exit with status 65280
+2014-10-19 22:30:43 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:43 Server:worker[21860:BusinessWorker] exit with status 65280
+2014-10-19 22:30:44 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:44 Server:worker[21757:BusinessWorker] exit with status 65280
+2014-10-19 22:30:45 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:45 Server:worker[21899:BusinessWorker] exit with status 65280
+2014-10-19 22:30:46 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:46 Server:worker[21888:BusinessWorker] exit with status 65280
+2014-10-19 22:30:47 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:47 Server:worker[21878:BusinessWorker] exit with status 65280
+2014-10-19 22:30:48 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:48 Server:worker[21931:BusinessWorker] exit with status 65280
+2014-10-19 22:30:49 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:49 Server:worker[21909:BusinessWorker] exit with status 65280
+2014-10-19 22:30:50 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:50 Server:worker[21941:BusinessWorker] exit with status 65280
+2014-10-19 22:30:51 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:51 Server:worker[21868:BusinessWorker] exit with status 65280
+2014-10-19 22:30:52 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:52 Server:worker[21968:BusinessWorker] exit with status 65280
+2014-10-19 22:30:53 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:53 Server:worker[21949:BusinessWorker] exit with status 65280
+2014-10-19 22:30:54 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 221
+2014-10-19 22:30:54 Server:worker[21959:BusinessWorker] exit with status 65280
+2014-10-19 22:30:55 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:30:55 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 222
+2014-10-19 22:30:55 Server:worker[22033:BusinessWorker] exit with status 65280
+2014-10-19 22:30:56 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 222
+2014-10-19 22:30:56 Server:worker[22019:BusinessWorker] exit with status 65280
+2014-10-19 22:30:57 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 222
+2014-10-19 22:30:57 Server:worker[22047:BusinessWorker] exit with status 65280
+2014-10-19 22:30:58 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_ERROR Access to undeclared static property: Event::$group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 222
+2014-10-19 22:30:58 Server:worker[22037:BusinessWorker] exit with status 65280
+2014-10-19 22:31:00 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:31:15 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:31:15 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'foreach' (T_FOREACH), expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 248
+2014-10-19 22:31:15 Server:worker[22241:BusinessWorker] exit with status 65280
+2014-10-19 22:31:17 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:31:24 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:31:37 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:31:41 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:31:51 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:41:54 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:45:40 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:45:40 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:40 Server:worker[28924:BusinessWorker] exit with status 65280
+2014-10-19 22:45:41 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:41 Server:worker[28939:BusinessWorker] exit with status 65280
+2014-10-19 22:45:42 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:42 Server:worker[28949:BusinessWorker] exit with status 65280
+2014-10-19 22:45:43 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:43 Server:worker[28925:BusinessWorker] exit with status 65280
+2014-10-19 22:45:44 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:44 Server:worker[28919:BusinessWorker] exit with status 65280
+2014-10-19 22:45:45 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:45 Server:worker[28983:BusinessWorker] exit with status 65280
+2014-10-19 22:45:46 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:46 Server:worker[28970:BusinessWorker] exit with status 65280
+2014-10-19 22:45:47 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:47 Server:worker[28958:BusinessWorker] exit with status 65280
+2014-10-19 22:45:48 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:48 Server:worker[29011:BusinessWorker] exit with status 65280
+2014-10-19 22:45:49 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:49 Server:worker[28917:BusinessWorker] exit with status 65280
+2014-10-19 22:45:50 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:50 Server:worker[29029:BusinessWorker] exit with status 65280
+2014-10-19 22:45:51 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:51 Server:worker[28993:BusinessWorker] exit with status 65280
+2014-10-19 22:45:52 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:52 Server:worker[29047:BusinessWorker] exit with status 65280
+2014-10-19 22:45:53 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:53 Server:worker[29055:BusinessWorker] exit with status 65280
+2014-10-19 22:45:54 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:54 Server:worker[29001:BusinessWorker] exit with status 65280
+2014-10-19 22:45:55 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:55 Server:worker[29065:BusinessWorker] exit with status 65280
+2014-10-19 22:45:56 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:56 Server:worker[29037:BusinessWorker] exit with status 65280
+2014-10-19 22:45:57 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:57 Server:worker[29019:BusinessWorker] exit with status 65280
+2014-10-19 22:45:58 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:58 Server:worker[29102:BusinessWorker] exit with status 65280
+2014-10-19 22:45:59 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:45:59 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:45:59 Server:worker[29134:BusinessWorker] exit with status 65280
+2014-10-19 22:46:00 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:00 Server:worker[29136:BusinessWorker] exit with status 65280
+2014-10-19 22:46:01 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:01 Server:worker[29143:BusinessWorker] exit with status 65280
+2014-10-19 22:46:02 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:02 Server:worker[29151:BusinessWorker] exit with status 65280
+2014-10-19 22:46:03 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:46:03 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:03 Server:worker[29191:BusinessWorker] exit with status 65280
+2014-10-19 22:46:04 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:04 Server:worker[29182:BusinessWorker] exit with status 65280
+2014-10-19 22:46:05 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:05 Server:worker[29209:BusinessWorker] exit with status 65280
+2014-10-19 22:46:06 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:06 Server:worker[29196:BusinessWorker] exit with status 65280
+2014-10-19 22:46:07 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:07 Server:worker[29219:BusinessWorker] exit with status 65280
+2014-10-19 22:46:08 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:46:08 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:08 Server:worker[29264:BusinessWorker] exit with status 65280
+2014-10-19 22:46:09 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:09 Server:worker[29259:BusinessWorker] exit with status 65280
+2014-10-19 22:46:10 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:10 Server:worker[29278:BusinessWorker] exit with status 65280
+2014-10-19 22:46:11 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:11 Server:worker[29246:BusinessWorker] exit with status 65280
+2014-10-19 22:46:12 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:12 Server:worker[29261:BusinessWorker] exit with status 65280
+2014-10-19 22:46:13 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:13 Server:worker[29268:BusinessWorker] exit with status 65280
+2014-10-19 22:46:14 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:14 Server:worker[29314:BusinessWorker] exit with status 65280
+2014-10-19 22:46:15 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:15 Server:worker[29322:BusinessWorker] exit with status 65280
+2014-10-19 22:46:16 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:16 Server:worker[29296:BusinessWorker] exit with status 65280
+2014-10-19 22:46:17 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:17 Server:worker[29340:BusinessWorker] exit with status 65280
+2014-10-19 22:46:18 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:18 Server:worker[29350:BusinessWorker] exit with status 65280
+2014-10-19 22:46:19 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:19 Server:worker[29304:BusinessWorker] exit with status 65280
+2014-10-19 22:46:20 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:20 Server:worker[29332:BusinessWorker] exit with status 65280
+2014-10-19 22:46:21 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:21 Server:worker[29383:BusinessWorker] exit with status 65280
+2014-10-19 22:46:22 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:22 Server:worker[29286:BusinessWorker] exit with status 65280
+2014-10-19 22:46:23 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:23 Server:worker[29360:BusinessWorker] exit with status 65280
+2014-10-19 22:46:24 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED   Cannot redeclare Event::getUserList() in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 241
+2014-10-19 22:46:24 Server:worker[29393:BusinessWorker] exit with status 65280
+2014-10-19 22:46:25 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:25 Server:worker[29412:BusinessWorker] exit with status 65280
+2014-10-19 22:46:26 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:46:26 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:26 Server:worker[29456:BusinessWorker] exit with status 65280
+2014-10-19 22:46:27 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:27 Server:worker[29450:BusinessWorker] exit with status 65280
+2014-10-19 22:46:28 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:28 Server:worker[29460:BusinessWorker] exit with status 65280
+2014-10-19 22:46:29 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:29 Server:worker[29478:BusinessWorker] exit with status 65280
+2014-10-19 22:46:30 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:46:30 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:30 Server:worker[29503:BusinessWorker] exit with status 65280
+2014-10-19 22:46:31 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:31 Server:worker[29519:BusinessWorker] exit with status 65280
+2014-10-19 22:46:32 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:32 Server:worker[29498:BusinessWorker] exit with status 65280
+2014-10-19 22:46:33 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:33 Server:worker[29539:BusinessWorker] exit with status 65280
+2014-10-19 22:46:34 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:34 Server:worker[29547:BusinessWorker] exit with status 65280
+2014-10-19 22:46:35 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:35 Server:worker[29514:BusinessWorker] exit with status 65280
+2014-10-19 22:46:36 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:36 Server:worker[29529:BusinessWorker] exit with status 65280
+2014-10-19 22:46:37 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:37 Server:worker[29557:BusinessWorker] exit with status 65280
+2014-10-19 22:46:38 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:38 Server:worker[29576:BusinessWorker] exit with status 65280
+2014-10-19 22:46:39 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:39 Server:worker[29513:BusinessWorker] exit with status 65280
+2014-10-19 22:46:40 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:40 Server:worker[29602:BusinessWorker] exit with status 65280
+2014-10-19 22:46:41 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:46:41 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:41 Server:worker[29634:BusinessWorker] exit with status 65280
+2014-10-19 22:46:42 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:42 Server:worker[29641:BusinessWorker] exit with status 65280
+2014-10-19 22:46:43 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:43 Server:worker[29620:BusinessWorker] exit with status 65280
+2014-10-19 22:46:44 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:44 Server:worker[29637:BusinessWorker] exit with status 65280
+2014-10-19 22:46:45 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:45 Server:worker[29671:BusinessWorker] exit with status 65280
+2014-10-19 22:46:46 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:46 Server:worker[29679:BusinessWorker] exit with status 65280
+2014-10-19 22:46:47 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:47 Server:worker[29689:BusinessWorker] exit with status 65280
+2014-10-19 22:46:48 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:48 Server:worker[29661:BusinessWorker] exit with status 65280
+2014-10-19 22:46:49 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:49 Server:worker[29707:BusinessWorker] exit with status 65280
+2014-10-19 22:46:50 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:50 Server:worker[29697:BusinessWorker] exit with status 65280
+2014-10-19 22:46:51 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:51 Server:worker[29715:BusinessWorker] exit with status 65280
+2014-10-19 22:46:52 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:52 Server:worker[29733:BusinessWorker] exit with status 65280
+2014-10-19 22:46:53 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:53 Server:worker[29725:BusinessWorker] exit with status 65280
+2014-10-19 22:46:54 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:54 Server:worker[29743:BusinessWorker] exit with status 65280
+2014-10-19 22:46:55 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:55 Server:worker[29761:BusinessWorker] exit with status 65280
+2014-10-19 22:46:56 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:56 Server:worker[29753:BusinessWorker] exit with status 65280
+2014-10-19 22:46:57 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:57 Server:worker[29771:BusinessWorker] exit with status 65280
+2014-10-19 22:46:58 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:58 Server:worker[29623:BusinessWorker] exit with status 65280
+2014-10-19 22:46:59 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:46:59 Server:worker[29797:BusinessWorker] exit with status 65280
+2014-10-19 22:47:00 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:47:00 Server:worker[29789:BusinessWorker] exit with status 65280
+2014-10-19 22:47:01 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:47:01 Server:worker[29779:BusinessWorker] exit with status 65280
+2014-10-19 22:47:02 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:47:02 Server:worker[29651:BusinessWorker] exit with status 65280
+2014-10-19 22:47:03 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:47:03 Server:worker[29807:BusinessWorker] exit with status 65280
+2014-10-19 22:47:04 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:47:04 Server:worker[29843:BusinessWorker] exit with status 65280
+2014-10-19 22:47:05 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:47:05 Server:worker[29825:BusinessWorker] exit with status 65280
+2014-10-19 22:47:06 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:47:06 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:06 Server:worker[29872:BusinessWorker] exit with status 65280
+2014-10-19 22:47:07 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:07 Server:worker[29880:BusinessWorker] exit with status 65280
+2014-10-19 22:47:08 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:08 Server:worker[29883:BusinessWorker] exit with status 65280
+2014-10-19 22:47:09 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:09 Server:worker[29887:BusinessWorker] exit with status 65280
+2014-10-19 22:47:10 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:10 Server:worker[29891:BusinessWorker] exit with status 65280
+2014-10-19 22:47:11 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:11 Server:worker[29928:BusinessWorker] exit with status 65280
+2014-10-19 22:47:12 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:12 Server:worker[29910:BusinessWorker] exit with status 65280
+2014-10-19 22:47:13 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:13 Server:worker[29946:BusinessWorker] exit with status 65280
+2014-10-19 22:47:14 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:14 Server:worker[29954:BusinessWorker] exit with status 65280
+2014-10-19 22:47:15 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:15 Server:worker[29936:BusinessWorker] exit with status 65280
+2014-10-19 22:47:16 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:16 Server:worker[29964:BusinessWorker] exit with status 65280
+2014-10-19 22:47:17 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:17 Server:worker[29982:BusinessWorker] exit with status 65280
+2014-10-19 22:47:18 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:47:19 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:19 Server:worker[30018:BusinessWorker] exit with status 65280
+2014-10-19 22:47:20 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:20 Server:worker[30011:BusinessWorker] exit with status 65280
+2014-10-19 22:47:21 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:21 Server:worker[30012:BusinessWorker] exit with status 65280
+2014-10-19 22:47:22 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:47:23 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:23 Server:worker[30072:BusinessWorker] exit with status 65280
+2014-10-19 22:47:24 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:24 Server:worker[30075:BusinessWorker] exit with status 65280
+2014-10-19 22:47:25 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:25 Server:worker[30066:BusinessWorker] exit with status 65280
+2014-10-19 22:47:26 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:26 Server:worker[30103:BusinessWorker] exit with status 65280
+2014-10-19 22:47:27 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:27 Server:worker[30085:BusinessWorker] exit with status 65280
+2014-10-19 22:47:28 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:28 Server:worker[30073:BusinessWorker] exit with status 65280
+2014-10-19 22:47:29 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:29 Server:worker[30113:BusinessWorker] exit with status 65280
+2014-10-19 22:47:30 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:30 Server:worker[30124:BusinessWorker] exit with status 65280
+2014-10-19 22:47:31 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:31 Server:worker[30142:BusinessWorker] exit with status 65280
+2014-10-19 22:47:32 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:32 Server:worker[30132:BusinessWorker] exit with status 65280
+2014-10-19 22:47:33 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:33 Server:worker[30168:BusinessWorker] exit with status 65280
+2014-10-19 22:47:34 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:34 Server:worker[30178:BusinessWorker] exit with status 65280
+2014-10-19 22:47:35 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:35 Server:worker[30186:BusinessWorker] exit with status 65280
+2014-10-19 22:47:36 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:36 Server:worker[30095:BusinessWorker] exit with status 65280
+2014-10-19 22:47:37 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:37 Server:worker[30204:BusinessWorker] exit with status 65280
+2014-10-19 22:47:38 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:38 Server:worker[30150:BusinessWorker] exit with status 65280
+2014-10-19 22:47:39 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:39 Server:worker[30160:BusinessWorker] exit with status 65280
+2014-10-19 22:47:40 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:40 Server:worker[30214:BusinessWorker] exit with status 65280
+2014-10-19 22:47:41 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:41 Server:worker[30222:BusinessWorker] exit with status 65280
+2014-10-19 22:47:42 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:42 Server:worker[30232:BusinessWorker] exit with status 65280
+2014-10-19 22:47:43 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:43 Server:worker[30258:BusinessWorker] exit with status 65280
+2014-10-19 22:47:44 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:44 Server:worker[30240:BusinessWorker] exit with status 65280
+2014-10-19 22:47:45 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:45 Server:worker[30196:BusinessWorker] exit with status 65280
+2014-10-19 22:47:46 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:46 Server:worker[30276:BusinessWorker] exit with status 65280
+2014-10-19 22:47:47 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:47 Server:worker[30250:BusinessWorker] exit with status 65280
+2014-10-19 22:47:48 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:48 Server:worker[30286:BusinessWorker] exit with status 65280
+2014-10-19 22:47:49 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:47:49 Server:worker[30294:BusinessWorker] exit with status 65280
+2014-10-19 22:47:50 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:47:58 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:48:03 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:48:05 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:05 Server:worker[30484:BusinessWorker] exit with status 65280
+2014-10-19 22:48:06 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:06 Server:worker[30481:BusinessWorker] exit with status 65280
+2014-10-19 22:48:07 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:07 Server:worker[30502:BusinessWorker] exit with status 65280
+2014-10-19 22:48:08 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:08 Server:worker[30479:BusinessWorker] exit with status 65280
+2014-10-19 22:48:09 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:09 Server:worker[30528:BusinessWorker] exit with status 65280
+2014-10-19 22:48:10 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:10 Server:worker[30538:BusinessWorker] exit with status 65280
+2014-10-19 22:48:11 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:11 Server:worker[30510:BusinessWorker] exit with status 65280
+2014-10-19 22:48:12 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:12 Server:worker[30548:BusinessWorker] exit with status 65280
+2014-10-19 22:48:13 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:13 Server:worker[30566:BusinessWorker] exit with status 65280
+2014-10-19 22:48:14 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:14 Server:worker[30520:BusinessWorker] exit with status 65280
+2014-10-19 22:48:15 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:15 Server:worker[30586:BusinessWorker] exit with status 65280
+2014-10-19 22:48:16 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:16 Server:worker[30576:BusinessWorker] exit with status 65280
+2014-10-19 22:48:17 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:17 Server:worker[30468:BusinessWorker] exit with status 65280
+2014-10-19 22:48:18 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:18 Server:worker[30604:BusinessWorker] exit with status 65280
+2014-10-19 22:48:19 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:19 Server:worker[30594:BusinessWorker] exit with status 65280
+2014-10-19 22:48:20 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:20 Server:worker[30558:BusinessWorker] exit with status 65280
+2014-10-19 22:48:21 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:21 Server:worker[30612:BusinessWorker] exit with status 12
+2014-10-19 22:48:22 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:22 Server:worker[30652:BusinessWorker] exit with status 12
+2014-10-19 22:48:23 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:23 Server:worker[30624:BusinessWorker] exit with status 12
+2014-10-19 22:48:24 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:24 Server:worker[30671:BusinessWorker] exit with status 12
+2014-10-19 22:48:25 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:25 Server:worker[30662:BusinessWorker] exit with status 12
+2014-10-19 22:48:26 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:26 Server:worker[30692:BusinessWorker] exit with status 12
+2014-10-19 22:48:27 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:27 Server:worker[30702:BusinessWorker] exit with status 12
+2014-10-19 22:48:28 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:28 Server:worker[30634:BusinessWorker] exit with status 12
+2014-10-19 22:48:29 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:29 Server:worker[30682:BusinessWorker] exit with status 12
+2014-10-19 22:48:30 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:30 Server:worker[30758:BusinessWorker] exit with status 12
+2014-10-19 22:48:31 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:31 Server:worker[30644:BusinessWorker] exit with status 12
+2014-10-19 22:48:32 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:32 Server:worker[30768:BusinessWorker] exit with status 12
+2014-10-19 22:48:33 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:33 Server:worker[30786:BusinessWorker] exit with status 12
+2014-10-19 22:48:34 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:34 Server:worker[30776:BusinessWorker] exit with status 65280
+2014-10-19 22:48:35 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:35 Server:worker[30796:BusinessWorker] exit with status 65280
+2014-10-19 22:48:36 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:36 Server:worker[30825:BusinessWorker] exit with status 65280
+2014-10-19 22:48:37 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:37 Server:worker[30750:BusinessWorker] exit with status 65280
+2014-10-19 22:48:37 Server:worker[30844:BusinessWorker] exit with status 12
+2014-10-19 22:48:38 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:48:38 Server:worker[30806:BusinessWorker] exit with status 65280
+2014-10-19 22:48:38 Server:worker[30859:BusinessWorker] exit with status 12
+2014-10-19 22:48:39 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:39 Server:worker[30836:BusinessWorker] exit with status 65280
+2014-10-19 22:48:39 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:48:39 Server:worker[30871:BusinessWorker] exit with status 12
+2014-10-19 22:48:40 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:40 Server:worker[30877:BusinessWorker] exit with status 12
+2014-10-19 22:48:41 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:41 Server:worker[30899:BusinessWorker] exit with status 12
+2014-10-19 22:48:42 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:42 Server:worker[30883:BusinessWorker] exit with status 65280
+2014-10-19 22:48:42 Server:worker[30920:BusinessWorker] exit with status 12
+2014-10-19 22:48:43 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:43 Server:worker[30887:BusinessWorker] exit with status 65280
+2014-10-19 22:48:43 Server:worker[30932:BusinessWorker] exit with status 12
+2014-10-19 22:48:44 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:44 Server:worker[30912:BusinessWorker] exit with status 65280
+2014-10-19 22:48:44 Server:worker[30944:BusinessWorker] exit with status 12
+2014-10-19 22:48:45 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:45 Server:worker[30934:BusinessWorker] exit with status 65280
+2014-10-19 22:48:45 Server:worker[30956:BusinessWorker] exit with status 12
+2014-10-19 22:48:46 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:46 Server:worker[30888:BusinessWorker] exit with status 65280
+2014-10-19 22:48:46 Server:worker[30966:BusinessWorker] exit with status 12
+2014-10-19 22:48:47 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:47 Server:worker[30968:BusinessWorker] exit with status 65280
+2014-10-19 22:48:47 Server:worker[30978:BusinessWorker] exit with status 12
+2014-10-19 22:48:48 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected ')' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:48:48 Server:worker[30946:BusinessWorker] exit with status 65280
+2014-10-19 22:48:48 Server:worker[30988:BusinessWorker] exit with status 12
+2014-10-19 22:48:49 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:48:53 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:49:40 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:52:38 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:52:39 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:39 Server:worker[324:BusinessWorker] exit with status 65280
+2014-10-19 22:52:40 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:40 Server:worker[319:BusinessWorker] exit with status 65280
+2014-10-19 22:52:41 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:41 Server:worker[313:BusinessWorker] exit with status 65280
+2014-10-19 22:52:42 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:42 Server:worker[360:BusinessWorker] exit with status 65280
+2014-10-19 22:52:43 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:43 Server:worker[312:BusinessWorker] exit with status 65280
+2014-10-19 22:52:44 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:44 Server:worker[341:BusinessWorker] exit with status 65280
+2014-10-19 22:52:45 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:45 Server:worker[378:BusinessWorker] exit with status 65280
+2014-10-19 22:52:46 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:46 Server:worker[399:BusinessWorker] exit with status 65280
+2014-10-19 22:52:47 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:47 Server:worker[407:BusinessWorker] exit with status 65280
+2014-10-19 22:52:48 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:48 Server:worker[388:BusinessWorker] exit with status 65280
+2014-10-19 22:52:49 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:49 Server:worker[425:BusinessWorker] exit with status 65280
+2014-10-19 22:52:50 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:50 Server:worker[437:BusinessWorker] exit with status 65280
+2014-10-19 22:52:51 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:51 Server:worker[417:BusinessWorker] exit with status 65280
+2014-10-19 22:52:52 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:52 Server:worker[455:BusinessWorker] exit with status 65280
+2014-10-19 22:52:53 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:53 Server:worker[447:BusinessWorker] exit with status 65280
+2014-10-19 22:52:54 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:54 Server:worker[370:BusinessWorker] exit with status 65280
+2014-10-19 22:52:55 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:55 Server:worker[473:BusinessWorker] exit with status 65280
+2014-10-19 22:52:56 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:56 Server:worker[465:BusinessWorker] exit with status 65280
+2014-10-19 22:52:57 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:57 Server:worker[483:BusinessWorker] exit with status 65280
+2014-10-19 22:52:58 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:58 Server:worker[351:BusinessWorker] exit with status 65280
+2014-10-19 22:52:59 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:52:59 Server:worker[510:BusinessWorker] exit with status 65280
+2014-10-19 22:53:00 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:00 Server:worker[533:BusinessWorker] exit with status 65280
+2014-10-19 22:53:01 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:01 Server:worker[522:BusinessWorker] exit with status 65280
+2014-10-19 22:53:02 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:02 Server:worker[543:BusinessWorker] exit with status 65280
+2014-10-19 22:53:03 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:03 Server:worker[491:BusinessWorker] exit with status 65280
+2014-10-19 22:53:04 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:04 Server:worker[561:BusinessWorker] exit with status 65280
+2014-10-19 22:53:05 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:05 Server:worker[570:BusinessWorker] exit with status 65280
+2014-10-19 22:53:06 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:06 Server:worker[501:BusinessWorker] exit with status 65280
+2014-10-19 22:53:07 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:07 Server:worker[580:BusinessWorker] exit with status 65280
+2014-10-19 22:53:08 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:08 Server:worker[589:BusinessWorker] exit with status 65280
+2014-10-19 22:53:09 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:09 Server:worker[609:BusinessWorker] exit with status 65280
+2014-10-19 22:53:10 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:10 Server:worker[551:BusinessWorker] exit with status 65280
+2014-10-19 22:53:11 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:11 Server:worker[643:BusinessWorker] exit with status 65280
+2014-10-19 22:53:12 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:12 Server:worker[663:BusinessWorker] exit with status 65280
+2014-10-19 22:53:13 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:13 Server:worker[671:BusinessWorker] exit with status 65280
+2014-10-19 22:53:14 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:14 Server:worker[689:BusinessWorker] exit with status 65280
+2014-10-19 22:53:15 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:15 Server:worker[651:BusinessWorker] exit with status 65280
+2014-10-19 22:53:16 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:16 Server:worker[707:BusinessWorker] exit with status 65280
+2014-10-19 22:53:17 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:17 Server:worker[719:BusinessWorker] exit with status 65280
+2014-10-19 22:53:18 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:18 Server:worker[681:BusinessWorker] exit with status 65280
+2014-10-19 22:53:19 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:19 Server:worker[601:BusinessWorker] exit with status 65280
+2014-10-19 22:53:20 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:20 Server:worker[727:BusinessWorker] exit with status 65280
+2014-10-19 22:53:21 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:21 Server:worker[745:BusinessWorker] exit with status 65280
+2014-10-19 22:53:22 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:22 Server:worker[765:BusinessWorker] exit with status 65280
+2014-10-19 22:53:23 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:23 Server:worker[737:BusinessWorker] exit with status 65280
+2014-10-19 22:53:24 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:24 Server:worker[776:BusinessWorker] exit with status 65280
+2014-10-19 22:53:25 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:25 Server:worker[699:BusinessWorker] exit with status 65280
+2014-10-19 22:53:26 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected 'if' (T_IF) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 256
+2014-10-19 22:53:26 Server:worker[784:BusinessWorker] exit with status 65280
+2014-10-19 22:53:27 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:53:58 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:55:06 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:55:07 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:07 Server:worker[1637:BusinessWorker] exit with status 65280
+2014-10-19 22:55:08 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:08 Server:worker[1632:BusinessWorker] exit with status 65280
+2014-10-19 22:55:09 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:09 Server:worker[1664:BusinessWorker] exit with status 65280
+2014-10-19 22:55:10 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:10 Server:worker[1635:BusinessWorker] exit with status 65280
+2014-10-19 22:55:11 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:11 Server:worker[1686:BusinessWorker] exit with status 65280
+2014-10-19 22:55:12 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:12 Server:worker[1695:BusinessWorker] exit with status 65280
+2014-10-19 22:55:13 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:13 Server:worker[1676:BusinessWorker] exit with status 65280
+2014-10-19 22:55:14 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:14 Server:worker[1654:BusinessWorker] exit with status 65280
+2014-10-19 22:55:15 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:15 Server:worker[1716:BusinessWorker] exit with status 65280
+2014-10-19 22:55:16 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:16 Server:worker[1628:BusinessWorker] exit with status 65280
+2014-10-19 22:55:17 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:17 Server:worker[1744:BusinessWorker] exit with status 65280
+2014-10-19 22:55:18 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:18 Server:worker[1726:BusinessWorker] exit with status 65280
+2014-10-19 22:55:19 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 282
+2014-10-19 22:55:19 Server:worker[1708:BusinessWorker] exit with status 65280
+2014-10-19 22:55:20 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:20 Server:worker[1734:BusinessWorker] exit with status 65280
+2014-10-19 22:55:20 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:55:21 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:21 Server:worker[1799:BusinessWorker] exit with status 65280
+2014-10-19 22:55:22 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:22 Server:worker[1812:BusinessWorker] exit with status 65280
+2014-10-19 22:55:23 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:23 Server:worker[1797:BusinessWorker] exit with status 65280
+2014-10-19 22:55:24 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:24 Server:worker[1785:BusinessWorker] exit with status 65280
+2014-10-19 22:55:25 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:25 Server:worker[1832:BusinessWorker] exit with status 65280
+2014-10-19 22:55:25 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:55:26 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:26 Server:worker[1878:BusinessWorker] exit with status 65280
+2014-10-19 22:55:27 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:27 Server:worker[1880:BusinessWorker] exit with status 65280
+2014-10-19 22:55:28 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:28 Server:worker[1907:BusinessWorker] exit with status 65280
+2014-10-19 22:55:29 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:29 Server:worker[1877:BusinessWorker] exit with status 65280
+2014-10-19 22:55:30 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:30 Server:worker[1894:BusinessWorker] exit with status 65280
+2014-10-19 22:55:31 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:31 Server:worker[1874:BusinessWorker] exit with status 65280
+2014-10-19 22:55:32 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:32 Server:worker[1934:BusinessWorker] exit with status 65280
+2014-10-19 22:55:33 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:33 Server:worker[1926:BusinessWorker] exit with status 65280
+2014-10-19 22:55:34 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:34 Server:worker[1955:BusinessWorker] exit with status 65280
+2014-10-19 22:55:35 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:35 Server:worker[1946:BusinessWorker] exit with status 65280
+2014-10-19 22:55:36 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:36 Server:worker[1979:BusinessWorker] exit with status 65280
+2014-10-19 22:55:37 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:37 Server:worker[2000:BusinessWorker] exit with status 65280
+2014-10-19 22:55:38 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:38 Server:worker[1970:BusinessWorker] exit with status 65280
+2014-10-19 22:55:39 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:39 Server:worker[2020:BusinessWorker] exit with status 65280
+2014-10-19 22:55:40 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:40 Server:worker[1989:BusinessWorker] exit with status 65280
+2014-10-19 22:55:41 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:41 Server:worker[2008:BusinessWorker] exit with status 65280
+2014-10-19 22:55:42 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:42 Server:worker[2030:BusinessWorker] exit with status 65280
+2014-10-19 22:55:43 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:43 Server:worker[2048:BusinessWorker] exit with status 65280
+2014-10-19 22:55:44 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:44 Server:worker[2079:BusinessWorker] exit with status 65280
+2014-10-19 22:55:45 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:45 Server:worker[2068:BusinessWorker] exit with status 65280
+2014-10-19 22:55:46 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:46 Server:worker[2102:BusinessWorker] exit with status 65280
+2014-10-19 22:55:47 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:47 Server:worker[2118:BusinessWorker] exit with status 65280
+2014-10-19 22:55:48 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:48 Server:worker[2038:BusinessWorker] exit with status 65280
+2014-10-19 22:55:49 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:49 Server:worker[2128:BusinessWorker] exit with status 65280
+2014-10-19 22:55:50 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:50 Server:worker[2149:BusinessWorker] exit with status 65280
+2014-10-19 22:55:51 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:51 Server:worker[2138:BusinessWorker] exit with status 65280
+2014-10-19 22:55:52 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:52 Server:worker[1915:BusinessWorker] exit with status 65280
+2014-10-19 22:55:53 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:53 Server:worker[2167:BusinessWorker] exit with status 65280
+2014-10-19 22:55:54 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:54 Server:worker[2090:BusinessWorker] exit with status 65280
+2014-10-19 22:55:55 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:55 Server:worker[2183:BusinessWorker] exit with status 65280
+2014-10-19 22:55:56 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:56 Server:worker[2159:BusinessWorker] exit with status 65280
+2014-10-19 22:55:57 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:57 Server:worker[2211:BusinessWorker] exit with status 65280
+2014-10-19 22:55:58 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:58 Server:worker[2202:BusinessWorker] exit with status 65280
+2014-10-19 22:55:59 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:55:59 Server:worker[2241:BusinessWorker] exit with status 65280
+2014-10-19 22:56:00 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:56:00 Server:worker[2249:BusinessWorker] exit with status 65280
+2014-10-19 22:56:01 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '$group' (T_VARIABLE) in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 283
+2014-10-19 22:56:01 Server:worker[2229:BusinessWorker] exit with status 65280
+2014-10-19 22:56:02 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:56:10 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:56:21 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:56:31 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:56:43 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:57:07 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:57:19 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:57:22 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:58:28 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:58:45 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:59:15 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:59:19 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:59:20 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:59:29 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:59:35 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 22:59:39 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:59:46 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:59:51 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 22:59:52 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:00:03 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:00:06 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:00:08 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:00:21 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:00:29 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:00:30 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:00:31 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:00:49 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:02:00 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:02:34 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:02:58 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:02:58 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:02:58 Server:worker[6554:BusinessWorker] exit with status 65280
+2014-10-19 23:02:59 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:02:59 Server:worker[6549:BusinessWorker] exit with status 65280
+2014-10-19 23:03:00 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:03:00 Server:worker[6559:BusinessWorker] exit with status 65280
+2014-10-19 23:03:01 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:03:01 Server:worker[6547:BusinessWorker] exit with status 65280
+2014-10-19 23:03:02 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:03:02 Server:worker[6596:BusinessWorker] exit with status 65280
+2014-10-19 23:03:03 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:03:03 Server:worker[6566:BusinessWorker] exit with status 65280
+2014-10-19 23:03:04 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:03:04 Server:worker[6606:BusinessWorker] exit with status 65280
+2014-10-19 23:03:05 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:03:05 Server:worker[6614:BusinessWorker] exit with status 65280
+2014-10-19 23:03:06 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:03:06 Server:worker[6624:BusinessWorker] exit with status 65280
+2014-10-19 23:03:07 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_PARSE syntax error, unexpected '}', expecting ',' or ';' in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 220
+2014-10-19 23:03:07 Server:worker[6642:BusinessWorker] exit with status 65280
+2014-10-19 23:03:08 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:03:14 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:03:15 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:03:29 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:03:30 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:03:50 Worker[FileMonitor]:terminal closed and reset workers fd
+2014-10-19 23:03:59 Server:Workerman is starting ...
+2014-10-19 23:03:59 Server:[33;40mWorkerman already started[0m
+2014-10-19 23:04:03 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:04:04 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:04:08 Server:Workerman is shutting down
+2014-10-19 23:04:08 Server:Workerman stoped
+2014-10-19 23:04:08 Server:Workerman is starting ...
+2014-10-19 23:04:08 Server:[1A
+[KWorkerman start success ...[0m
+2014-10-19 23:04:17 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:04:26 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:06:21 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:06:32 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:06:53 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:07:52 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:08:23 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:08:57 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:09:50 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:10:01 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:10:42 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:11:09 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:11:42 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:13:13 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:13:26 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:14:26 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:14:42 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:14:59 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:15:27 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:16:23 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:16:54 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:17:18 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-19 23:17:23 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-19 23:17:50 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers

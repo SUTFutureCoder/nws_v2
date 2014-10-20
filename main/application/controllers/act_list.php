@@ -180,7 +180,7 @@ class Act_list extends CI_Controller{
      *  POST array(
      *      'user_key'  用户识别码
      *      'user_id'   用户id
-     *      'act_list'  当前活动列表
+     *      'max_act_id'先前最大的活动id
      *      )
      *  @Return: 
      *  状态码|状态
@@ -190,7 +190,7 @@ class Act_list extends CI_Controller{
      * 
     */
     public function RedrawActList(){
-        $this->load->library('secure');  
+        $this->load->library('secure');
         $this->load->library('data');
         $this->load->library('authorizee');
         $this->load->model('act_model');
@@ -198,24 +198,20 @@ class Act_list extends CI_Controller{
             $this->data->Out('iframe', $this->input->post('src', TRUE), -1, '密钥无法通过安检');
         }
         
-        //从这里开始，错误代码改为-数
-        if (!ctype_digit($this->input->post('act_id', TRUE))){
-            $this->data->Out('iframe', $this->input->post('src', TRUE), -2, '活动id传值错误');
+        if (!$this->authorizee->CheckAuthorizee('act_global_list', $this->input->post('user_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -2, '用户无权限');
         }
         
-        //验证活动是否存在
-        if (!$this->act_model->CheckIdExist($this->input->post('act_id', TRUE))){
-            $this->data->Out('iframe', $this->input->post('src', TRUE), -3, '活动不存在');
-        }    
+        if (!ctype_digit($this->input->post('max_act_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -3, '先前最大的活动id不合法');
+        }        
         
-        $data = $this->act_model->GetActInfo($this->input->post('act_id', TRUE));
-        
-        if ($data[0]['act_defunct'] && !$this->authorizee->CheckAuthorizee('act_read_dele', $this->input->post('user_id', TRUE))){
-            $this->data->Out('iframe', $this->input->post('src', TRUE), -4, '用户没有查看已删除活动的权限');
-        }
-        
-        $this->data->Out('iframe', $this->input->post('src', TRUE), 1, 'GetActInfo', $data[0]);
+        //初始化列表，从1开始拉取到10.无需再次设计函数
+        $data = $this->act_model->GetActList(0, 10, $this->input->post('max_act_id', TRUE));
+        $this->data->Out('iframe', $this->input->post('src', TRUE), 1, 'RedrawActList', $data);
     }
+    
+    
     
     
 }
