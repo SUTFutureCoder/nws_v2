@@ -1,0 +1,24 @@
+2014-10-21 16:21:24 Server:Workerman is starting ...
+2014-10-21 16:21:24 Server:[1A
+[KWorkerman start success ...[0m
+2014-10-21 16:22:32 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-21 16:22:34 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-21 16:29:04 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 16:29:13 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 16:29:58 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 16:39:19 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 16:40:32 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-21 16:40:42 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-21 16:40:44 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-21 16:40:45 /tmp/group.store.cache.php updated and reload workers
+2014-10-21 16:42:03 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 16:43:00 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 16:46:31 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-21 16:48:04 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 16:49:35 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 16:49:45 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-21 16:49:46 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-21 16:51:25 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 17:05:55 /var/www/html/nws_v2/websocket/applications/Chat/Event.php updated and reload workers
+2014-10-21 17:06:52 /tmp/gateway.store.cache.php updated and reload workers
+2014-10-21 21:17:53 Worker[FileMonitor]:terminal closed and reset workers fd

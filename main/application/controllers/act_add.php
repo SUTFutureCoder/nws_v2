@@ -240,11 +240,10 @@ class Act_add extends CI_Controller{
         if (!$this->act_model->CheckIdExist($this->input->post('act_id', TRUE))){
             return 0;
         }
-        
-        $act_data = $this->act_model->GetActList(0, 1, $this->input->post('act_id', TRUE));
+        $act_data = $this->act_model->GetActList(0, 1, $this->input->post('act_id', TRUE) - 1);
         
         if ($act_data){
-            $this->data->OutUncode('group', $this->input->post('src', TRUE), 1, 'B_ActListInsert' ,$act_data);
+            $this->data->Out('group', $this->input->post('src', TRUE), 1, 'B_ActListInsert' ,$act_data);
         }
     }
     

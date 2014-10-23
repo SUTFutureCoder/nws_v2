@@ -171,7 +171,7 @@ class Act_model extends CI_Model{
      *  @Parameter: 
      *  $start_id   起始id
      *  $offset_num 偏移量【默认为10】
-     *  $old_max_id 之前拉取的最大活动id
+     *  $old_max_id 之前拉取的最大活动id 注意，如果单条查询则需要-1处理。 因为是大于号
      *  $type       活动类型
      *  $section    部门限制
      *  $keyword    查询字段

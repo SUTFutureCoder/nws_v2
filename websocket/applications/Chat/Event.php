@@ -205,12 +205,13 @@ class Event
                 $data['src'] = $message_data['src'];                
                 $data['group'] = $message_data['group'];
                 $message_data['key'] ? $key = $message_data['key'] : $key = null;   
-                $new_message = self::getApiData($url, $data, $key);
+                $new_message = json_decode(self::getApiData($url, $data, $key));
+                
                 //注意，getApiData不要json_encode!在确认无误后              
                 foreach (self::getGroupUserList() as $key => $value){
                     if ($data['group'] == $key){
                         foreach ($value as $uid => $user_id)
-                        Gateway::sendToUid($uid, WebSocket::encode('helloworld'));
+                        Gateway::sendToUid($uid, WebSocket::encode($new_message));
                     }                    
                 }
                 return TRUE;

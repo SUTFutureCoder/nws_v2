@@ -48,11 +48,20 @@ class Test extends CI_Controller{
     public function TestGetActGlobeInit(){
         $this->load->model('act_model');
         header("Content-type:text/html;charset=utf-8");
-        var_dump($this->act_model->GetActList(0, 10, 13));
+        var_dump($this->act_model->GetActList(0, 1, 43));
     }
     public function TestGetActInfo(){
         $this->load->model('act_model');
         header("Content-type:text/html;charset=utf-8");
         var_dump($this->act_model->GetActInfo(15));
+    }
+    
+    public function OJ_test(){
+        
+        $team_number1 = 140406305;
+        echo substr($team_number1, 0, 2) ;
+        echo "<br/>//////////////<br/>";
+                
+                echo date("y");
     }
 }
