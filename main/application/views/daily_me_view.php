@@ -295,7 +295,7 @@ $(function(){
                 //发送到母窗口
             function MotherIframeSend(){
                 var data = new Array();
-                data['src'] = location.href;
+                data['src'] = location.href.slice((location.href.lastIndexOf("/")));
                 data['api'] = location.href + '/SetUserInfo';                
                 data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>", "user_telephone" : "' + $("#user_telephone").val() + '"';
                 data['data'] += ', "user_qq" : "' + $("#user_qq").val() + '", "user_talent" : "' + $("#user_talent").val() + '", "user_friendsearch_enable" : "' + $("#user_friendsearch_enable").is(':checked') + '"'

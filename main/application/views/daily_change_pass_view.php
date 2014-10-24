@@ -86,7 +86,7 @@
 //发送到母窗口
     function MotherIframeSend(){
         var data = new Array();
-        data['src'] = location.href;
+        data['src'] = location.href.slice((location.href.lastIndexOf("/")));
         data['api'] = location.href + '/ChangePass';          
         data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>", "user_mixed" : "' + $("#user_mixed").val() + '"';
         data['data'] += ', "user_password_old" : "' + $("#user_password_old").val() + '", "user_password_new" : "' + $("#user_password_new").val() + '"';

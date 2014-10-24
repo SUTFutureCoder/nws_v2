@@ -65,7 +65,7 @@ $(function(){
         });
         if ($("#role_type").val()){
             var data = new Array();
-            data['src'] = location.href;
+            data['src'] = location.href.slice((location.href.lastIndexOf("/")));
             data['api'] = location.href + '/GetRoleAuthorizeeList';
             data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
             data['data'] += ', "role_type" : "' + $("#role_type").val() + '"}'; 
@@ -88,7 +88,7 @@ $(function(){
         });
         //console.log(authorizee_list);
         var data = new Array();
-        data['src'] = location.href;
+        data['src'] = location.href.slice((location.href.lastIndexOf("/")));
         data['api'] = location.href + '/SetRoleAuthorizee';          
         data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';        
         data['data'] += ', "role_type" : "' + $("#role_type").val() + '", "authorizee_list" : "' + authorizee_list + '"}';            

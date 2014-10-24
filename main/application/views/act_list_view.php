@@ -81,7 +81,7 @@ $(function(){
     //当没有max_act_id，即之前尚未进行localstorage存储或被清除数据的情况
     if (!$.LS.get("max_act_id")){
         var data = new Array();
-        data['src'] = location.href;
+        data['src'] = location.href.slice((location.href.lastIndexOf("/")));
         data['api'] = location.href + '/GetActGlobeListInit';          
         data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"}';
         parent.IframeSend(data);
@@ -92,7 +92,7 @@ $(function(){
         act_list = JSON.parse($.LS.get("act_list"));
         var max_act_id = $.LS.get("max_act_id");
         var data = new Array();
-        data['src'] = location.href;
+        data['src'] = location.href.slice((location.href.lastIndexOf("/")));    
         data['api'] = location.href + '/RedrawActList';          
         data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
         data['data'] += ', "max_act_id" : "' + max_act_id + '"}';  
@@ -142,7 +142,7 @@ function GetActInfo(act_id, act_name){
     $(".modal-body").html("<img src='<?= base_url('img/load.gif')?>'>");
     var data = new Array();
     if (!$.LS.get("act_info_" + act_id)){
-        data['src'] = location.href;
+        data['src'] = location.href.slice((location.href.lastIndexOf("/")));
         data['api'] = location.href + '/GetActInfo';          
         data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
         data['data'] += ', "act_id" : "' + act_id + '"}';  
@@ -164,7 +164,7 @@ function GetActInfo(act_id, act_name){
 //对于活动的参加、修改、宣传、删除处理
 function act_deal(act_id, method){
     var data = new Array();
-    data['src'] = location.href;
+    data['src'] = location.href.slice((location.href.lastIndexOf("/")));
     switch (method){
         case "join":
             data['api'] = location.href + '/ActJoin';

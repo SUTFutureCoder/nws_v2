@@ -139,7 +139,7 @@ $(function(){
         $("#conflict_tab").click(function(){
             $("#conflict").empty();
             var data = new Array();
-            data['src'] = location.href;
+            data['src'] = location.href.slice((location.href.lastIndexOf("/")));
             data['api'] = location.href + '/GetSectionConflict';
             data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"}';
             parent.IframeSend(data);
@@ -148,7 +148,7 @@ $(function(){
         $("#final_tab").click(function(){   
             $("#final_stat").empty();
             var data = new Array();
-            data['src'] = location.href;
+            data['src'] = location.href.slice((location.href.lastIndexOf("/")));
             data['api'] = location.href + '/GetNewStat';
             data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"}';
             parent.IframeSend(data);           
@@ -253,7 +253,7 @@ $(function(){
     //判定部门
     function ConflictJudge(user_conflict_id, user_section){
         var data = new Array();
-            data['src'] = location.href;
+            data['src'] = location.href.slice((location.href.lastIndexOf("/")));
             data['api'] = location.href + '/JudgeSectionConflict';
             data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id?>", "user_conflict_id" : "' + user_conflict_id + '", "user_section" : "' + user_section + '"}';
             parent.IframeSend(data);

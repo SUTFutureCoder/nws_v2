@@ -51,6 +51,7 @@ var ws, ping, name = 'null', user_list={};
         $(".btn").removeAttr("disabled");
         $(".btn").attr("value", "一键配置"); 
     }
+    
     switch (result[0])
     {
         case 'SetSectionList_2':
@@ -96,8 +97,8 @@ var ws, ping, name = 'null', user_list={};
             break;
                 
         case "iframe":
-        case "group":
-            $("iframe[src='" + result[1] + "']")[0].contentWindow.MotherResultRec(result);
+        case "group":            
+            $("iframe[src='" + location.href.slice(0, location.href.lastIndexOf("/")) + result[1] + "']")[0].contentWindow.MotherResultRec(result);
             /*if ($("iframe[src='" + result[1] + "']"))
             {
                 alert($("iframe[src='" + result[1] + "']").attr('scrolling'));
@@ -115,7 +116,8 @@ ws.onerror = function() {
 };    
 
 </script>
-<script>                                    
+<script>     
+//                            alert(location.href.slice(0, location.href.lastIndexOf("/")));
 function IframeSend(data, type) { 
     type = arguments[1] ? arguments[1] : "iframe";
     if (!data['group']){
