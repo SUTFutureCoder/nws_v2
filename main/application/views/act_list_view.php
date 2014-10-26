@@ -127,7 +127,9 @@ function MotherResultRec(data){
         case 'B_ActListInsert':
             //活动的更新、删除
             if (data[4]){
+                console.log("////////////");
                 console.log(data[4]);
+                console.log("////////////");
                 var max_act_id = list_draw(data[4], $.LS.get("max_act_id"), 'prepend');      
                 $.LS.set("act_list", JSON.stringify(data[4].concat(JSON.parse($.LS.get("act_list")))));
                 $.LS.set("max_act_id", max_act_id);     
@@ -191,7 +193,7 @@ function act_deal(act_id, method){
 //insert_position 如有更新的插入位置（append/prepend）
 function list_draw(data, max_act_id, insert_position){    
     $.each(data, function(i, item){
-        if (item['act_id'] * 1 >= max_act_id){
+        if (item['act_id'] * 1 > max_act_id){
             max_act_id = item['act_id'] * 1;
         } 
         
@@ -199,7 +201,7 @@ function list_draw(data, max_act_id, insert_position){
             case "append":
                 $("#act_list").append("<tr data-toggle=\"modal\" data-target=\"#act_info\" onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\">");
                 break;
-                
+
             case "prepend":
                 $("#act_list").prepend("<tr data-toggle=\"modal\" data-target=\"#act_info\" onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\">");
                 break;
@@ -214,7 +216,6 @@ function list_draw(data, max_act_id, insert_position){
         $("#" + item['act_id']).append("<td>" + item['act_start'] + "</td>");
         $("#" + item['act_id']).append("<td>" + item['act_end'] + "</td>");
         $("#" + item['act_id']).append("</tr>");  
-               
     });
     return max_act_id;
 }

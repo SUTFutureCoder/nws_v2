@@ -26,5 +26,14 @@ class Basic
     //此处填写user_key用户密钥生效时限(前端以小时为单位，转换后写入文件)推荐不小于2小时
     public $user_key_life = 43200;
     
+    //移动端版本号，用于检查更新
+    public $mobile_version = 2.0;
+    
+    //最新版下载位置
+    public $mobile_download = '';
+    
+    //应用密钥
+    public $app_key = 'ALLHAILNWS!';
+    
     
 }

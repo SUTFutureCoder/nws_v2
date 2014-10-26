@@ -12,7 +12,8 @@
         <link rel=stylesheet href=iscroll/scrollbar.css>
         <script src=iscroll/iscroll.js></script>
         <script src=js/nws_v2_mobile.js></script>    
-        
+        <script src=js/localstorage.js></script>
+        <script src=js/act.js></script>
     </head>
     <body>          
         <div data-role="page" id="pageone" >
@@ -22,7 +23,7 @@
                 </div>
                 <div id="log_button">                    
                     <a href="#" data-role="button">社员登录</a>
-                    <a href="#guest_index" data-role="button" data-transition="slide">游客浏览</a>
+                    <a href="#guest_index" data-role="button" data-transition="slide" onclick="yoo()">游客浏览</a>
                 </div>                
             </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle="false">
@@ -44,129 +45,28 @@
 			<span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
 		</div>
 		
-                <ul data-role="listview" id="thelist">
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                            <h2>Google Chrome</h2>
-                            <p>Google Chrome 免费的开源 web 浏览器。发布于 2008 年。</p>
-                            </a>
-                        </li>
-                </ul>        
+                <ul data-role="listview" id="thelist" data-inset="true">
+                    <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+                    <li><a href="index.html">
+                    <h2>Stephen Weber</h2>
+                    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+                    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+                    </a></li>
+                    <li><a href="index.html">
+                    <h2>jQuery Team</h2>
+                    <p><strong>Boston Conference Planning</strong></p>
+                    <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+                        <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+                    </a></li>
+                    <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+                    <li><a href="index.html">
+                    <h2>Avery Walker</h2>
+                    <p><strong>Re: Dinner Tonight</strong></p>
+                    <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+                        <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+                    </a></li>
+                </ul>   
 		
             <div id="pullUp">
 			<span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
@@ -178,8 +78,8 @@
                 <div data-role="navbar">
                     <ul>
                     <li><a href="#" class="ui-btn-active ui-state-persist"  data-icon="grid">动态</a></li>
-                    <li><a href="#" data-icon="grid">功能</a></li>
-                    <li><a href="#" data-icon="grid">关于</a></li>			
+                    <li><a href="#" data-icon="grid">直播间</a></li>
+                    <li><a href="#" data-icon="grid">更多</a></li>			
                     </ul>			
                 </div>
             </div>

@@ -1,10 +1,6 @@
-var server_ip = "127.0.0.1";
-var base_url = "http://" + server_ip + "/nws_v2/index.php/";
-var websocket = "ws://" + server_ip + ":8080/";
-var user_key = "ALLHAILNWS!";
-var app_key = "SUTNWS";
-var version = 2.0;
-var version_string = "alpha";
+var base_url = "http://localhost/nws_v2/index.php/";
+var user_key = "";
+var app_key = "";
 //判断是否联网，如未联网则调用本地存储
 var online = 0;
 
@@ -12,8 +8,7 @@ $(function(){
    $("#log_button").css({         
         'text-align' : "center",
         'margin-bottom': ($(window).height() - $("#log_button").outerHeight())/2 - $(document).scrollTop() 
-    }); 
-    
+    });         
 });
 
 //websocket
@@ -22,26 +17,32 @@ WEB_SOCKET_SWF_LOCATION = "swf/WebSocketMain.swf";
 WEB_SOCKET_DEBUG = true;
 var ws, ping, ping_interval, reconnect_interval, name = 'null', user_list={};        
 
-ws = new WebSocket(websocket);   
+//connect();
+//function connect(){
+    ws = new WebSocket("ws://192.168.1.108:8080/");   
+//}
+
+
+//断线重连
+/*function reconnect(){
+    if (1 != ws.readyState){
+        alert('yoo');
+        connect();
+    } else {
+        ping_interval = setInterval("getping()",1000);
+        clearInterval(reconnect_interval);
+    }         
+}*/
    
-// 当socket连接打开时，输入用户名
+  // 当socket连接打开时，输入用户名
 ws.onopen = function() {  
     online = 1;    
     if (!user_key){
-        ws.send(JSON.stringify({"type":"login","name":"guest","group":"mobile"}));
+        ws.send(JSON.stringify({"type":"login","name":"guest","group":"guest"}));
     }    else {
         //先开放游客登录
     }
-//    setInterval("getping()",1000);
-    ws.send(JSON.stringify({"type":"login","name":"guest","group":"mobile"}));
 };
-
-//测试连接
-//function getping(){ 
-//    var date = new Date();
-//    ping = date.getTime(); 
-//    ws.send('{"type":"ping"}');
-//}
 
 // 当有消息时根据消息类型显示不同信息
 ws.onmessage = function(e) {  
@@ -70,26 +71,18 @@ ws.onmessage = function(e) {
         case "mobile":
             //对于手机端则result[1]为函数名称
             eval(result[1] + "(" + result + ")");
+            /*if ($("iframe[src='" + result[1] + "']"))
+            {
+                alert($("iframe[src='" + result[1] + "']").attr('scrolling'));
+            }*/
             break;
     }
 };
-
 ws.onclose = function() {
-    setTimeout(function(){  
-        $.mobile.loading('show', {
-            text: '服务器连接失败，进入离线模式',
-            textVisible: true,
-            theme:'b',
-            textonly: true
-//          html:'服务器连接失败<br/>进入离线模式'                        
-        });  
-    },1); 
-    setTimeout(function(){
-         $.mobile.loading('hide');
-    }, 3500);
     console.log("服务端关闭了连接"); 
+    //clearInterval(ping_interval);
+    //reconnect_interval = setInterval("reconnect()",1000);              
 };
-
 ws.onerror = function() {
     console.log("出现错误");              
 };  
