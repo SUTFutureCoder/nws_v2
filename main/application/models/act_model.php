@@ -171,16 +171,17 @@ class Act_model extends CI_Model{
      *  @Parameter: 
      *  $start_id   起始id
      *  $offset_num 偏移量【默认为10】
-     *  $old_max_id 之前拉取的最大活动id 注意，如果单条查询则需要-1处理。 因为是大于号
-     *  $type       活动类型
-     *  $section    部门限制
-     *  $keyword    查询字段
+     *  $old_max_id = NULL 之前拉取的最大活动id 注意，如果单条查询则需要-1处理。 因为是大于号
+     *  $guest = 0  是否为游客
+     *  $type = NULL       活动类型
+     *  $section = NULL    部门限制
+     *  $keyword = NULL    查询字段
      *  @Return: 
      *  
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function GetActList($start_id, $offset_num = 10, $old_max_id = NULL, $type = NULL, $section = NULL, $keyword = NULL){
+    public function GetActList($start_id, $offset_num = 10, $old_max_id = NULL, $guest = 0, $type = NULL, $section = NULL, $keyword = NULL){
         $this->load->database();  
         $this->db->select('activity.act_id, activity.act_name, activity.act_private, '
                 . 'activity.act_private, activity.act_start, activity.act_end, '
@@ -194,6 +195,12 @@ class Act_model extends CI_Model{
         $this->db->order_by('activity.act_end', 'desc');
         if (NULL != $old_max_id){
             $this->db->where('activity.act_id >', $old_max_id);
+            $this->db->where('activity.act_end >', date("Y-m-d H:i:s"));
+        }
+        
+        //游客登录时不显示内部活动
+        if (1 == $guest){
+            $this->db->where('act_private', 0);
         }
         
         $this->db->join('re_activity_type', 're_activity_type.act_id = activity.act_id');

@@ -11,9 +11,10 @@
         <script type="text/javascript" src="js/json.js"></script>
         <link rel=stylesheet href=iscroll/scrollbar.css>
         <script src=iscroll/iscroll.js></script>
-        <script src=js/nws_v2_mobile.js></script>    
-        <script src=js/localstorage.js></script>
+        <script src=js/localstorage.js></script>        
+        <script src=js/nws_v2_mobile.js></script>  
         <script src=js/act.js></script>
+        
     </head>
     <body>          
         <div data-role="page" id="pageone" >
@@ -21,8 +22,9 @@
                 <div id="nws_logo_large">
                     <img src="images/eng4.png">
                 </div>
-                <div id="log_button">                    
-                    <a href="#" data-role="button">社员登录</a>
+                <div id="log_button"> 
+                    <a href="#update_dialog" style="display: none" id="update_hidden_button" data-role="button" data-transition="flip"></a>
+                    <a href="#update_dialog" data-role="button" data-transition="flip">社员登录</a>
                     <a href="#guest_index" data-role="button" data-transition="slide" onclick="yoo()">游客浏览</a>
                 </div>                
             </div>
@@ -38,42 +40,40 @@
                 <h1>工大<img src="images/s.png" id="nws_logo">网管</h1>
                 <a href="#" data-icon="gear" class="ui-btn-right">Options</a>
             </div>
-        <div id="wrapper">
-            
-	<div id="scroller">
-		<div id="pullDown">
-			<span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
-		</div>
-		
-                <ul data-role="listview" id="thelist" data-inset="true">
-                    <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
-                    <li><a href="index.html">
-                    <h2>Stephen Weber</h2>
-                    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
-                    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
-                        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
-                    </a></li>
-                    <li><a href="index.html">
-                    <h2>jQuery Team</h2>
-                    <p><strong>Boston Conference Planning</strong></p>
-                    <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
-                        <p class="ui-li-aside"><strong>9:18</strong>AM</p>
-                    </a></li>
-                    <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
-                    <li><a href="index.html">
-                    <h2>Avery Walker</h2>
-                    <p><strong>Re: Dinner Tonight</strong></p>
-                    <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
-                        <p class="ui-li-aside"><strong>4:48</strong>PM</p>
-                    </a></li>
-                </ul>   
-		
-            <div id="pullUp">
-			<span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
-		</div>
-		
-	</div>
-</div>
+            <div id="wrapper">
+            <div id="scroller">
+                    <div id="pullDown">
+                            <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+                    </div>
+
+                    <ul data-role="listview" id="thelist" data-inset="true">
+                        <li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+                        <li><a href="index.html">
+                        <h2>Stephen Weber</h2>
+                        <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+                        <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+                            <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+                        </a></li>
+                        <li><a href="index.html">
+                        <h2>jQuery Team</h2>
+                        <p><strong>Boston Conference Planning</strong></p>
+                        <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+                            <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+                        </a></li>
+                        <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+                        <li><a href="index.html">
+                        <h2>Avery Walker</h2>
+                        <p><strong>Re: Dinner Tonight</strong></p>
+                        <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+                            <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+                        </a></li>
+                    </ul>   
+
+                    <div id="pullUp">
+                            <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+                    </div>
+            </div>
+            </div>
             <div data-role="footer" data-position="fixed" data-tap-toggle ="false">
                 <div data-role="navbar">
                     <ul>
@@ -83,6 +83,21 @@
                     </ul>			
                 </div>
             </div>
-        </div>            
+        </div>
+        <div data-role="page" id="update_dialog" >            
+            <div role="dialog" class="ui-dialog-contain ui-overlay-shadow ui-corner-all">
+		<div data-role="header"  role="banner" class="ui-header ui-bar-b">
+		<h1 class="ui-title" role="heading" aria-level="1">发现新版本</h1>
+		</div>
+		<div role="main" class="ui-content">
+		<h1 id="update_version"></h1>
+		<p id="update_notice"></p>
+			<a href="index.html" id="app_update" class="ui-btn ui-shadow ui-corner-all">更新</a>
+			<a href="index.html" id="update_ignore" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-a">忽略此版本</a>
+                        <a href="index.html" id="update_exit" data-rel="back" class="ui-btn ui-shadow ui-corner-all">取消</a>
+		</div>
+            </div>
+        </div>
+        
     </body>    
 </html>

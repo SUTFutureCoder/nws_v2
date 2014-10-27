@@ -1,9 +1,17 @@
 var server_ip = "127.0.0.1";
 var base_url = "http://" + server_ip + "/nws_v2/main/index.php/";
 var websocket = "ws://" + server_ip + ":8080/";
-var user_key = "";
+if (!$.LS.get("user_key")){
+    var user_key = 0;
+} else {    
+    var user_key = $.LS.get("user_key");
+}
+
+//if ('undefined' == user_key){
+//    alert("a");
+//}
 var app_key = "ALLHAILNWS!";
-var version = 2.01;
+var version = 2.00000;
 var version_string = "alpha";
 //判断是否联网，如未联网则调用本地存储
 var online = 0;
@@ -76,7 +84,16 @@ ws.onmessage = function(e) {
         case "update":
             switch (result[1]){
                 case 1:
-                    alert('发现新版本！版本号：' + result[2] + '下载地址：' + result[3]);
+                    if ($.LS.get("update_ignore") != result[2]){
+                        $("#update_hidden_button").trigger("click");
+//                    alert('发现新版本！版本号：' + result[2] + '下载地址：' + result[3]);
+                        window.location.href = 'index.html#update_dialog';
+                        $("#update_version").html(result[2]);
+                        $("#update_notice").html(result[3]);
+                        $("#app_update").attr("href", result[4]);
+                        $("#update_ignore").attr("onclick", "update_ignore(" + result[2] + ")");
+                           
+                    }   
                     break;
                 case -1:
                 case -2:
@@ -112,24 +129,10 @@ function MobileSend(api, data){
     ws.send('{"type":"mobile","api":"' + base_url + api +'","data":' + data + '}'); 
 }
 
-
-//获取活动列表
-//STEP1:检测是否存在数据库，如没有则拉取数据后创建
-//STEP2:读取网络状态，如断网情况下则仅读取数据库.如已联网，则从最大记录开始往里加入数据
-//STEP3:读取活动修改列表
-//STEP4:读取活动删除列表
-var act_list_current_page = 0;
-var act_list_page_step = 10;
-
-function GetActivityList(user_key, act_list_current_page, act_list_page_step){
-    data = new Array();
-    data['api'] = "act_list/MobileGetActList/"    
-    data['data'] = new Array();
-    data['data']['page'] = act_list_current_page;
-    data['data']['limit'] = act_list_page_step;
-    MobileSend(data);
+//忽略此版本
+function update_ignore(version){
+    $.LS.set("update_ignore", version);
 }
-
 
 /**
  * 初始化iScroll控件

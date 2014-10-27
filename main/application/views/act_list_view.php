@@ -206,7 +206,13 @@ function list_draw(data, max_act_id, insert_position){
                 $("#act_list").prepend("<tr data-toggle=\"modal\" data-target=\"#act_info\" onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\">");
                 break;
         }
-        $("#" + item['act_id']).append("<td>" + item['activity_type_name'] + "</td>");
+        //检测是否过期
+        if (datetime_to_unix(item['act_end']) <= $.now()){
+            $("#" + item['act_id']).append("<td><span class=\"label label-default\">过期</span>" + item['activity_type_name'] + "</td>");
+        } else {
+            $("#" + item['act_id']).append("<td>" + item['activity_type_name'] + "</td>");
+        }
+        
         $("#" + item['act_id']).append("<td>" + item['act_name'] + "</td>");
         if ("0" == item['act_global']){
             $("#" + item['act_id']).append("<td>" + item['section_name'] + "</td>");
@@ -216,6 +222,8 @@ function list_draw(data, max_act_id, insert_position){
         $("#" + item['act_id']).append("<td>" + item['act_start'] + "</td>");
         $("#" + item['act_id']).append("<td>" + item['act_end'] + "</td>");
         $("#" + item['act_id']).append("</tr>");  
+        
+        
     });
     return max_act_id;
 }
@@ -254,6 +262,20 @@ function info_draw(data){
     $("#act_update").attr("onclick", "act_deal(" + data['act_id'] + ", 'update')");
     $("#act_propagator").attr("onclick", "act_deal(" + data['act_id'] + ", 'propagator')");
     $("#act_dele").attr("onclick", "act_deal(" + data['act_id'] + ", 'dele')");
+}
+
+//date("Y-m-d H:i:s")转时间戳
+function datetime_to_unix(datetime){
+    var tmp_datetime = datetime.replace(/:/g,'-');
+    tmp_datetime = tmp_datetime.replace(/ /g,'-');
+    var arr = tmp_datetime.split("-");
+    var now = new Date(Date.UTC(arr[0],arr[1]-1,arr[2],arr[3]-8,arr[4],arr[5]));
+    return parseInt(now.getTime());
+}
+//时间戳/1000转date("Y-m-d H:i:s")
+function unix_to_datetime(unix) {
+    var now = new Date(parseInt(unix) * 1000);
+    return now.toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
 }
 </script>
 </html>

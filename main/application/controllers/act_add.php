@@ -155,8 +155,8 @@ class Act_add extends CI_Controller{
             $data['activity']['act_warn'] = $this->input->post('act_warn', TRUE);
         }        
         
-        if (!$this->input->post('act_start', TRUE) || (time() < $this->secure->CheckDateTime($this->input->post('act_start', TRUE)))){
-            $this->data->Out('iframe', $this->input->post('src', TRUE), 7, '活动开始时间不能大于当前时间，请尝试把输入法关闭', 'act_start');
+        if (!$this->input->post('act_start', TRUE) || (!$this->secure->CheckDateTime($this->input->post('act_start', TRUE)))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 7, '活动开始时间格式不合法，请尝试把输入法关闭', 'act_start');
         }        
         $data['activity']['act_start'] = $this->input->post('act_start', TRUE);
         

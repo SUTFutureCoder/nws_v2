@@ -114,8 +114,8 @@ class Act_list extends CI_Controller{
             $this->data->Out('iframe', $this->input->post('src', TRUE), 2, '用户无权限');
         }
         
-        //初始化列表，从1开始拉取到10.无需再次设计函数        
-        $data = $this->act_model->GetActList(0, 10);
+        //初始化列表，从1开始拉取到20.无需再次设计函数        
+        $data = $this->act_model->GetActList(0, 20);
         $this->data->Out('iframe', $this->input->post('src', TRUE), 1, 'GetActGlobeInit', $data);
     }
     
@@ -206,12 +206,8 @@ class Act_list extends CI_Controller{
             $this->data->Out('iframe', $this->input->post('src', TRUE), -3, '先前最大的活动id不合法');
         }        
         
-        //初始化列表，从1开始拉取到10.无需再次设计函数
-        $data = $this->act_model->GetActList(0, 10, $this->input->post('max_act_id', TRUE));
+        $data = $this->act_model->GetActList(0, 1000, $this->input->post('max_act_id', TRUE));
         $this->data->Out('iframe', $this->input->post('src', TRUE), 1, 'RedrawActList', $data);
     }
-    
-    
-    
     
 }

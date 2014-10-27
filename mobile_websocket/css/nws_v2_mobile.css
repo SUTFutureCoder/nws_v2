@@ -23,5 +23,15 @@
 	margin-bottom: -5px;
 }
 
+#app_update{
+    background-color: #38c;border-color: #38c;color: #fff;text-shadow: 0 1px 0 #059;
+}
+
+#update_exit{
+    color: #fff;background-color: #c9302c;border-color: #ac2925;text-shadow: 0 1px 0 #08b;
+}
+
+
+
 
 

@@ -40,6 +40,7 @@ class Mobile_basic extends CI_Controller{
     public function CheckUpdate(){
         $this->load->library('basic');
         $this->load->library('data');
+        $this->load->model('mobile_model');
         if ($this->basic->app_key != $this->input->post('app_key', TRUE)){
             $this->data->Out('update', -2, '密钥错误');
         }
@@ -48,8 +49,10 @@ class Mobile_basic extends CI_Controller{
             $this->data->Out('update', -1, '版本号类型错误');
         }
         
-        if ($this->basic->mobile_version > $this->input->post('version', TRUE)){
-            $this->data->Out('update', 1, $this->basic->mobile_version, $this->basic->mobile_download);
+        $update_message = array();
+        $update_message = $this->mobile_model->CheckUpdate($this->input->post('version', TRUE));
+        if ($update_message[0]){
+            $this->data->Out('update', 1, $update_message[0]['mobile_version_build'], nl2br($update_message[0]['mobile_version_notice']), base_url('app/nws.apk'));
         }else {
             $this->data->Out('update', 0);
         }

@@ -124,6 +124,34 @@ class Secure{
         }
         return $encrypted_user_id;
     }    
+        
+    /**    
+     *  @Purpose:    
+     *  检验传入的【移动端】用户密钥是否合法或过期   
+     *  @Method Name:
+     *  CheckMobileUserKey($encrypted_key) 
+     *  @Parameter: 
+     *  $encrypted_key 用户密钥
+     *  @Return: 
+     *  0|已过期或是非法的用户密钥
+     *  $user_id|用户账户
+    */ 
+    public function CheckMobileUserKey($encrypted_key){
+        //在自定义类库中初始化CI资源
+        $CI =& get_instance();       
+        $CI->load->library('encrypt');
+        $CI->load->library('basic');
+        $encrypted_time = substr($CI->encrypt->decode($encrypted_key), 0, strlen(time()));
+        //过期的密钥
+        if (time() - $encrypted_time >= $CI->basic->mobile_user_key_life){
+            return 0;
+        }
+        $encrypted_user_id = substr($CI->encrypt->decode($encrypted_key), strlen(time()));
+        if (!ctype_digit($encrypted_user_id)){
+            return 0;
+        }
+        return $encrypted_user_id;
+    }    
     
     /**    
      *  @Purpose:    

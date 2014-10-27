@@ -50,10 +50,17 @@ class Test extends CI_Controller{
         header("Content-type:text/html;charset=utf-8");
         var_dump($this->act_model->GetActList(0, 1, 43));
     }
+    
     public function TestGetActInfo(){
         $this->load->model('act_model');
         header("Content-type:text/html;charset=utf-8");
         var_dump($this->act_model->GetActInfo(15));
+    }
+    
+    public function TestMobileUpdate(){
+        $this->load->model('mobile_model');
+        header("Content-type:text/html;charset=utf-8");
+        var_dump($this->mobile_model->CheckUpdate(2.00001));
     }
     
     public function OJ_test(){
