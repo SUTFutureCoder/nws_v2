@@ -40,7 +40,6 @@ class Mobile_basic extends CI_Controller{
     public function CheckUpdate(){
         $this->load->library('basic');
         $this->load->library('data');
-
         if ($this->basic->app_key != $this->input->post('app_key', TRUE)){
             $this->data->Out('update', -2, '密钥错误');
         }
@@ -50,9 +49,9 @@ class Mobile_basic extends CI_Controller{
         }
         
         if ($this->basic->mobile_version > $this->input->post('version', TRUE)){
-            $this->data->Out('update', 1, $this->basic->mobile_download)
+            $this->data->Out('update', 1, $this->basic->mobile_version, $this->basic->mobile_download);
         }else {
-            $this->data->Out('update', 0)
+            $this->data->Out('update', 0);
         }
     }
     

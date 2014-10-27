@@ -27,7 +27,7 @@ class Basic
     public $user_key_life = 43200;
     
     //移动端版本号，用于检查更新
-    public $mobile_version = 2.0;
+    public $mobile_version = 2.1;
     
     //最新版下载位置
     public $mobile_download = '';

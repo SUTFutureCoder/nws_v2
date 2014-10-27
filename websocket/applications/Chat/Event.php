@@ -183,8 +183,7 @@ class Event
                 $new_message = self::getApiData($url, $data, $key);                 
                 return Gateway::sendToUid($uid, WebSocket::encode($new_message));
                 
-            case 'iframe':
-            case 'mobile':
+            case 'iframe':            
                 $url = $message_data['api'];
                 $data = $message_data['data'];
                 $data['src'] = $message_data['src'];
@@ -224,8 +223,14 @@ class Event
 //                var_dump(self::getGroupUserList());
                 return Gateway::sendToUid($uid, WebSocket::encode(json_encode($ping)));
                 
-            
-                
+            case 'mobile':
+                $url = $message_data['api'];
+                $data = $message_data['data'];
+                $message_data['key'] ? $key = $message_data['key'] : $key = null;
+                $new_message = self::getApiData($url, $data, $key);
+                //选择器索引放入result[2]
+//                $new_message[2] = $message_data['src'];
+                return Gateway::sendToUid($uid, WebSocket::encode($new_message));
         }
    }
    

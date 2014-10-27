@@ -1,9 +1,9 @@
 var server_ip = "127.0.0.1";
-var base_url = "http://" + server_ip + "/nws_v2/index.php/";
+var base_url = "http://" + server_ip + "/nws_v2/main/index.php/";
 var websocket = "ws://" + server_ip + ":8080/";
-var user_key = "ALLHAILNWS!";
-var app_key = "SUTNWS";
-var version = 2.0;
+var user_key = "";
+var app_key = "ALLHAILNWS!";
+var version = 2.01;
 var version_string = "alpha";
 //判断是否联网，如未联网则调用本地存储
 var online = 0;
@@ -33,7 +33,9 @@ ws.onopen = function() {
         //先开放游客登录
     }
 //    setInterval("getping()",1000);
-    ws.send(JSON.stringify({"type":"login","name":"guest","group":"mobile"}));
+    
+    data = '{"app_key" : "' + app_key + '", "version" : "' + version + '"}';
+    MobileSend('mobile_basic/CheckUpdate', data);
 };
 
 //测试连接
@@ -45,7 +47,6 @@ ws.onopen = function() {
 
 // 当有消息时根据消息类型显示不同信息
 ws.onmessage = function(e) {  
-    console.log(e.data);
     var result = JSON.parse(e.data);  
     console.log(result);
     if (result[0] != 'p')
@@ -71,6 +72,18 @@ ws.onmessage = function(e) {
             //对于手机端则result[1]为函数名称
             eval(result[1] + "(" + result + ")");
             break;
+            
+        case "update":
+            switch (result[1]){
+                case 1:
+                    alert('发现新版本！版本号：' + result[2] + '下载地址：' + result[3]);
+                    break;
+                case -1:
+                case -2:
+                    alert(result[2]);
+                    break;
+            }  
+            break;
     }
 };
 
@@ -95,8 +108,8 @@ ws.onerror = function() {
 };  
 
 //统一发送接口
-function MobileSend(data){
-    ws.send('{"type":"mobile","api":"' + base_url + data['api'] +'","data":' + data['data'] + '}'); 
+function MobileSend(api, data){
+    ws.send('{"type":"mobile","api":"' + base_url + api +'","data":' + data + '}'); 
 }
 
 
