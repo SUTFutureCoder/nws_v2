@@ -123,16 +123,22 @@ function MotherResultRec(data){
             $.LS.set("act_info_" + data[4]['act_id'], JSON.stringify(data[4]));
             break;
             
-        case 'RedrawActList':
-        case 'B_ActListInsert':
+        case 'RedrawActList':        
             //活动的更新、删除
             if (data[4]){
-                console.log("////////////");
-                console.log(data[4]);
-                console.log("////////////");
                 var max_act_id = list_draw(data[4], $.LS.get("max_act_id"), 'prepend');      
                 $.LS.set("act_list", JSON.stringify(data[4].concat(JSON.parse($.LS.get("act_list")))));
                 $.LS.set("max_act_id", max_act_id);     
+            }  
+            break;
+        //如果和RedrawActList放置一起时，如果打开多个实例则会出现同一份数据同步到localstorage两次，最后导致数据并排显示
+        case 'B_ActListInsert':
+            //WS的数据肯定是一条
+            if (data[4]){
+                //暂时冻结
+//                var max_act_id = list_draw(data[4], $.LS.get("max_act_id"), 'prepend');
+//                $.LS.set("act_list", JSON.stringify(data[4].concat(JSON.parse($.LS.get("act_list")))));
+//                $.LS.set("max_act_id", max_act_id);     
             }  
             break;
     }

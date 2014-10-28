@@ -49,37 +49,45 @@ class Act_list extends CI_Controller{
      *  @Method Name:
      *  MobileGetActList()    
      *  @Parameter: 
-     *  POST array(
-     *      'user_key' 用户识别码
-     *      array data_data(
-     *          array(
-     *              
-     *          )
-     *      )
-     *  )   
+     *  POST user_key 用户密钥
+     *  POST user_id  用户id
+     *  POST current  起点id
+     *  POST limit    偏移量    
      *  @Return: 
      *  状态码|状态
-     *      0|密钥无法通过安检
-     *      1|添加成功
-     *      2|活动名称不可为空或超过198个字符
-     *      3|活动类型不存在或超过48个字符
-     *      4|部门名称不存在或超过28个字符
-     *      5|活动描述不可为空或超过998个字符
-     *      6|活动注意事项超过998个字符
-     *      7|活动开始时间不合法，请尝试把输入法关闭
-     *      8|活动结束时间不合法，请尝试把输入法关闭
-     *      9|需要资金格式为小于10位的整数
-     *      10|活动地点不能超过198个字符
-     *      11|加入人数限制必须为小于10位的数字
-     *      12|添加失败
-     *      13|用户无权限
-     *      14|用户无添加其他部门活动的权限
-     *      15|内部活动传值错误
-     *      
+     *      -1|密钥无法通过安检
+     *      -2|起点id格式错误
+     *      -3|偏移量格式错误
+     * 
      * 
     */
     public function MobileGetActList(){
+        $this->load->library('secure');  
+        $this->load->library('data');
+        $this->load->library('authorizee');
+        $this->load->model('act_model');
         
+        $data = array();
+        if (!ctype_digit($this->input->post('current', TRUE))){
+            $this->data->Out('notice', -2, '起点id格式错误');
+        }
+        
+        if (!ctype_digit($this->input->post('limit', TRUE))){
+            $this->data->Out('notice', -3, '偏移量格式错误');
+        }
+        
+        if (!$this->input->post('user_id', TRUE) && $this->input->post('user_key', TRUE)){
+            //游客
+            $data = $this->act_model->GetActList($this->input->post('current', TRUE), $this->input->post('limit', TRUE), NULL, 1);
+        } else {
+            //社员
+            if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+                $this->data->Out('iframe', -1, '密钥无法通过安检');
+            }
+            
+            $data = $this->act_model->GetActList($this->input->post('current', TRUE), $this->input->post('limit', TRUE), NULL, 0);
+        }
+        $this->data->Out('GetActList', 1, $data);
     }
     
     /**    

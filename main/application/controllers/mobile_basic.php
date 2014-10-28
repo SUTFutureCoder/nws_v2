@@ -42,11 +42,11 @@ class Mobile_basic extends CI_Controller{
         $this->load->library('data');
         $this->load->model('mobile_model');
         if ($this->basic->app_key != $this->input->post('app_key', TRUE)){
-            $this->data->Out('update', -2, '密钥错误');
+            $this->data->Out('notice', -2, '密钥错误');
         }
         
         if (!is_numeric($this->input->post('version', TRUE))){
-            $this->data->Out('update', -1, '版本号类型错误');
+            $this->data->Out('notice', -1, '版本号类型错误');
         }
         
         $update_message = array();

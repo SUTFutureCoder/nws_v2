@@ -1,6 +1,7 @@
 var server_ip = "127.0.0.1";
 var base_url = "http://" + server_ip + "/nws_v2/main/index.php/";
 var websocket = "ws://" + server_ip + ":8080/";
+var user_id = 0;
 if (!$.LS.get("user_key")){
     var user_key = 0;
 } else {    
@@ -92,14 +93,13 @@ ws.onmessage = function(e) {
                         $("#update_notice").html(result[3]);
                         $("#app_update").attr("href", result[4]);
                         $("#update_ignore").attr("onclick", "update_ignore(" + result[2] + ")");
-                           
                     }   
-                    break;
-                case -1:
-                case -2:
-                    alert(result[2]);
-                    break;
+                    break;                
             }  
+            break;
+            
+        case 'notice':
+            
             break;
     }
 };
