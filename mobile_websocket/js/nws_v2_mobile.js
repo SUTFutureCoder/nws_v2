@@ -8,6 +8,7 @@ if (!$.LS.get("user_key")){
     var user_key = $.LS.get("user_key");
 }
 
+
 //if ('undefined' == user_key){
 //    alert("a");
 //}
@@ -82,7 +83,8 @@ ws.onmessage = function(e) {
             eval(result[1] + "(" + result + ")");
             break;
             
-        case "update":
+        case "update":       
+            
             switch (result[1]){
                 case 1:
                     if ($.LS.get("update_ignore") != result[2]){
@@ -92,14 +94,14 @@ ws.onmessage = function(e) {
                         $("#update_version").html(result[2]);
                         $("#update_notice").html(result[3]);
                         $("#app_update").attr("href", result[4]);
-                        $("#update_ignore").attr("onclick", "update_ignore(" + result[2] + ")");
-                    }   
+                        $("#update_ignore").attr("onclick", "UpdateIgnore(" + result[2] + ")");
+                    }                      
                     break;                
             }  
             break;
             
         case 'notice':
-            
+            MessagePop(result[2], 2000, '');
             break;
     }
 };
@@ -130,8 +132,36 @@ function MobileSend(api, data){
 }
 
 //忽略此版本
-function update_ignore(version){
+function UpdateIgnore(version){
     $.LS.set("update_ignore", version);
+}
+
+/* @Purpose: 
+ * 即时消息提示
+ * 
+ * @Method Name:
+ * 
+ * 
+ * @Parameter: 
+ * data 数据
+ * delay 持续时间
+ * html  html代码字符串
+ * :NOTICE: html将会覆盖data
+ */
+
+function MessagePop(data, delay, html){
+    setTimeout(function(){  
+        $.mobile.loading('show', {
+            text: data,
+            textVisible: true,
+            theme:'b',
+            textonly: true,
+            html: html                        
+        });  
+    },1); 
+    setTimeout(function(){
+         $.mobile.loading('hide');
+    }, delay);
 }
 
 /**
