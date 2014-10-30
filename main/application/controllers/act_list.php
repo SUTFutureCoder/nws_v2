@@ -90,6 +90,58 @@ class Act_list extends CI_Controller{
         $this->data->Out('GetActList', 1, $data);
     }
     
+    
+    /**    
+     *  @Purpose:    
+     *  移动端初始化活动列表查询
+     *  
+     *  @Method Name:
+     *  MobileGetActListInit()    
+     *  @Parameter: 
+     *  POST array(
+     *      'user_key' 用户识别码【可选】
+     *      'user_id'  用户id【可选】
+     *      'limit'     偏移量
+     *      )
+     *  )   
+     *  @Return: 
+     *  状态码|状态
+     *      -1|密钥无法通过安检
+     *      -2|用户无权限
+     *      -3|偏移量错误
+     *      1|array $data = array ();
+     * 
+    */
+    public function MobileGetActListInit(){
+        $this->load->library('secure');  
+        $this->load->library('data');
+        $this->load->library('authorizee');
+        $this->load->model('act_model');
+        
+        if (!ctype_digit($this->input->post('limit', TRUE))){
+            $this->data->Out('notice', -3, '偏移量格式错误');
+        }
+        
+        if ($this->input->post('user_id', TRUE) && $this->input->post('user_key', TRUE)){
+            if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+                $this->data->Out('iframe', -1, '密钥无法通过安检');
+            }
+
+            if (!$this->authorizee->CheckAuthorizee('act_global_list', $this->input->post('user_id', TRUE))){
+                $this->data->Out('iframe', -2, '用户无权限');
+            }
+        } else {
+            $data = $this->act_model->GetActList(0, $this->input->post('limit', TRUE), NULL, 1);
+        }
+        
+        
+        
+        
+        
+        $this->data->Out('GetActListInit', $data);
+    }
+    
+    
     /**    
      *  @Purpose:    
      *  初始化活动列表查询

@@ -136,9 +136,9 @@ function MotherResultRec(data){
             //WS的数据肯定是一条
             if (data[4]){
                 //暂时冻结
-//                var max_act_id = list_draw(data[4], $.LS.get("max_act_id"), 'prepend');
-//                $.LS.set("act_list", JSON.stringify(data[4].concat(JSON.parse($.LS.get("act_list")))));
-//                $.LS.set("max_act_id", max_act_id);     
+                var max_act_id = list_draw(data[4], $.LS.get("max_act_id"), 'prepend');
+                $.LS.set("act_list", JSON.stringify(data[4].concat(JSON.parse($.LS.get("act_list")))));
+                $.LS.set("max_act_id", max_act_id);     
             }  
             break;
     }
@@ -192,16 +192,25 @@ function act_deal(act_id, method){
     parent.IframeSend(data);
 }
 
+var current_act_id = 0;
 //遍历数组绘制活动列表
 //@para
 //data 要遍历绘制的数组
 //max_act_id 当前最大的活动id值
 //insert_position 如有更新的插入位置（append/prepend）
-function list_draw(data, max_act_id, insert_position){    
+function list_draw(data, max_act_id, insert_position){ 
+    
     $.each(data, function(i, item){
         if (item['act_id'] * 1 > max_act_id){
             max_act_id = item['act_id'] * 1;
-        } 
+        }
+        
+        //防止重绘多绘错误
+        if (current_act_id == item['act_id']){
+            console.log(current_act_id);
+            console.log(item['act_id']);
+            return true;
+        }
         
         switch (insert_position){
             case "append":
@@ -228,7 +237,7 @@ function list_draw(data, max_act_id, insert_position){
         $("#" + item['act_id']).append("<td>" + item['act_start'] + "</td>");
         $("#" + item['act_id']).append("<td>" + item['act_end'] + "</td>");
         $("#" + item['act_id']).append("</tr>");  
-        
+        current_act_id = item['act_id'];
         
     });
     return max_act_id;
