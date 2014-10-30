@@ -193,6 +193,7 @@ function act_deal(act_id, method){
 }
 
 var current_act_id = 0;
+
 //遍历数组绘制活动列表
 //@para
 //data 要遍历绘制的数组

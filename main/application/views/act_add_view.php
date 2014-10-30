@@ -152,7 +152,7 @@
                 var B_data = new Array();
                 B_data['src'] = '/act_list';
                 B_data['api'] = location.href + '/B_ActListInsert';
-                B_data['group'] = "desktop";
+                B_data['group'] = "desktop|mobile";
                 B_data['data'] = '{"user_key" : "<?= $user_key ?>", "user_id" : "<?= $user_id ?>"';
                 B_data['data'] += ', "act_id" : "' + data[4] + '"}';
                 parent.IframeSend(B_data, 'group');

@@ -57,6 +57,7 @@ ws.onopen = function() {
 
 // 当有消息时根据消息类型显示不同信息
 ws.onmessage = function(e) {  
+    console.log(e);
     var result = JSON.parse(e.data);  
     console.log(result);    
     switch (result[0])
@@ -88,17 +89,21 @@ ws.onmessage = function(e) {
                 $.LS.set("max_act_id", max_act_id);     
             }  
             break;
-        //如果和RedrawActList放置一起时，如果打开多个实例则会出现同一份数据同步到localstorage两次，最后导致数据并排显示
-        case 'B_ActListInsert':
-            //WS的数据肯定是一条
-            if (result[4]){
-                //暂时冻结
-//                var max_act_id = list_draw(data[4], $.LS.get("max_act_id"), 'prepend');
-//                $.LS.set("act_list", JSON.stringify(data[4].concat(JSON.parse($.LS.get("act_list")))));
-//                $.LS.set("max_act_id", max_act_id);     
-            }  
-            break;   
             
+        //如果和RedrawActList放置一起时，如果打开多个实例则会出现同一份数据同步到localstorage两次，最后导致数据并排显示
+        case 'group':
+            switch (result[3]){
+                case 'B_ActListInsert':
+                    //WS的数据肯定是一条
+                    if (result[4]){
+                        var max_act_id = list_draw(result[4], $.LS.get("max_act_id"), 'prepend');
+                        $.LS.set("act_list", JSON.stringify(result[4].concat(JSON.parse($.LS.get("act_list")))));
+                        $.LS.set("max_act_id", max_act_id);
+                    }  
+                    break; 
+            }
+            break;
+        
         case "update": 
             switch (result[1]){
                 case 1:
@@ -118,10 +123,7 @@ ws.onmessage = function(e) {
         case 'notice':
             MessagePop(result[2], 2000, 'b', '');
             break;
-            
-        case 'GetActList':
-            
-            break;
+
     }
 };
 

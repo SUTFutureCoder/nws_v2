@@ -1114,15 +1114,7 @@ generatedCount = 0;
  * myScroll.refresh();		// 数据加载完成后，调用界面更新方法
  */
 function pullDownAction () {
-            var el, li, i;
-            el = document.getElementById('thelist');
-
-            for (i=0; i<3; i++) {
-                    li = document.createElement('li');
-                    li.innerText = 'Generated row ' + (++generatedCount);
-                    el.insertBefore(li, el.childNodes[0]);
-            }
-
+            GetActivityList(user_key, user_id, 0, 1000);
             myScroll.refresh();		//数据加载完成后，调用界面更新方法   Remember to refresh when contents are loaded (ie: on ajax completion)
 }
 

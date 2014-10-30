@@ -42,42 +42,57 @@ function GetActivityList(user_key, user_id, act_list_current_num, act_list_page_
         var data = new Array();
         if (user_key && user_id){
         //为登录用户时
-            data = '{"user_key" : "' + user_key + '", "user_id" : "' + user_id + '", "current" : "' + act_list_current_num + '", "limit" : "' + act_list_page_step + '", "max_act_id" : "' + max_act_id + '"}';
+            data = '{"user_key" : "' + user_key + '", "user_id" : "' + user_id + '", "current" : "' + act_list_current_num + '", "limit" : "' + act_list_page_step + '", "standard_id" : "' + max_act_id + '"}';
         }else {
-            data = '{"current" : "' + act_list_current_num + '", "limit" : "' + act_list_page_step + '", "max_act_id" : "' + max_act_id + '"}';
+            data = '{"current" : "' + act_list_current_num + '", "limit" : "' + act_list_page_step + '", "standard_id" : "' + max_act_id + '"}';
         }
-        MobileSend('act_list/MobileRedrawActList', data);
+        MobileSend('act_list/MobileGetActList', data);
         list_draw(act_list, max_act_id, 'append');
     }   
 }
 
-
-
+var current_act_id = 0;
+//遍历数组绘制活动列表
+//@param
+//data 要遍历绘制的数组
+//max_act_id 当前最大的活动id值
+//insert_position 如有更新的插入位置（append/prepend）
 function list_draw(data, max_act_id, insert_position){    
     $.each(data, function(i, item){
+        if ($("#" + item['act_id']).length){
+            return true;
+        }
+        
         if (item['act_id'] * 1 > max_act_id){            
             max_act_id = item['act_id'] * 1;
         } 
         
+        //防止重绘多绘错误
+        if (current_act_id == item['act_id']){
+            console.log(current_act_id);
+            console.log(item['act_id']);
+            return true;
+        }
+        
         switch (insert_position){
             case "append":
-                $("#act_list").append("<tr data-toggle=\"modal\" data-target=\"#act_info\" onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\">");
+                $("#guest_act_list").append("<li onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\"></li>");
                 break;
 
             case "prepend":
-                $("#act_list").prepend("<tr data-toggle=\"modal\" data-target=\"#act_info\" onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\">");
+                $("#guest_act_list").prepend("<li onclick=\"GetActInfo(" + item['act_id'] + ", '" + item['act_name'] + "')\" id=\"" + item['act_id'] + "\"></li>");
                 break;
         }
-        $("#" + item['act_id']).append("<td>" + item['activity_type_name'] + "</td>");
-        $("#" + item['act_id']).append("<td>" + item['act_name'] + "</td>");
+        
+        var act_list_temp = "<a class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><h1>" + item['act_name'] + "</h1>";
         if ("0" == item['act_global']){
-            $("#" + item['act_id']).append("<td>" + item['section_name'] + "</td>");
+            act_list_temp += "<p><strong>部门限制：" + item['section_name'] + "</strong></p>";
         } else {
-            $("#" + item['act_id']).append("<td>无限制</td>");
-        }
-        $("#" + item['act_id']).append("<td>" + item['act_start'] + "</td>");
-        $("#" + item['act_id']).append("<td>" + item['act_end'] + "</td>");
-        $("#" + item['act_id']).append("</tr>");  
+            act_list_temp += "<p><strong>部门限制：无限制</strong></p>";
+        }        
+        act_list_temp += "<p class=\"ui-li-aside\"><strong>" + item['act_start'] + "至" + item['act_end'] + "</strong></p></a>";
+        
+        $("#" + item['act_id']).append(act_list_temp);  
     });
     return max_act_id;
 }

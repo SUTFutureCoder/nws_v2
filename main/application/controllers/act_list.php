@@ -51,14 +51,22 @@ class Act_list extends CI_Controller{
      *  @Parameter: 
      *  POST user_key 用户密钥
      *  POST user_id  用户id
-     *  POST current  起点id
-     *  POST limit    偏移量    
+     *  POST current  查询分页起始位置
+     *  POST limit    偏移量
+     *  POST standard_id 基准活动id
+     *  POST up 查询方向
+     *     
      *  @Return: 
      *  状态码|状态
+     *      $data
      *      -1|密钥无法通过安检
      *      -2|起点id格式错误
      *      -3|偏移量格式错误
+     *      -4|基准活动id值格式错误
+     *      -5|获取数据方向错误
      * 
+     * :NOTICE:当起点id为0的时候，则从最大活动id开始向上获取数据。:NOTICE:
+     * :NOTICE:当最大活动id为0的时候，则从起点id开始向下获取数据。:NOTICE:
      * 
     */
     public function MobileGetActList(){
@@ -76,18 +84,21 @@ class Act_list extends CI_Controller{
             $this->data->Out('notice', -3, '偏移量格式错误');
         }
         
+        if (!ctype_digit($this->input->post('standard_id', TRUE))){
+            $this->data->Out('notice', -4, '基准活动id值格式错误');
+        }
+        
         if (!$this->input->post('user_id', TRUE) && $this->input->post('user_key', TRUE)){
             //游客
-            $data = $this->act_model->GetActList($this->input->post('current', TRUE), $this->input->post('limit', TRUE), NULL, 1);
+            $data = $this->act_model->GetActList($this->input->post('current', TRUE), $this->input->post('limit', TRUE), $this->input->post('standard_id', TRUE), 1);
         } else {
             //社员
             if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
                 $this->data->Out('iframe', -1, '密钥无法通过安检');
-            }
-            
-            $data = $this->act_model->GetActList($this->input->post('current', TRUE), $this->input->post('limit', TRUE), NULL, 0);
+            }            
+            $data = $this->act_model->GetActList($this->input->post('current', TRUE), $this->input->post('limit', TRUE), $this->input->post('standard_id', TRUE), 0);
         }
-        $this->data->Out('GetActList', 1, $data);
+        $this->data->Out('RedrawActList', $data);
     }
     
     
