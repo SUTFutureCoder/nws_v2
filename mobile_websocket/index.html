@@ -54,7 +54,7 @@
                             <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
                     </div>
             </div>
-            </div>
+            </div>            
             <div data-role="footer" data-position="fixed" data-tap-toggle ="false">
                 <div data-role="navbar">
                     <ul>
@@ -63,9 +63,50 @@
                     <li><a href="#" data-icon="grid">更多</a></li>			
                     </ul>			
                 </div>
+            </div>            
+        </div>    
+        
+        <div data-role="page" id="act_info_page">
+            <div data-role="header" data-position="fixed" data-tap-toggle ="false">
+                <a href="#" data-icon="back" class="ui-btn-left">返回</a>
+                <h1>活动详情</h1>                
             </div>
-            
-        </div>        
+            <div data-role="content">   
+            <ul data-role="listview" data-inset="true" data-divider-theme="b" >
+                <li data-role="list-divider">活动编号：<a id="act_id"></a></li>
+                <li data-role="list-divider">活动名称：</li>
+                <li data-icon="false"><a id="act_name" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">发起部门：</li>
+                <li data-icon="false"><a id="act_section" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">发起人：</li>
+                <li data-icon="false"><a id="act_s_name" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider" >联系方式：<a id="act_telephonetitle"></a></li>
+
+                <li data-icon="false" id="act_telephone"></li>
+                <li data-role="list-divider">针对部门：</li>
+                <li data-icon="false"><a id="act_section_only" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">活动内容：</li>
+                <li data-icon="false"><a id="act_content" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">活动注意事项：</li>
+                <li data-icon="false"><a id="act_warn" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">活动开始时间：</li>
+                <li data-icon="false"><a id="act_start" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">活动结束时间：</li>
+                <li data-icon="false"><a id="act_end" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">活动需要费用：</li>
+                <li data-icon="false"><a id="act_money" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">活动地点：</li>
+                <li data-icon="false"><a id="act_position" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">活动发布时间：</li>
+                <li data-icon="false"><a id="act_regtime" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">活动人数限制：</li>
+                <li data-icon="false"><a id="act_member_sum" style='white-space:pre-wrap;'></a></li>
+                <li data-role="list-divider">当前参加人数：</li>
+                <li data-icon="false"><a id="act_join_num" style='white-space:pre-wrap;'></a></li>    
+            </ul>
+            </div>  
+        </div>
+        
         <div data-role="page" id="update_dialog" >  
             <div role="dialog" class="ui-dialog-contain ui-overlay-shadow ui-corner-all">
 		<div data-role="header"  role="banner" class="ui-header ui-bar-b">

@@ -1,4 +1,5 @@
 var server_ip = "127.0.0.1";
+//var server_ip = "192.168.1.8";
 var base_url = "http://" + server_ip + "/nws_v2/main/index.php/";
 var websocket = "ws://" + server_ip + ":8080/";
 var user_id = 0;
@@ -57,7 +58,6 @@ ws.onopen = function() {
 
 // 当有消息时根据消息类型显示不同信息
 ws.onmessage = function(e) {  
-    console.log(e);
     var result = JSON.parse(e.data);  
     console.log(result);    
     switch (result[0])

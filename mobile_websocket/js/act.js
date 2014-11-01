@@ -26,7 +26,7 @@ $(function(){
 * 
 * 
 */
-function GetActivityList(user_key, user_id, act_list_current_num, act_list_page_step){      
+function GetActivityList(user_key, user_id, act_list_current_num, act_list_page_step){          
     if (!$.LS.get("max_act_id")){
         if (user_key && user_id){
         //为登录用户时
@@ -46,8 +46,8 @@ function GetActivityList(user_key, user_id, act_list_current_num, act_list_page_
         }else {
             data = '{"current" : "' + act_list_current_num + '", "limit" : "' + act_list_page_step + '", "standard_id" : "' + max_act_id + '"}';
         }
-        MobileSend('act_list/MobileGetActList', data);
         list_draw(act_list, max_act_id, 'append');
+        MobileSend('act_list/MobileGetActList', data);
     }   
 }
 
@@ -84,7 +84,7 @@ function list_draw(data, max_act_id, insert_position){
                 break;
         }
         
-        var act_list_temp = "<a class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><h1>" + item['act_name'] + "</h1>";
+        var act_list_temp = "<a href='#act_info_page' class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"><h1>" + item['act_name'] + "</h1>";
         if ("0" == item['act_global']){
             act_list_temp += "<p><strong>部门限制：" + item['section_name'] + "</strong></p>";
         } else {
@@ -96,3 +96,28 @@ function list_draw(data, max_act_id, insert_position){
     });
     return max_act_id;
 }
+
+//获取活动详情
+function GetActInfo(act_id, act_name){
+    $("#myModalLabel").html(act_name);    
+    $(".modal-body").html("<img src='<?= base_url('img/load.gif')?>'>");
+    var data = new Array();
+    if (!$.LS.get("act_info_" + act_id)){
+        data['src'] = location.href.slice((location.href.lastIndexOf("/")));
+        data['api'] = location.href + '/GetActInfo';          
+        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
+        data['data'] += ', "act_id" : "' + act_id + '"}';  
+        parent.IframeSend(data);
+    } else {
+        var act_info = new Array();
+        act_info = JSON.parse($.LS.get("act_info_" + act_id));
+//        var data = new Array();
+//        data['src'] = location.href;
+//        data['api'] = location.href + '/RedrawActList';          
+//        data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
+//        data['data'] += ', "max_act_id" : "' + max_act_id + '"}';  
+//        parent.IframeSend(data);
+        console.log(act_info);
+        info_draw(act_info);
+    }
+}    
