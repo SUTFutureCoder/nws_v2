@@ -149,7 +149,7 @@
             else{
                 $(".btn").attr("value", "正在安装中...请稍后");
                 $(".btn").attr("disabled", "disabled");    
-                ws.send(JSON.stringify({"type":"func","api":location.href+"/index.php/setup/SetupInit","data":{"organ_name":$("#organ_name").val(),"user_number":$("#user_number").val(),
+                ws.send(JSON.stringify({"type":"func","api":location.href+"index.php/setup/SetupInit","data":{"organ_name":$("#organ_name").val(),"user_number":$("#user_number").val(),
                             "user_number_length": $("#user_number_length").val(), "user_password" : $("#user_password").val(),
                             "user_password_confirm" : $("#user_password_confirm").val(), "user_telephone" : $("#user_telephone").val(),
                             "user_name" : $("#user_name").val(),
