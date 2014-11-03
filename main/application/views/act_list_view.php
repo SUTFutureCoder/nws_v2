@@ -74,6 +74,14 @@
         </div>
     </div>
 </div>
+    
+<div class="modal fade bs-example-modal-sm" id="act_dele_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
 </body>
 <script>
 $(function(){
@@ -184,6 +192,10 @@ function act_deal(act_id, method){
             data['api'] = location.href + '/ActPropagator';
             break;
         case "dele":
+            $('#act_dele_modal').modal('show').on('shown',function(){
+                $(".btn-primary").attr('href','Del.asp?id='+id);
+            })
+            
             data['api'] = location.href + '/ActDele';
             break;
     }
