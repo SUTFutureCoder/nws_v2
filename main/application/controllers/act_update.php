@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 /**
  * 
- * 
+ * 用于活动的更新
  * 
  *
  * @copyright  版权所有(C) 2014-2014 沈阳工业大学ACM实验室 沈阳工业大学网络管理中心 *Chen
@@ -20,13 +20,10 @@ class Act_update extends CI_Controller{
     }
     
     public function index(){
-        $this->load->library('basic');
-        $this->load->library('index');
+        $this->load->library('session');
         $this->load->library('data');
-        
-        if (!ctype_alnum($this->input->post('act_id'))){
+        if (!ctype_alnum($this->input->post('user_id', TRUE))){
             
         }
-        
     }
 }
