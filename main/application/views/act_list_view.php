@@ -56,7 +56,7 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                 <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
-            <div class="modal-body">               
+            <div class="modal-body" id="act_info_body">               
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -75,10 +75,19 @@
     </div>
 </div>
     
-<div class="modal fade bs-example-modal-sm" id="act_dele_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="modal fade bs-example-modal-sm" id="act_deal_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      ...
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="act_deal_title"></h4>
+        </div>        
+        <div class="modal-body" id="act_deal_body">            
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>            
+            <button type="button" class="btn btn-danger" id="act_deal_confirm"></button>                
+        </div>
     </div>
   </div>
 </div>
@@ -90,7 +99,7 @@ $(function(){
     if (!$.LS.get("max_act_id")){
         var data = new Array();
         data['src'] = location.href.slice((location.href.lastIndexOf("/")));
-        data['api'] = location.href + '/GetActGlobeListInit';          
+        data['api'] = location.href + '/GetActGlobeListInit';
         data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"}';
         parent.IframeSend(data);
     } else {
@@ -143,19 +152,53 @@ function MotherResultRec(data){
         case 'B_ActListInsert':
             //WS的数据肯定是一条
             if (data[4]){
-                //暂时冻结
                 var max_act_id = list_draw(data[4], $.LS.get("max_act_id"), 'prepend');
                 $.LS.set("act_list", JSON.stringify(data[4].concat(JSON.parse($.LS.get("act_list")))));
                 $.LS.set("max_act_id", max_act_id);     
             }  
             break;
+            
+        case 'B_ActListDele':
+            if (data[4]){
+                $("#" + data[4]).remove();
+                new_list = new Array;
+                old_list = JSON.parse($.LS.get("act_list"));
+                for (var n in old_list){
+                    if (old_list[n].act_id == data[4]){
+                        old_list.splice(n, 1);
+                        break;
+                    }
+                }
+                console.log(old_list);
+                $.LS.set("act_list", JSON.stringify(old_list));
+            }  
+            break;
+            
+        <?php if($authorizee_act_dele): ?>
+        case 'ActDele':
+            //活动删除结果
+            if (data[1]){
+                //列表中即时删除
+                $("#" + data[4]).remove();
+                //清除LS残余项
+                $.LS.removeItem("act_info_" + data[4]);
+                //广播自动删除最新活动                
+                var B_data = new Array();
+                B_data['src'] = '/act_list';
+                B_data['api'] = location.href + '/B_ActListDele';
+                B_data['group'] = "desktop|mobile";
+                B_data['data'] = '{"user_key" : "<?= $user_key ?>", "user_id" : "<?= $user_id ?>"';
+                B_data['data'] += ', "act_id" : "' + data[4] + '"}';
+                parent.IframeSend(B_data, 'group');
+            }
+        <?php endif;?>
     }
 }
 
 //获取活动详情
 function GetActInfo(act_id, act_name){
     $("#myModalLabel").html(act_name);    
-    $(".modal-body").html("<img src='<?= base_url('img/load.gif')?>'>");
+    $("#act_info_body").html("<img src='<?= base_url('img/load.gif')?>'>");
     var data = new Array();
     if (!$.LS.get("act_info_" + act_id)){
         data['src'] = location.href.slice((location.href.lastIndexOf("/")));
@@ -178,30 +221,60 @@ function GetActInfo(act_id, act_name){
 }    
 
 //对于活动的参加、修改、宣传、删除处理
-function act_deal(act_id, method){
-    var data = new Array();
-    data['src'] = location.href.slice((location.href.lastIndexOf("/")));
+//confirm为确认后执行
+function act_deal(act_id, method, confirm){
+    var data = new Array();    
+    data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
     switch (method){
         case "join":
-            data['api'] = location.href + '/ActJoin';
+            if (!confirm){
+                
+            } else {
+                data['api'] = location.href + '/ActJoin';
+            }
+            
             break;
         case "update":
-            data['api'] = location.href + '/ActUpdate';
+            if (!confirm){
+                $('#act_deal_title').html('活动修改');
+                $('#act_deal_body').html("<");
+                $('#act_deal_confirm').html('修改');
+                $('#act_deal_confirm').attr('onclick', "act_deal(" + act_id + ", 'update', 1)")
+                $('#act_deal_modal').modal('show');
+            } else {
+                data['api'] = location.href + '/ActUpdate';
+                data['data'] += ', "user_id" : "<?= $user_id ?>", "user_id" : "<?= $user_id ?>"';  
+            }
+            
             break;
         case "propagator":
-            data['api'] = location.href + '/ActPropagator';
-            break;
-        case "dele":
-            $('#act_dele_modal').modal('show').on('shown',function(){
-                $(".btn-primary").attr('href','Del.asp?id='+id);
-            })
+            if (!confirm){
+                
+            } else {
+                data['api'] = location.href + '/ActPropagator';
+            }
             
-            data['api'] = location.href + '/ActDele';
             break;
+        <?php if($authorizee_act_dele): ?>
+        case "dele":
+            if (!confirm){
+                $('#act_deal_title').html('删除');
+                $('#act_deal_body').html('您正在准备删除' + act_id + '活动');
+                $('#act_deal_confirm').html('删除');
+                $('#act_deal_confirm').attr('onclick', "act_deal(" + act_id + ", 'dele', 1)")
+                $('#act_deal_modal').modal('show');
+            } else {
+                $('.modal').modal('hide')
+                data['api'] = location.href + '/ActDele';
+            }
+            break;
+        <?php endif; ?>
     }
-    data['data'] = '{"user_key" : "<?= $user_key?>", "user_id" : "<?= $user_id ?>"';
-    data['data'] += ', "act_id" : "' + act_id + '"}';  
-    parent.IframeSend(data);
+    if (confirm){
+        data['src'] = location.href.slice((location.href.lastIndexOf("/")));
+        data['data'] += ', "act_id" : "' + act_id + '"}';  
+        parent.IframeSend(data);
+    }
 }
 
 var current_act_id = 0;
@@ -214,14 +287,13 @@ var current_act_id = 0;
 function list_draw(data, max_act_id, insert_position){ 
     
     $.each(data, function(i, item){
+        
         if (item['act_id'] * 1 > max_act_id){
             max_act_id = item['act_id'] * 1;
         }
         
         //防止重绘多绘错误
         if (current_act_id == item['act_id']){
-            console.log(current_act_id);
-            console.log(item['act_id']);
             return true;
         }
         
@@ -258,38 +330,38 @@ function list_draw(data, max_act_id, insert_position){
  
 //绘制面板
 function info_draw(data){
-    $(".modal-body").html("");
-    $(".modal-body").append("<dl class=\"dl-horizontal\"></dl>");
-    $(".modal-body dl").append("<dt><h4><strong>活动内容</strong></h4></dt><dd><h4>" + data['act_content'] + "</h4></dd>");
-    $(".modal-body dl").append("<dt><h4><strong>开展位置</strong></h4></dt><dd><h4>" + data['act_position'] + "</h4></dd>");
-    $(".modal-body dl").append("<dt><h4><strong>开始时间</strong></h4></dt><dd><h4>" + data['act_start'] + "</h4></dd>");
-    $(".modal-body dl").append("<dt><h4><strong>结束时间</strong></h4></dt><dd><h4>" + data['act_end'] + "</h4></dd>");
-    $(".modal-body dl").append("<dt><h4><strong>发起者姓名</strong></h4></dt><dd><h4>" + data['user_name'] + "</h4></dd>");
-    $(".modal-body dl").append("<dt><h4><strong>发起者电话</strong></h4></dt><dd><h4>" + data['user_telephone'] + "</h4></dd>");
-    $(".modal-body dl").append("<dt><h4><strong>发起者QQ</strong></h4></dt><dd><h4><a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=" + data['user_qq'] + "&site=qq&menu=yes\"><img border=\"0\" src=\"http://wpa.qq.com/pa?p=2:" + data['user_qq'] + ":52\">" + data['user_qq'] + "</a></h4></dd>");
+    $("#act_info_body").html("");
+    $("#act_info_body").append("<dl class=\"dl-horizontal\"></dl>");
+    $("#act_info_body dl").append("<dt><h4><strong>活动内容</strong></h4></dt><dd><h4>" + data['act_content'] + "</h4></dd>");
+    $("#act_info_body dl").append("<dt><h4><strong>开展位置</strong></h4></dt><dd><h4>" + data['act_position'] + "</h4></dd>");
+    $("#act_info_body dl").append("<dt><h4><strong>开始时间</strong></h4></dt><dd><h4>" + data['act_start'] + "</h4></dd>");
+    $("#act_info_body dl").append("<dt><h4><strong>结束时间</strong></h4></dt><dd><h4>" + data['act_end'] + "</h4></dd>");
+    $("#act_info_body dl").append("<dt><h4><strong>发起者姓名</strong></h4></dt><dd><h4>" + data['user_name'] + "</h4></dd>");
+    $("#act_info_body dl").append("<dt><h4><strong>发起者电话</strong></h4></dt><dd><h4>" + data['user_telephone'] + "</h4></dd>");
+    $("#act_info_body dl").append("<dt><h4><strong>发起者QQ</strong></h4></dt><dd><h4><a target=\"_blank\" href=\"http://wpa.qq.com/msgrd?v=3&uin=" + data['user_qq'] + "&site=qq&menu=yes\"><img border=\"0\" src=\"http://wpa.qq.com/pa?p=2:" + data['user_qq'] + ":52\">" + data['user_qq'] + "</a></h4></dd>");
     if ("0" != data['act_money']){
-        $(".modal-body dl").append("<dt><h4><strong>需要资金</strong></h4></dt><dd><h4>" + data['act_money'] + "</h4></dd>");
+        $("#act_info_body dl").append("<dt><h4><strong>需要资金</strong></h4></dt><dd><h4>" + data['act_money'] + "</h4></dd>");
     }
     if (data['act_warn']){
-        $(".modal-body dl").append("<dt><h4><strong>注意事项</strong></h4></dt><dd><h4>" + data['act_warn'] + "</h4></dd>");
+        $("#act_info_body dl").append("<dt><h4><strong>注意事项</strong></h4></dt><dd><h4>" + data['act_warn'] + "</h4></dd>");
     }
-    $(".modal-body dl").append("<hr>");
+    $("#act_info_body dl").append("<hr>");
 
     if ("1" == data['act_global']){
-        $(".modal-body dl").append("<center><h4><strong>本活动无部门限制</strong></h4></center>");
+        $("#act_info_body dl").append("<center><h4><strong>本活动无部门限制</strong></h4></center>");
     } else {
-        $(".modal-body dl").append("<center><h4><strong>本活动仅限" + data['section_name'] + "成员参加</strong></h4></center>");
+        $("#act_info_body dl").append("<center><h4><strong>本活动仅限" + data['section_name'] + "成员参加</strong></h4></center>");
     }
 
     if ("1" == data['act_private']){
-        $(".modal-body dl").append("<center><h4><strong>本活动为社团内部活动</strong></h4></center>");
+        $("#act_info_body dl").append("<center><h4><strong>本活动为社团内部活动</strong></h4></center>");
     }
 
     //添加点击事件
-    $("#act_join").attr("onclick", "act_deal(" + data['act_id'] + ", 'join')");
-    $("#act_update").attr("onclick", "act_deal(" + data['act_id'] + ", 'update')");
-    $("#act_propagator").attr("onclick", "act_deal(" + data['act_id'] + ", 'propagator')");
-    $("#act_dele").attr("onclick", "act_deal(" + data['act_id'] + ", 'dele')");
+    $("#act_join").attr("onclick", "act_deal(" + data['act_id'] + ", 'join', 0)");
+    $("#act_update").attr("onclick", "act_deal(" + data['act_id'] + ", 'update', 0)");
+    $("#act_propagator").attr("onclick", "act_deal(" + data['act_id'] + ", 'propagator', 0)");
+    $("#act_dele").attr("onclick", "act_deal(" + data['act_id'] + ", 'dele', 0)");
 }
 
 //date("Y-m-d H:i:s")转时间戳

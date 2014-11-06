@@ -203,12 +203,9 @@ class Act_add extends CI_Controller{
      *  B_ActListInsert()    
      *  @Parameter: 
      *  POST array(
-     *      'user_key' 用户识别码
-     *      array data_data(
-     *          array(
-     *              
-     *          )
-     *      )
+     *      'user_key' 用户识别码,
+     *      'user_id'   用户id,
+     *      'act_id'    活动id
      *  )   
      *  @Return: 
      *  状态码|状态
@@ -216,7 +213,7 @@ class Act_add extends CI_Controller{
      *      
      *      
      * :NOTICE:禁止错误反馈:NOTICE:
-     * :NOTICE:用户要有创建活动的权限:NOTICE:
+     * :NOTICE:用户要有删除活动的权限:NOTICE:
     */
     public function B_ActListInsert(){
         $this->load->library('secure');  

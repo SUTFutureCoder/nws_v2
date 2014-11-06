@@ -280,5 +280,103 @@ class Act_list extends CI_Controller{
         $data = $this->act_model->GetActList(0, 1000, $this->input->post('max_act_id', TRUE));
         $this->data->Out('iframe', $this->input->post('src', TRUE), 1, 'RedrawActList', $data);
     }
+        
+    /**    
+     *  @Purpose:    
+     *  删除活动
+     *  
+     *  @Method Name:
+     *  ActDele()    
+     *  @Parameter: 
+     *  POST array(
+     *      'user_key'  用户识别码
+     *      'user_id'   用户id
+     *      'act_id'    活动id
+     *      )
+     *  @Return: 
+     *  状态码|状态
+     *      -1|密钥无法通过安检
+     *      -2|用户无权限
+     *      -3|活动id不合法
+     *      -4|活动不存在
+     *      1|$act_id
+     *      0|无法再次删除
+     *      
+     *      
+     * 
+    */
+    public function ActDele(){
+        $this->load->library('secure');
+        $this->load->library('data');
+        $this->load->library('authorizee');
+        $this->load->model('act_model');
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -1, '密钥无法通过安检');
+        }
+        
+        if (!$this->authorizee->CheckAuthorizee('act_dele', $this->input->post('user_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -2, '用户无权限');
+        }
+        
+        if (!ctype_digit($this->input->post('act_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -3, '活动id不合法');
+        }        
+        
+        if ($this->act_model->CheckIdExist($this->input->post('act_id', TRUE))){
+            if ($this->act_model->ActDele($this->input->post('act_id', TRUE))){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), 1, 'ActDele', $this->input->post('act_id', TRUE));
+            } else {
+                $this->data->Out('iframe', $this->input->post('src', TRUE), 0, 'ActDele', '无法再次删除');
+            }
+        } else {
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -4, '活动id不存在');
+        }
+    }
+    
+    /**    
+     *  @Purpose:    
+     *  广播_实时活动删除
+     *  
+     *  @Method Name:
+     *  B_ActListDele()    
+     *  @Parameter: 
+     *  POST array(
+     *      'user_key' 用户识别码
+     *      'user_id'   用户id
+     *      'act_id'    活动id
+     *  )   
+     *  @Return: 
+     *  状态码|状态
+     * 
+     *      
+     *      
+     * :NOTICE:禁止错误反馈:NOTICE:
+     * :NOTICE:用户要有创建活动的权限:NOTICE:
+    */
+    public function B_ActListDele(){
+        $this->load->library('secure');  
+        $this->load->library('data');
+        $this->load->library('authorizee');
+        $this->load->model('act_model');
+        $this->load->model('section_model');
+        $this->load->model('user_model');
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+            return 0;
+        }
+        
+        if (!ctype_digit($this->input->post('act_id', TRUE))){
+            return 0;
+        }
+        
+        if (!$this->authorizee->CheckAuthorizee('act_dele', $this->input->post('user_id', TRUE))){
+            return 0;
+        }        
+        
+        if (!$this->act_model->CheckIdExist($this->input->post('act_id', TRUE))){
+            return 0;
+        }
+
+        $this->data->Out('group', $this->input->post('src', TRUE), 1, 'B_ActListDele', $this->input->post('act_id', TRUE));
+    }
     
 }

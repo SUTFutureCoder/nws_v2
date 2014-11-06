@@ -165,6 +165,25 @@ class Act_model extends CI_Model{
     
     /**    
      *  @Purpose:    
+     *  删除活动   
+     *  @Method Name:
+     *  ActDele($act_id)    
+     *  @Parameter: 
+     *  $act_id 活动id
+     *  @Return: 
+     *  0|添加失败
+     *  1|添加成功
+     * 
+    */ 
+    public function ActDele($act_id){
+        $this->load->database();
+        $this->db->where('act_id', $act_id);
+        $this->db->update('activity', array('act_defunct' => 1));
+        return $this->db->affected_rows();
+    }
+    
+    /**    
+     *  @Purpose:    
      *  获取活动列表   
      *  @Method Name:
      *  GetActList($start_id, $offset_num, $type, $section, $keyword)    
