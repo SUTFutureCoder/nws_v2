@@ -39,7 +39,7 @@ class Control_center extends CI_Controller{
         $this->load->model('control_center_model');
         $this->load->model('message_model');
         $this->load->model('user_model');
-        if (empty($this->session->userdata('user_id'))){
+        if (!$this->session->userdata('user_id')){
             header("Content-Type: text/html;charset=utf-8");
             echo '<script>alert("会话已过期，请重新登录")</script>';
             echo '<script>window.location.href= \'' . base_url() . '\';</script>'; 

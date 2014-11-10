@@ -49,7 +49,7 @@
         </tbody>
     </table>
     
-<div class="modal fade" id="act_info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="act_info" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -75,8 +75,8 @@
     </div>
 </div>
     
-<div class="modal fade bs-example-modal-sm" id="act_deal_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+<div class="modal fade" id="act_deal_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog ">
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -234,10 +234,63 @@ function act_deal(act_id, method, confirm){
             }
             
             break;
+            
         case "update":
+            $("#act_deal_modal .modal-dialog").removeClass("modal-sm").addClass("modal-lg");
+            
             if (!confirm){
                 $('#act_deal_title').html('活动修改');
-                $('#act_deal_body').html("<");
+                $('#act_deal_body').html("<form class=\"form-horizontal\" id=\"act_deal_body_update\" role=\"form\"></form>");
+                act_basic_info = JSON.parse($.LS.get('act_info_' + act_id));
+                console.log(act_basic_info);
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_name\" class=\"col-sm-2 control-label\">活动名称</label><div class=\"col-sm-9\"><input type=\"text\" class=\"form-control\" id=\"act_name\" value=\"" + act_basic_info['act_name'] +"\"></div></div>");
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_private\" class=\"col-sm-2 control-label\">社团内部活动</label><div class=\"col-sm-9\"><input type=\"checkbox\" id=\"act_private\"></div></div>");
+                if (act_basic_info['act_private']){
+                    $('#act_private').attr("checked", true);
+                }
+                
+                //活动类型
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_type\" class=\"col-sm-2 control-label\">活动类别</label><div class=\"col-sm-9\"><select class=\"form-control\" id=\"act_type" + act_basic_info['act_id'] + "\"></div>");
+                <?php foreach ($act_type as $act_type_item): ?>                    
+                    $("#act_type" + act_basic_info['act_id']).append("<option><?= $act_type_item['activity_type_name'] ?></option>");
+                <?php endforeach; ?>
+                //快速选中
+                $("#act_type" + act_basic_info['act_id'] + " option:contains('" + act_basic_info['activity_type_name'] + "')").attr("selected", "selected");
+                
+                //部门限制
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_section_only\" class=\"col-sm-2 control-label\">部门限制</label><div class=\"col-sm-9\"><select class=\"form-control\" id=\"act_section_only" + act_basic_info['act_id'] + "\"></div>");
+                $("#act_section_only" + act_basic_info['act_id']).append("<option>不限制</option>");
+                <?php foreach ($act_section as $act_section_item): ?>
+                    $("#act_section_only" + act_basic_info['act_id']).append("<option><?= $act_section_item['section_name'] ?></option>");
+                <?php endforeach; ?>
+                //快速选中
+                if (!act_basic_info['act_global']){
+                    $("#act_section_only" + act_basic_info['act_id'] + " option:contains('" + act_basic_info['section_name'] + "')").attr("selected", "selected");
+                } else {
+                    $("#act_section_only" + act_basic_info['act_id'] + " option:contains('不限制')").attr("selected", "selected");
+                }
+                
+                //活动描述
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_content\" class=\"col-sm-2 control-label\">活动描述</label><div class=\"col-sm-9\"><textarea class=\"form-control\" rows=\"3\" id=\"act_content\">" + act_basic_info['act_content'] + "</textarea></div></div>");
+                
+                //活动注意事项
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_warn\" class=\"col-sm-2 control-label\">活动注意事项</label><div class=\"col-sm-9\"><textarea class=\"form-control\" rows=\"3\" placeholder=\"选填\"  id=\"act_warn\">" + act_basic_info['act_warn'] + "</textarea></div></div>");
+                
+                //活动开始时间
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_start\" class=\"col-sm-2 control-label\">活动开始时间</label><div class=\"col-sm-9\"><input type=\"text\" class=\"form-control\" placeholder=\"例：2014-08-20 20:05:01\" id=\"act_start\" value=\"" + act_basic_info['act_start'] +"\"></div></div>");
+                
+                //活动结束时间
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_end\" class=\"col-sm-2 control-label\">活动结束时间</label><div class=\"col-sm-9\"><input type=\"text\" class=\"form-control\" placeholder=\"例：2014-08-20 20:05:01\" id=\"act_end\" value=\"" + act_basic_info['act_end'] +"\"></div></div>");
+                
+                //活动需要资金
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_money\" class=\"col-sm-2 control-label\">活动需要资金/人</label><div class=\"col-sm-9\"><input type=\"text\" class=\"form-control\" placeholder=\"选填\" id=\"act_money\" value=\"" + act_basic_info['act_money'] +"\"></div></div>");
+                
+                //活动位置
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_position\" class=\"col-sm-2 control-label\">活动地点</label><div class=\"col-sm-9\"><textarea class=\"form-control\" rows=\"3\" id=\"act_position\">" + act_basic_info['act_position'] + "</textarea></div></div>");
+                
+                //总人数限制
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_member_sum\" class=\"col-sm-2 control-label\">总人数限制</label><div class=\"col-sm-9\"><input type=\"text\" class=\"form-control\" placeholder=\"选填\" id=\"act_member_sum\" value=\"" + act_basic_info['act_money'] +"\"></div></div>");
+                
                 $('#act_deal_confirm').html('修改');
                 $('#act_deal_confirm').attr('onclick', "act_deal(" + act_id + ", 'update', 1)")
                 $('#act_deal_modal').modal('show');
@@ -256,7 +309,8 @@ function act_deal(act_id, method, confirm){
             
             break;
         <?php if($authorizee_act_dele): ?>
-        case "dele":
+        case "dele":            
+            $("#act_deal_modal .modal-dialog").removeClass("modal-lg").addClass("modal-sm");
             if (!confirm){
                 $('#act_deal_title').html('删除');
                 $('#act_deal_body').html('您正在准备删除' + act_id + '活动');

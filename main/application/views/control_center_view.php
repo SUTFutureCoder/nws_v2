@@ -97,7 +97,7 @@ var ws, ping, name = 'null', user_list={};
             break;
                 
         case "iframe":
-        case "group":            
+        case "group":     
             $("iframe[src='" + location.href.slice(0, location.href.lastIndexOf("/")) + result[1] + "']")[0].contentWindow.MotherResultRec(result);
             /*if ($("iframe[src='" + result[1] + "']"))
             {

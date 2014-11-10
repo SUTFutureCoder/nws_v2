@@ -37,6 +37,7 @@ class Act_list extends CI_Controller{
             'authorizee_act_dele' => $this->authorizee->CheckAuthorizee('act_dele', $this->session->userdata('user_id')),
             'authorizee_act_global_list' => $this->authorizee->CheckAuthorizee('act_global_list', $this->session->userdata('user_id')),
             'authorizee_act_propagator' => $this->authorizee->CheckAuthorizee('act_propagator', $this->session->userdata('user_id')),
+            'act_global_add' => $this->authorizee->CheckAuthorizee('act_global_add', $this->session->userdata('user_id')),
             'act_section' => $this->section_model->GetSectionNameList(),
             'act_type' => $this->act_model->GetActTypeList()
         ));
