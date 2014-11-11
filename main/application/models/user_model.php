@@ -167,6 +167,7 @@ class User_model extends CI_Model{
         $this->db->join('section', 'section.section_id = re_user_section.section_id');
         $this->db->where('re_user_section.user_id', $user_id);
         $query = $this->db->get();
+        //注意试用问题
         return $query->row()->section_name;
     }
     
