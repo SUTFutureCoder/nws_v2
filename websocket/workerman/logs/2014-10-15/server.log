@@ -1,3 +1,0 @@
-2014-10-15 00:43:08 Worker[BusinessWorker]:WORKER EXIT UNEXPECTED  E_NOTICE Undefined variable: group in /var/www/html/nws_v2/websocket/applications/Chat/Event.php on line 227
-2014-10-15 00:43:09 /tmp/gateway.store.cache.php updated and reload workers
-2014-10-15 00:43:09 Worker[FileMonitor]:terminal closed and reset workers fd
