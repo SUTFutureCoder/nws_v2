@@ -59,11 +59,17 @@ class Act_add extends CI_Controller{
      *  @Parameter: 
      *  POST array(
      *      'user_key' 用户识别码
-     *      array data_data(
-     *          array(
-     *              
-     *          )
-     *      )
+     *      'act_name' 活动名字
+     *      'act_private' 社团内部活动
+     *      'act_type' 活动类型
+     *      'act_section_only' 部门限制
+     *      'act_content' 活动内容
+     *      'act_warn' 活动注意事项
+     *      'act_start' 活动开始时间
+     *      'act_end' 活动截止时间
+     *      'act_money' 活动所需资金
+     *      'act_position' 活动地点
+     *      'act_member_sum' 活动总人数限制
      *  )   
      *  @Return: 
      *  状态码|状态
@@ -104,7 +110,7 @@ class Act_add extends CI_Controller{
         $data = array();
         $data['activity']['act_user_id'] = $this->input->post('user_id', TRUE);
         
-        if (!$this->input->post('act_name', TRUE) && 198 < iconv_strlen($this->input->post('act_name', TRUE), 'utf-8')){
+        if (!$this->input->post('act_name', TRUE) || 198 < iconv_strlen($this->input->post('act_name', TRUE), 'utf-8')){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 2, '活动名称不可为空或超过198个字符');
         }
         $data['activity']['act_name'] = $this->input->post('act_name', TRUE);
@@ -120,13 +126,13 @@ class Act_add extends CI_Controller{
                 $this->data->Out('iframe', $this->input->post('src', TRUE), 15, '社团内部活动传值错误');
         }        
         
-        if (!$this->input->post('act_type', TRUE) && 48 < iconv_strlen($this->input->post('act_type', TRUE), 'utf-8') ||
+        if (!$this->input->post('act_type', TRUE) || 48 < iconv_strlen($this->input->post('act_type', TRUE), 'utf-8') ||
                 !$this->act_model->CheckTypeExist($this->input->post('act_type', TRUE))){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 3, '活动类型不存在或超过48个字符');
         }
         $data['re_activity_type']['type_id'] = $this->act_model->TypeToId($this->input->post('act_type', TRUE));
         
-        if (!$this->input->post('act_section_only', TRUE) && 28 < iconv_strlen($this->input->post('act_section_only', TRUE), 'utf-8') || 
+        if (!$this->input->post('act_section_only', TRUE) || 28 < iconv_strlen($this->input->post('act_section_only', TRUE), 'utf-8') || 
                 ( !$this->section_model->CheckSectionExist($this->input->post('act_section_only', TRUE)) &&
                 '不限制' != $this->input->post('act_section_only', TRUE))){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 4, '部门名称不存在或超过28个字符');
@@ -143,7 +149,7 @@ class Act_add extends CI_Controller{
             $data['re_activity_section']['section_id'] = $this->section_model->GetSectionId($this->input->post('act_section_only', TRUE));
         }
         
-        if (!$this->input->post('act_content', TRUE) && 998 < iconv_strlen($this->input->post('act_content', TRUE), 'utf-8')){
+        if (!$this->input->post('act_content', TRUE) || 998 < iconv_strlen($this->input->post('act_content', TRUE), 'utf-8')){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 5, '活动描述不可为空或超过998个字符', 'act_content');
         }
         $data['activity']['act_content'] = $this->input->post('act_content', TRUE);
@@ -174,7 +180,7 @@ class Act_add extends CI_Controller{
             $data['activity']['act_money'] = $this->input->post('act_money', TRUE);
         }
         
-        if (!$this->input->post('act_position', TRUE) && 198 < iconv_strlen($this->input->post('act_position', TRUE), 'utf-8')){
+        if (!$this->input->post('act_position', TRUE) || 198 < iconv_strlen($this->input->post('act_position', TRUE), 'utf-8')){
             $this->data->Out('iframe', $this->input->post('src', TRUE), 10, '活动地点不能超过198个字符', 'act_position');
         }
         $data['activity']['act_position'] = $this->input->post('act_position', TRUE);

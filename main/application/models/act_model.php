@@ -55,7 +55,7 @@ class Act_model extends CI_Model{
     public function GetActInfo($act_id){
         $this->load->database();
         $this->db->select('activity.act_id, activity.act_name, activity.act_content, activity.act_warn, activity.act_money, activity.act_position,'
-                . 'activity.act_private, activity.act_start, activity.act_end, activity.act_member_sum'
+                . 'activity.act_private, activity.act_start, activity.act_end, activity.act_member_sum, '
                 . 'user.user_name, user.user_telephone, user.user_qq, '
                 . 'activity_type.activity_type_name, section.section_name, activity.act_global, activity.act_private, activity.act_defunct');
         $this->db->where('activity.act_id', $act_id);

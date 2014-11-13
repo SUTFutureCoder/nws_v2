@@ -93,6 +93,12 @@
 </div>
 </body>
 <script>
+    //TEST AREA
+//$(function(){
+//    $.LS.clear();    
+//});
+</script>
+<script>
 $(function(){
     $('.dropdown-toggle').dropdown()
     //当没有max_act_id，即之前尚未进行localstorage存储或被清除数据的情况
@@ -169,7 +175,11 @@ function MotherResultRec(data){
                         break;
                     }
                 }
-                console.log(old_list);
+                //清除残余项
+                if ($.LS.get("act_info_" + data[4])){
+                    $.LS.remove("act_info_" + data[4]);
+                }
+                
                 $.LS.set("act_list", JSON.stringify(old_list));
             }  
             break;
@@ -181,7 +191,10 @@ function MotherResultRec(data){
                 //列表中即时删除
                 $("#" + data[4]).remove();
                 //清除LS残余项
-                $.LS.removeItem("act_info_" + data[4]);
+                if ($.LS.get("act_info_" + data[4])){
+                    $.LS.remove("act_info_" + data[4]);
+                }
+                
                 //广播自动删除最新活动                
                 var B_data = new Array();
                 B_data['src'] = '/act_list';
@@ -235,6 +248,7 @@ function act_deal(act_id, method, confirm){
             
             break;
             
+        <?php if($authorizee_act_update): ?>    
         case "update":
             $("#act_deal_modal .modal-dialog").removeClass("modal-sm").addClass("modal-lg");
             
@@ -296,10 +310,17 @@ function act_deal(act_id, method, confirm){
                 $('#act_deal_modal').modal('show');
             } else {
                 data['api'] = location.href + '/ActUpdate';
-                data['data'] += ', "user_id" : "<?= $user_id ?>", "user_id" : "<?= $user_id ?>"';  
+                data['data'] += ', "act_name" : "' + $("#act_name").val() + '", "act_type" : "' + $("#act_type").val() + '"';
+                data['data'] += ', "act_content" : "' + $("#act_content").val() + '", "act_warn" : "' + $("#act_warn").val() + '"';
+                data['data'] += ', "act_start" : "' + $("#act_start").val() + '", "act_end" : "' + $("#act_end").val() + '"';
+                data['data'] += ', "act_money" : "' + $("#act_money").val() + '", "act_position" : "' + $("#act_position").val() + '"';
+                data['data'] += ', "act_member_sum" : "' + $("#act_member_sum").val() + '", "act_private" : "' + $("#act_private").prop("checked") + '"';
+                data['data'] += ', "act_section_only" : "' + $("#act_section_only").val() + '"}'; 
             }
             
             break;
+        <?php endif; ?>
+        
         case "propagator":
             if (!confirm){
                 

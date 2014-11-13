@@ -89,7 +89,7 @@ class Act_list extends CI_Controller{
             $this->data->Out('notice', -4, '基准活动id值格式错误');
         }
         
-        if (!$this->input->post('user_id', TRUE) && $this->input->post('user_key', TRUE)){
+        if (!$this->input->post('user_id', TRUE) && !$this->input->post('user_key', TRUE)){
             //游客
             $data = $this->act_model->GetActList($this->input->post('current', TRUE), $this->input->post('limit', TRUE), $this->input->post('standard_id', TRUE), 1);
         } else {
@@ -280,6 +280,66 @@ class Act_list extends CI_Controller{
         
         $data = $this->act_model->GetActList(0, 1000, $this->input->post('max_act_id', TRUE));
         $this->data->Out('iframe', $this->input->post('src', TRUE), 1, 'RedrawActList', $data);
+    }
+        
+    /**    
+     *  @Purpose:    
+     *  活动修改
+     *  
+     *  @Method Name:
+     *  ActUpdate()    
+     *  @Parameter: 
+     *  POST array(
+     *      'user_key' 用户识别码
+     *      'act_name' 活动名字
+     *      'act_private' 社团内部活动
+     *      'act_type' 活动类型
+     *      'act_section_only' 部门限制
+     *      'act_content' 活动内容
+     *      'act_warn' 活动注意事项
+     *      'act_start' 活动开始时间
+     *      'act_end' 活动截止时间
+     *      'act_money' 活动所需资金
+     *      'act_position' 活动地点
+     *      'act_member_sum' 活动总人数限制
+     *  )   
+     *  @Return: 
+     *  状态码|状态
+     *      -1|密钥无法通过安检
+     *      -2|用户无权限
+     *      -3|活动id不合法
+     *      -4|活动id不存在
+     *      -5|活动名称不可为空或超过198个字符
+     *      
+     * 
+    */
+    public function ActUpdate(){
+        $this->load->library('secure');
+        $this->load->library('data');
+        $this->load->library('authorizee');
+        $this->load->model('act_model');
+        $this->load->model('section_model');
+        $this->load->model('user_model');
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -1, '密钥无法通过安检');
+        }
+        
+        if (!$this->authorizee->CheckAuthorizee('act_update', $this->input->post('user_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -2, '用户无权限');
+        }
+        
+        if (!ctype_digit($this->input->post('act_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -3, '活动id不合法');
+        }        
+        
+        if (!$this->act_model->CheckIdExist($this->input->post('act_id', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -4, '活动id不存在');
+        }
+        
+        $data = array();
+        if (!$this->input->post('act_name', TRUE) || 198 < iconv_strlen($this->input->post('act_name'), 'utf-8')){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -5, '活动名称不可为空或超过198个字符');
+        }
     }
         
     /**    
