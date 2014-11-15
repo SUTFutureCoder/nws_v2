@@ -336,9 +336,95 @@ class Act_list extends CI_Controller{
             $this->data->Out('iframe', $this->input->post('src', TRUE), -4, '活动id不存在');
         }
         
-        $data = array();
+        $data = array();        
         if (!$this->input->post('act_name', TRUE) || 198 < iconv_strlen($this->input->post('act_name'), 'utf-8')){
             $this->data->Out('iframe', $this->input->post('src', TRUE), -5, '活动名称不可为空或超过198个字符');
+        }
+        $data['activity']['act_name'] = $this->input->post('act_name', TRUE);
+        
+        switch ($this->input->post('act_private')){
+            case 'true':
+                $data['activity']['act_private'] = 1;
+                break;
+            case 'false':
+                $data['activity']['act_private'] = 0;
+                break;
+            default :
+                $this->data->Out('iframe', $this->input->post('src', TRUE), -6, '社团内部活动传值错误');                
+        }
+        
+        if (!$this->input->post('act_type', TRUE) || 
+                !$this->act_model->CheckTypeExist($this->input->post('act_type', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -7, '活动类型不存在');
+        }
+        $data['re_activity']['type_id'] = $this->act_model->TypeToId($this->input->post('act_type', TRUE));
+        
+        if (!$this->input->post('act_section_only', TRUE) || 
+                ( !$this->section_model->CheckSectionExist($this->input->post('act_section_only', TRUE)) &&
+                '不限制' != $this->input->post('act_section_only', TRUE))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -8, '部门名称不存在');
+        }
+        
+        if ('不限制' == $this->input->post('act_section_only', TRUE)){
+            $data['re_activity_section']['section_id'] = $this->user_model->GetUserSectionId($this->input->post('user_id', TRUE));
+            $data['activity']['act_global'] = 1;
+        } else {
+            if (!$this->authorizee->CheckAuthorizee('act_global_add', $this->input->post('user_id', TRUE)) && 
+                $this->user_model->GetUserSection($this->input->post('user_id', TRUE)) != $this->input->post('act_section_only', TRUE)){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), -9, '用户无添加其他部门活动的权限');
+            }
+            $data['re_activity_section']['section_id'] = $this->section_model->GetSectionId($this->input->post('act_section_only', TRUE));
+        }
+        
+        if (!$this->input->post('act_content', TRUE) || 998 < iconv_strlen($this->input->post('act_content', TRUE), 'utf-8')){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -10, '活动描述不可为空或超过998个字符', 'act_content');
+        }
+        $data['activity']['act_content'] = $this->input->post('act_content', TRUE);
+        
+        if ($this->input->post('act_warn', TRUE)){
+            if (998 < iconv_strlen($this->input->post('act_warn', TRUE), 'utf-8')){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), -11, '活动注意事项超过998个字符', 'act_warn');
+            }
+            $data['activity']['act_warn'] = $this->input->post('act_warn', TRUE);
+        }        
+        
+        if (!$this->input->post('act_start', TRUE) || (!$this->secure->CheckDateTime($this->input->post('act_start', TRUE)))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -12, '活动开始时间格式不合法，请尝试把输入法关闭', 'act_start');
+        }        
+        $data['activity']['act_start'] = $this->input->post('act_start', TRUE);
+        
+        if (!$this->input->post('act_end', TRUE) ||  (time() > $this->secure->CheckDateTime($this->input->post('act_end', TRUE)))){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -13, '活动结束时间不能低于当前时间，请尝试把输入法关闭', 'act_end');
+//            $this->data->Out('iframe', $this->input->post('src', TRUE), 8, $this->secure->CheckDateTime($this->input->post('act_start', TRUE)), 'act_end');
+        }
+        $data['activity']['act_end'] = $this->input->post('act_end', TRUE);
+        
+        if ($this->input->post('act_money', TRUE)){
+            if (!ctype_digit($this->input->post('act_money', TRUE)) || 
+                    10 < strlen($this->input->post('act_money', TRUE))){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), -14, '需要资金格式为小于10位的整数', 'act_money');
+            }
+            $data['activity']['act_money'] = $this->input->post('act_money', TRUE);
+        }
+        
+        if (!$this->input->post('act_position', TRUE) || 198 < iconv_strlen($this->input->post('act_position', TRUE), 'utf-8')){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -15, '活动地点不能超过198个字符', 'act_position');
+        }
+        $data['activity']['act_position'] = $this->input->post('act_position', TRUE);
+        
+        if ($this->input->post('act_member_sum', TRUE)){
+            if (!ctype_digit($this->input->post('act_member_sum', TRUE)) || 
+                    10 < strlen($this->input->post('act_member_sum', TRUE))){
+                $this->data->Out('iframe', $this->input->post('src', TRUE), -16, '加入人数限制必须为小于10位的数字', 'act_member_sum');
+            }
+            $data['activity']['act_member_sum'] = $this->input->post('act_member_sum', TRUE);
+        }
+        
+        $act_id = $this->act_model->AddAct($data);
+        if (!$act_id){
+            $this->data->Out('iframe', $this->input->post('src', TRUE), -17, '修改失败');
+        } else {
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 1, 'ActUpdate', $act_id);
         }
     }
         
@@ -387,7 +473,7 @@ class Act_list extends CI_Controller{
             if ($this->act_model->ActDele($this->input->post('act_id', TRUE))){
                 $this->data->Out('iframe', $this->input->post('src', TRUE), 1, 'ActDele', $this->input->post('act_id', TRUE));
             } else {
-                $this->data->Out('iframe', $this->input->post('src', TRUE), 0, 'ActDele', '无法再次删除');
+                $this->data->Out('iframe', $this->input->post('src', TRUE), 0, '无法再次删除');
             }
         } else {
             $this->data->Out('iframe', $this->input->post('src', TRUE), -4, '活动id不存在');
@@ -412,7 +498,7 @@ class Act_list extends CI_Controller{
      *      
      *      
      * :NOTICE:禁止错误反馈:NOTICE:
-     * :NOTICE:用户要有创建活动的权限:NOTICE:
+     * :NOTICE:用户要有删除活动的权限:NOTICE:
     */
     public function B_ActListDele(){
         $this->load->library('secure');  
@@ -438,6 +524,54 @@ class Act_list extends CI_Controller{
         }
 
         $this->data->Out('group', $this->input->post('src', TRUE), 1, 'B_ActListDele', $this->input->post('act_id', TRUE));
+    }
+    
+    /**    
+     *  @Purpose:    
+     *  广播_实时活动更新
+     *  
+     *  @Method Name:
+     *  B_ActListUpdate()    
+     *  @Parameter: 
+     *  POST array(
+     *      'user_key' 用户识别码
+     *      'user_id'   用户id
+     *      'act_id'    活动id
+     *  )   
+     *  @Return: 
+     *  0|NULL【不广播】 <-异常时
+     *  更新活动信息 <-正常
+     *      
+     *      
+     * :NOTICE:禁止错误反馈:NOTICE:
+     * :NOTICE:用户要有修改活动的权限:NOTICE:
+    */
+    public function B_ActListUpdate(){
+        $this->load->library('secure');  
+        $this->load->library('data');
+        $this->load->library('authorizee');
+        $this->load->model('act_model');
+        $this->load->model('section_model');
+        $this->load->model('user_model');
+        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+            return 0;
+        }
+        
+        if (!ctype_digit($this->input->post('act_id', TRUE))){
+            return 0;
+        }
+        
+        if (!$this->authorizee->CheckAuthorizee('act_update', $this->input->post('user_id', TRUE))){
+            return 0;
+        }        
+        
+        if (!$this->act_model->CheckIdExist($this->input->post('act_id', TRUE))){
+            return 0;
+        }
+        
+        $data = $this->act_model->GetActInfo($this->input->post('act_id', TRUE));
+
+        $this->data->Out('group', $this->input->post('src', TRUE), 1, 'B_ActListUpdate', $data);
     }
     
 }

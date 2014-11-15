@@ -132,6 +132,8 @@ function MotherResultRec(data){
     if (1 != data[2]){
         alert(data[3]);
     }
+    
+    
     switch (data[3]){
         case 'GetActGlobeInit': 
             //开始绘制列表页面,并设置最大值 
@@ -184,27 +186,54 @@ function MotherResultRec(data){
             }  
             break;
             
+        case 'B_ActListUpdate':
+                
+            
+        <?php if($authorizee_act_update): ?>
+        case 'ActUpdate':
+            //列表即时修改
+            $("#list_act_type_name_" + data[4]).html($("#act_type").val());
+            $("#list_act_name_" + data[4]).html($("#act_name").val());
+            $("#list_section_name_" + data[4]).html($("#act_section_only").val());
+            $("#list_act_start_" + data[4]).html($("#act_start").val());
+            $("#list_act_end_" + data[4]).html($("#act_end").val());
+            
+            //广播自动更新活动                
+            var B_data = new Array();
+            B_data['src'] = '/act_list';
+            B_data['api'] = location.href + '/B_ActListUpdate';
+            B_data['group'] = "desktop|mobile";
+            B_data['data'] = '{"user_key" : "<?= $user_key ?>", "user_id" : "<?= $user_id ?>"';
+            B_data['data'] += ', "act_id" : "' + data[4] + '"}';
+            parent.IframeSend(B_data, 'group');
+            break;
+        <?php endif; ?>
+                
         <?php if($authorizee_act_dele): ?>
         case 'ActDele':
-            //活动删除结果
-            if (data[1]){
-                //列表中即时删除
-                $("#" + data[4]).remove();
-                //清除LS残余项
-                if ($.LS.get("act_info_" + data[4])){
-                    $.LS.remove("act_info_" + data[4]);
-                }
-                
-                //广播自动删除最新活动                
-                var B_data = new Array();
-                B_data['src'] = '/act_list';
-                B_data['api'] = location.href + '/B_ActListDele';
-                B_data['group'] = "desktop|mobile";
-                B_data['data'] = '{"user_key" : "<?= $user_key ?>", "user_id" : "<?= $user_id ?>"';
-                B_data['data'] += ', "act_id" : "' + data[4] + '"}';
-                parent.IframeSend(B_data, 'group');
+            //列表中即时删除
+            $("#" + data[4]).remove();
+            //清除LS残余项
+            if ($.LS.get("act_info_" + data[4])){
+                $.LS.remove("act_info_" + data[4]);
             }
+
+            //广播自动删除活动                
+            var B_data = new Array();
+            B_data['src'] = '/act_list';
+            B_data['api'] = location.href + '/B_ActListDele';
+            B_data['group'] = "desktop|mobile";
+            B_data['data'] = '{"user_key" : "<?= $user_key ?>", "user_id" : "<?= $user_id ?>"';
+            B_data['data'] += ', "act_id" : "' + data[4] + '"}';
+            parent.IframeSend(B_data, 'group');
+            break;
         <?php endif;?>
+            
+        default :
+            if (data[4]){
+                $("#" + data[4]).focus();
+            }
+            break;
     }
 }
 
@@ -383,22 +412,21 @@ function list_draw(data, max_act_id, insert_position){
         }
         //检测是否过期
         if (datetime_to_unix(item['act_end']) <= $.now()){
-            $("#" + item['act_id']).append("<td><span class=\"label label-default\">过期</span>" + item['activity_type_name'] + "</td>");
+            $("#" + item['act_id']).append("<td id=\"list_act_type_name_" + item['act_id'] + "\"><span class=\"label label-default\">过期</span>" + item['activity_type_name'] + "</td>");
         } else {
-            $("#" + item['act_id']).append("<td>" + item['activity_type_name'] + "</td>");
+            $("#" + item['act_id']).append("<td id=\"list_act_type_name_" + item['act_id'] + "\">" + item['activity_type_name'] + "</td>");
         }
         
-        $("#" + item['act_id']).append("<td>" + item['act_name'] + "</td>");
+        $("#" + item['act_id']).append("<td id=\"list_act_name_" + item['act_id'] + "\">" + item['act_name'] + "</td>");
         if ("0" == item['act_global']){
-            $("#" + item['act_id']).append("<td>" + item['section_name'] + "</td>");
+            $("#" + item['act_id']).append("<td id=\list_section_name_" + item['act_id'] + "\">" + item['section_name'] + "</td>");
         } else {
             $("#" + item['act_id']).append("<td>无限制</td>");
         }
-        $("#" + item['act_id']).append("<td>" + item['act_start'] + "</td>");
-        $("#" + item['act_id']).append("<td>" + item['act_end'] + "</td>");
+        $("#" + item['act_id']).append("<td id=\"list_act_start_" + item['act_id'] + "\">" + item['act_start'] + "</td>");
+        $("#" + item['act_id']).append("<td id=\"list_act_end_" + item['act_id'] + "\">" + item['act_end'] + "</td>");
         $("#" + item['act_id']).append("</tr>");  
         current_act_id = item['act_id'];
-        
     });
     return max_act_id;
 }

@@ -126,16 +126,16 @@ class Act_add extends CI_Controller{
                 $this->data->Out('iframe', $this->input->post('src', TRUE), 15, '社团内部活动传值错误');
         }        
         
-        if (!$this->input->post('act_type', TRUE) || 48 < iconv_strlen($this->input->post('act_type', TRUE), 'utf-8') ||
+        if (!$this->input->post('act_type', TRUE) ||
                 !$this->act_model->CheckTypeExist($this->input->post('act_type', TRUE))){
-            $this->data->Out('iframe', $this->input->post('src', TRUE), 3, '活动类型不存在或超过48个字符');
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 3, '活动类型不存在');
         }
         $data['re_activity_type']['type_id'] = $this->act_model->TypeToId($this->input->post('act_type', TRUE));
         
-        if (!$this->input->post('act_section_only', TRUE) || 28 < iconv_strlen($this->input->post('act_section_only', TRUE), 'utf-8') || 
+        if (!$this->input->post('act_section_only', TRUE) || 
                 ( !$this->section_model->CheckSectionExist($this->input->post('act_section_only', TRUE)) &&
                 '不限制' != $this->input->post('act_section_only', TRUE))){
-            $this->data->Out('iframe', $this->input->post('src', TRUE), 4, '部门名称不存在或超过28个字符');
+            $this->data->Out('iframe', $this->input->post('src', TRUE), 4, '部门名称不存在');
         }
         
         if ('不限制' == $this->input->post('act_section_only', TRUE)){
