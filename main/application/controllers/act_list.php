@@ -336,7 +336,8 @@ class Act_list extends CI_Controller{
             $this->data->Out('iframe', $this->input->post('src', TRUE), -4, '活动id不存在');
         }
         
-        $data = array();        
+        $data = array();    
+        $data['act_id'] = $this->input->post('act_id', TRUE);
         if (!$this->input->post('act_name', TRUE) || 198 < iconv_strlen($this->input->post('act_name'), 'utf-8')){
             $this->data->Out('iframe', $this->input->post('src', TRUE), -5, '活动名称不可为空或超过198个字符');
         }
@@ -420,7 +421,7 @@ class Act_list extends CI_Controller{
             $data['activity']['act_member_sum'] = $this->input->post('act_member_sum', TRUE);
         }
         
-        $act_id = $this->act_model->AddAct($data);
+        $act_id = $this->act_model->ActUpdate($data);
         if (!$act_id){
             $this->data->Out('iframe', $this->input->post('src', TRUE), -17, '修改失败');
         } else {

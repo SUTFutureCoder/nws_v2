@@ -184,6 +184,37 @@ class Act_model extends CI_Model{
     
     /**    
      *  @Purpose:    
+     *  更新活动   
+     *  @Method Name:
+     *  ActUpdate($data)    
+     *  @Parameter: 
+     *  $data 活动信息
+     *  @Return: 
+     *  0|修改失败
+     *  1|修改成功
+     * 
+    */ 
+    public function ActUpdate($data){
+        $this->load->database();
+        $this->db->update('activity', $data['activity'], array('act_id' => $data['act_id']));
+        $this->db->update('re_activity_type', $data['re_activity_type'], array('act_id' => $data['act_id']));
+        $this->db->update('re_activity_section', $data['re_activity_section'], array('act_id' => $data['act_id']));
+        if (!$this->db->affected_rows()){
+            return 0;
+        } else {
+            $this->db->where('act_id', $data['act_id']);        
+            if (!$this->db->count_all_results('activity_update')){
+                $this->db->insert('activity_update', array('act_id' => $data['act_id']));  
+            } else {  
+                $this->db->where('act_id', $data['act_id']);
+                $this->db->set('act_update_sum', 'act_update_sum+1', FALSE);
+                $this->db->update('activity_update');
+            }   
+        }        
+    }
+    
+    /**    
+     *  @Purpose:    
      *  获取活动列表   
      *  @Method Name:
      *  GetActList($start_id, $offset_num, $type, $section, $keyword)    

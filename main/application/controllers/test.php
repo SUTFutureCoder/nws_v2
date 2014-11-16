@@ -71,4 +71,20 @@ class Test extends CI_Controller{
                 
                 echo date("y");
     }
+    
+    public function test_this_db_set(){
+        $this->load->database();        
+//        $this->db->set('act_id', 10000);
+//        $this->db->set('act_update_sum', 'act_update_sum+1', FALSE);
+//        $this->db->update('activity_update');
+        $this->db->where('act_id', 10002);        
+        if (!$this->db->count_all_results('activity_update')){
+            $this->db->insert('activity_update', array('act_id' => 10002));  
+        } else {  
+            $this->db->where('act_id', 10002);
+            $this->db->set('act_update_sum', 'act_update_sum+1', FALSE);
+            $this->db->update('activity_update');
+        }              
+        
+    }
 }

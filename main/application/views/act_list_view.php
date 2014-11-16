@@ -169,7 +169,6 @@ function MotherResultRec(data){
         case 'B_ActListDele':
             if (data[4]){
                 $("#" + data[4]).remove();
-                new_list = new Array;
                 old_list = JSON.parse($.LS.get("act_list"));
                 for (var n in old_list){
                     if (old_list[n].act_id == data[4]){
@@ -187,7 +186,16 @@ function MotherResultRec(data){
             break;
             
         case 'B_ActListUpdate':
-                
+            $.LS.set("act_info_" + data[4]['act_id'], JSON.stringify(data[4]));
+            old_list = JSON.parse($.LS.get("act_list"));
+            for (var n in old_list){
+                if (old_list[n].act_id == data[4]['act_id']){
+                    old_list.splice(n, 1, data[4]);
+                    break;
+                }
+            }
+            $.LS.set("act_list", JSON.stringify(old_list));
+            break;
             
         <?php if($authorizee_act_update): ?>
         case 'ActUpdate':
@@ -338,6 +346,7 @@ function act_deal(act_id, method, confirm){
                 $('#act_deal_confirm').attr('onclick', "act_deal(" + act_id + ", 'update', 1)")
                 $('#act_deal_modal').modal('show');
             } else {
+                $('.modal').modal('hide');
                 data['api'] = location.href + '/ActUpdate';
                 data['data'] += ', "act_name" : "' + $("#act_name").val() + '", "act_type" : "' + $("#act_type").val() + '"';
                 data['data'] += ', "act_content" : "' + $("#act_content").val() + '", "act_warn" : "' + $("#act_warn").val() + '"';
@@ -368,7 +377,7 @@ function act_deal(act_id, method, confirm){
                 $('#act_deal_confirm').attr('onclick', "act_deal(" + act_id + ", 'dele', 1)")
                 $('#act_deal_modal').modal('show');
             } else {
-                $('.modal').modal('hide')
+                $('.modal').modal('hide');
                 data['api'] = location.href + '/ActDele';
             }
             break;
