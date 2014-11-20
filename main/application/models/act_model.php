@@ -210,6 +210,7 @@ class Act_model extends CI_Model{
                 $this->db->set('act_update_sum', 'act_update_sum+1', FALSE);
                 $this->db->update('activity_update');
             }   
+            return $this->db->affected_rows();
         }        
     }
     

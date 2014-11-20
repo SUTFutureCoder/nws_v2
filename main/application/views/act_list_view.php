@@ -14,7 +14,7 @@
         <input type="text" class="form-control" id="act_name" placeholder="活动名称">
     </div>
     <div class="form-group">
-        <select class="form-control" id="act_section_only">
+        <select class="form-control" id="act_section_only_search">
             <option>部门</option>
             <option>不限制</option>
             <?php foreach ($act_section as $act_section_item):?>
@@ -23,7 +23,7 @@
         </select> 
     </div>
     <div class="form-group">
-        <select class="form-control" id="act_section_only">
+        <select class="form-control" id="act_section_only_search">
             <option>类型</option>
             <?php foreach ($act_type as $act_type_item):?>
                 <option><?= $act_type_item['activity_type_name']?></option>
@@ -301,24 +301,24 @@ function act_deal(act_id, method, confirm){
                 }
                 
                 //活动类型
-                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_type\" class=\"col-sm-2 control-label\">活动类别</label><div class=\"col-sm-9\"><select class=\"form-control\" id=\"act_type" + act_basic_info['act_id'] + "\"></div>");
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_type\" class=\"col-sm-2 control-label\">活动类别</label><div class=\"col-sm-9\"><select class=\"form-control\" id=\"act_type\"></div>");
                 <?php foreach ($act_type as $act_type_item): ?>                    
-                    $("#act_type" + act_basic_info['act_id']).append("<option><?= $act_type_item['activity_type_name'] ?></option>");
+                    $("#act_type").append("<option><?= $act_type_item['activity_type_name'] ?></option>");
                 <?php endforeach; ?>
                 //快速选中
-                $("#act_type" + act_basic_info['act_id'] + " option:contains('" + act_basic_info['activity_type_name'] + "')").attr("selected", "selected");
+                $("#act_type option:contains('" + act_basic_info['activity_type_name'] + "')").attr("selected", "selected");
                 
                 //部门限制
-                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_section_only\" class=\"col-sm-2 control-label\">部门限制</label><div class=\"col-sm-9\"><select class=\"form-control\" id=\"act_section_only" + act_basic_info['act_id'] + "\"></div>");
-                $("#act_section_only" + act_basic_info['act_id']).append("<option>不限制</option>");
+                $('#act_deal_body_update').append("<div class=\"form-group\"><label for=\"act_section_only\" class=\"col-sm-2 control-label\">部门限制</label><div class=\"col-sm-9\"><select class=\"form-control\" id=\"act_section_only\"></div>");
+                $("#act_section_only").append("<option>不限制</option>");
                 <?php foreach ($act_section as $act_section_item): ?>
-                    $("#act_section_only" + act_basic_info['act_id']).append("<option><?= $act_section_item['section_name'] ?></option>");
+                    $("#act_section_only").append("<option><?= $act_section_item['section_name'] ?></option>");
                 <?php endforeach; ?>
                 //快速选中
                 if (!act_basic_info['act_global']){
-                    $("#act_section_only" + act_basic_info['act_id'] + " option:contains('" + act_basic_info['section_name'] + "')").attr("selected", "selected");
+                    $("#act_section_only option:contains('" + act_basic_info['section_name'] + "')").attr("selected", "selected");
                 } else {
-                    $("#act_section_only" + act_basic_info['act_id'] + " option:contains('不限制')").attr("selected", "selected");
+                    $("#act_section_only option:contains('不限制')").attr("selected", "selected");
                 }
                 
                 //活动描述

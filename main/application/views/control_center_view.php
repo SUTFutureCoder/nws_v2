@@ -98,7 +98,19 @@ var ws, ping, name = 'null', user_list={};
                 
         case "iframe":
         case "group":     
-            $("iframe[src='" + location.href.slice(0, location.href.lastIndexOf("/")) + result[1] + "']")[0].contentWindow.MotherResultRec(result);
+            //当src为index.php/a 的情况
+            if ($("iframe[src='" + location.href.slice(0, location.href.lastIndexOf("/")) + result[1] + "']")[0]){
+                $("iframe[src='" + location.href.slice(0, location.href.lastIndexOf("/")) + result[1] + "']")[0].contentWindow.MotherResultRec(result);
+            } else {
+                //当src为index.php?a&b的情况
+                $("iframe[src='" + location.href.slice(0, location.href.lastIndexOf("/", location.href.lastIndexOf("/") - 1)) + result[1] + "']")[0].contentWindow.MotherResultRec(result);
+            }
+            //当src为index.php?a&b的情况
+            //$("iframe[src='" + location.href.slice(0, location.href.lastIndexOf("/", location.href.lastIndexOf("/") - 1)) + result[1] + "']")[0].contentWindow.MotherResultRec(result);
+            //当src为index.php/a 的情况
+            //$("iframe[src='" + location.href.slice(0, location.href.lastIndexOf("/")) + result[1] + "']")[0].contentWindow.MotherResultRec(result);
+           
+            //$("iframe[src='" + location.href.slice(0, location.href.lastIndexOf("/")) + result[1] + "']")[0].contentWindow.MotherResultRec(result);
             /*if ($("iframe[src='" + result[1] + "']"))
             {
                 alert($("iframe[src='" + result[1] + "']").attr('scrolling'));
