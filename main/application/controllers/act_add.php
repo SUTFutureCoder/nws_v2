@@ -238,8 +238,8 @@ class Act_add extends CI_Controller{
         
         if (!$this->authorizee->CheckAuthorizee('act_add', $this->input->post('user_id', TRUE))){
             return 0;
-        }        
-        
+        }       
+       
         if (!$this->act_model->CheckIdExist($this->input->post('act_id', TRUE))){
             return 0;
         }
