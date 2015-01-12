@@ -168,7 +168,7 @@ class Setup extends CI_Controller{
         if (ctype_graph($db_password) && $db_password)
         {
             $clean['db_password'] = $db_password;
-            if (function_exists("mysql_close")==1)
+            if (function_exists("mysql_close") == 1)
             {
                 error_reporting(0);
                 //进行数据库连接检查

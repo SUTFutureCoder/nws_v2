@@ -39,9 +39,14 @@ var ws, ping, name = 'null', user_list={};
 
     // 当有消息时根据消息类型显示不同信息
     ws.onmessage = function(e) {  
-    console.log(e.data);
+    
     var result = JSON.parse(e.data);  
+    <?php if (ENVIRONMENT == 'development'):?>
+    //开发模式
     console.log(result);
+    console.log(e.data);
+    <?php endif; ?>
+    
     if (result[0] != 'p')
     {
         //alert(result[1]);
@@ -210,7 +215,7 @@ function getping(){
 				<div title="权限相关">
 					<a href="javascript:void(0);" src="<?= base_url('index.php/authorizee_manage');?>" class="cs-navi-tab">权限管理</a></p>
 					<a href="javascript:void(0);" src="<?= base_url('index.php/daily_change_pass');?>" class="cs-navi-tab">更改密码</a></p>
-					<a href="javascript:void(0);" src="index.php/authorizee_promote" class="cs-navi-tab">部员晋升</a></p>
+					<a href="javascript:void(0);" src="<?= base_url('index.php/authorizee_prompt');?>" class="cs-navi-tab">部员晋升</a></p>
 				</div>
                             
 

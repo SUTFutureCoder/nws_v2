@@ -101,6 +101,10 @@ ws.onmessage = function(e) {
                         $.LS.set("max_act_id", max_act_id);
                     }  
                     break; 
+                    
+                case 'B_ActListDele':
+                    //删除数据
+                    
             }
             break;
         

@@ -18,7 +18,17 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'development');
+$host = substr($_SERVER['HTTP_HOST'], 0, 5);
+if (in_array($host, array('local', '127.0', '192.1'))){
+    define('ENVIRONMENT', 'development');
+} else {
+    define('ENVIRONMENT', 'production');
+}
+
+
+
+
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING

@@ -98,20 +98,42 @@ class User_model extends CI_Model{
     
     /**    
      *  @Purpose:    
-     *  根据用户学号获取用户基础信息   
+     *  根据用户特征获取用户基础信息   
      *  @Method Name:
-     *  GetUserBasic($user_id)    
+     *  GetUserBasic($user_mix)    
      *  @Parameter: 
-     *  $user_id 已安检用户账号
+     *  $user_mix 已安检用户id\tele\number etc...
+     *  $type = 'user_id'   传入值类型 
      *  @Return: 
      *  用户信息或0
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function GetUserBasic($user_id){
+    public function GetUserBasic($user_mix, $type = 'user_id'){
         $this->load->database();
         $data = array();
-        $this->db->where('user_id', $user_id);
+        switch ($type){
+            case 'user_id':
+                $this->db->where('user_id', $user_mix);
+                break;
+            
+            case 'user_number':
+                $this->db->where('user_number', $user_mix);
+                break;
+            
+            case 'user_telephone':
+                $this->db->where('user_telephone', $user_mix);
+                break;
+            
+            case 'user_qq':
+                $this->db->where('user_qq', $user_mix);
+                break;
+            
+            default :
+                return 0;
+                break;
+        }
+        
         $query = $this->db->get('user');
         if ($query->num_rows()){
             $data = array_merge($data, $query->result_array());

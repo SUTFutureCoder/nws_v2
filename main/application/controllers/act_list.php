@@ -266,7 +266,7 @@ class Act_list extends CI_Controller{
         $this->load->library('data');
         $this->load->library('authorizee');
         $this->load->model('act_model');
-        if ($this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
+        if (!$this->input->post('user_id', TRUE) || $this->input->post('user_id', TRUE) != $this->secure->CheckUserKey($this->input->post('user_key', TRUE))){
             $this->data->Out('iframe', $this->input->post('src', TRUE), -1, '密钥无法通过安检');
         }
         

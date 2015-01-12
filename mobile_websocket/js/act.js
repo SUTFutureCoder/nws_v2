@@ -4,7 +4,9 @@
 //注意倒序
 var act_list_current_num = 0;
 var act_list_page_step = 20;
-//alert(user_key);
+
+//LocalStorage活动回收器
+function ActGc(act_list){};
 
 //绑定事件
 $(function(){
@@ -57,7 +59,7 @@ var current_act_id = 0;
 //data 要遍历绘制的数组
 //max_act_id 当前最大的活动id值
 //insert_position 如有更新的插入位置（append/prepend）
-function list_draw(data, max_act_id, insert_position){    
+function list_draw(data, max_act_id, insert_position){      
     $.each(data, function(i, item){
         if ($("#" + item['act_id']).length){
             return true;
@@ -94,6 +96,10 @@ function list_draw(data, max_act_id, insert_position){
         
         $("#" + item['act_id']).append(act_list_temp);  
     });
+    
+    //执行回收操作
+    ActGc(data);
+    
     return max_act_id;
 }
 
@@ -121,3 +127,12 @@ function GetActInfo(act_id, act_name){
         info_draw(act_info);
     }
 }    
+
+//清除老旧localhost减轻遍历负担
+//额定50条活动
+function ActGc(act_list){
+    if (act_list.length > 50){
+        act_list.splice(50, 100);
+        $.LS.set("act_list", JSON.stringify(act_list));
+    }
+}
