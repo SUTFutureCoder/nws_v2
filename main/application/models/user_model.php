@@ -19,25 +19,47 @@ class User_model extends CI_Model{
     
     /**    
      *  @Purpose:    
-     *  手机号码转用户id
+     *  多种数据转用户id
      *  @Method Name:
-     *  TeleToId($user_tele)
+     *  ConvertToId($user_mix, $data_type)
      *  @Parameter: 
-     *  $user_tele 用户手机号码
+     *  $user_mix   不定类型数据
+     *  $data_type  数据类型
      *  @Return: 
-     *  0|失败，传入手机号码不存在或非法
+     *  0|失败，传入数据不存在或非法
      *  $user_id|用户$user_id
      * 
      *  :WARNING:在传参之前请务必进行安检
     */ 
-    public function TeleToId($user_tele){
+    public function ConvertToId($user_mix, $data_type){
         $this->load->database();        
-        
-        if (!$user_tele || !ctype_digit($user_tele) || 11 != strlen($user_tele)){
-            return 0;
-        }
         $this->db->select('user_id');
-        $this->db->where('user_telephone', $user_tele);
+        
+        if (!isset($user_mix) || !ctype_digit($user_mix)){
+            return 0;            
+        }
+        
+        switch ($data_type){
+            case 'user_number':
+                $this->db->where('user_number', $user_mix);
+                break;
+            
+            case 'user_qq':
+                $this->db->where('user_qq', $user_mix);
+                break;
+            
+            case 'user_telephone':
+                if (11 != strlen($user_mix)){
+                    return 0;
+                }        
+                $this->db->where('user_telephone', $user_mix);
+                break;
+                
+            default :
+                return 0;
+                break;
+        }
+        
         $query = $this->db->get('user');        
         if ($query->num_rows()){
             return $query->row()->user_id;
@@ -98,7 +120,7 @@ class User_model extends CI_Model{
     
     /**    
      *  @Purpose:    
-     *  根据用户特征获取用户基础信息   
+     *  根据用户特征获取用户基础信息 (仅包括user_id, user_number, user_name, user_telephone, user_qq, user_major, user_sex, user_talent, user_reg_time)  
      *  @Method Name:
      *  GetUserBasic($user_mix)    
      *  @Parameter: 
@@ -112,6 +134,10 @@ class User_model extends CI_Model{
     public function GetUserBasic($user_mix, $type = 'user_id'){
         $this->load->database();
         $data = array();
+        
+        //等待后续添加
+        $this->db->select('user_id, user_number, user_name, user_telephone, user_qq, user_major, user_sex, user_talent, user_reg_time, user_friendsearch_enable,  user_joined_act_sum');
+        
         switch ($type){
             case 'user_id':
                 $this->db->where('user_id', $user_mix);
@@ -354,7 +380,7 @@ class User_model extends CI_Model{
     
     /**    
      *  @Purpose:    
-     *  根据传入数组设置用户角色关联   
+     *  根据传入数组设置或更新用户角色关联   
      *  @Method Name:
      *  SetUserSection($user_id, $user_role)    
      *  @Parameter: 
@@ -378,15 +404,17 @@ class User_model extends CI_Model{
             return 0;
         }
         //查询是否重复录入
-        $this->db->where('user_id', $user_id);
-        $this->db->where('role_id', $data['role_id']);
-        $query = $this->db->get('re_user_role');
+        $this->db->where('user_id', $user_id);        
+        $query = $this->db->get('re_user_role');        
         if ($query->num_rows()){
-            return 1;
+            $this->db->where('user_id', $user_id);
+            $this->db->update('re_user_role', array('role_id' => $data['role_id']));
+        } else {
+            $this->db->insert('re_user_role', $data);
         }
 //        $this->db->where('user_id', $user_id);
 //        $this->db->set($data);
-        $this->db->insert('re_user_role', $data);
+        
         return $this->db->affected_rows();
     }
     

@@ -87,7 +87,7 @@ class Secure{
             if (!isset($user_mixed{11})){
                 $user_id = $user_mixed;
             } else if (11 == strlen($user_mixed)){
-                $user_id = $CI->user_model->TeleToId($user_mixed);
+                $user_id = $CI->user_model->ConvertToId($user_mixed, 'user_telephone');
             } else {
                 return 0;
             }
