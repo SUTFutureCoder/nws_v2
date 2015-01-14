@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014-11-02 01:33:40
--- 服务器版本: 5.1.73
--- PHP 版本: 5.2.17
+-- 生成日期: 2015-01-14 21:25:20
+-- 服务器版本: 5.5.40-0ubuntu0.14.04.1
+-- PHP 版本: 5.5.9-1ubuntu4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -260,17 +260,7 @@ CREATE TABLE IF NOT EXISTS `bug` (
   `bug_repair_progress` int(4) NOT NULL COMMENT 'bug修复进度',
   `bug_repaired` int(11) NOT NULL COMMENT '是否已经修复完毕',
   PRIMARY KEY (`bug_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
---
--- 转存表中的数据 `bug`
---
-
-INSERT INTO `bug` (`bug_id`, `bug_version`, `bug_release_time`, `bug_detail`, `bug_report_user_id`, `bug_report_time`, `bug_reply`, `bug_reply_user_number`, `bug_reply_time`, `bug_repair_progress`, `bug_repaired`) VALUES
-(1, 'Alpha1 build1071', '2014-04-29 23:59:49', '功能有些不完善', 120406305, '2014-05-03 23:32:10', '敬请期待后续版本更新', 120406305, '2014-05-03 23:38:18', 80, 0),
-(2, 'Alpha1 build1071', '2014-04-29 23:59:49', '功能还不完善', 120406305, '2014-05-03 23:32:49', '', 0, '0000-00-00 00:00:00', 0, 0),
-(3, 'Alpha1 build1071', '2014-04-29 23:59:49', '功能还不完善', 120406305, '2014-05-03 23:34:06', '', 0, '0000-00-00 00:00:00', 0, 0),
-(4, 'Alpha1 build1077', '2014-05-15 21:25:26', '多宣传平台一键直达', 120406305, '2014-05-24 23:18:50', '', 0, '0000-00-00 00:00:00', 0, 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -310,14 +300,7 @@ CREATE TABLE IF NOT EXISTS `contest` (
   `contest_res_ext` varchar(20) NOT NULL COMMENT '比赛材料后缀名',
   `contest_join_num` int(10) NOT NULL COMMENT '比赛加入人数',
   PRIMARY KEY (`contest_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- 转存表中的数据 `contest`
---
-
-INSERT INTO `contest` (`contest_id`, `contest_name`, `contest_launcher`, `contest_telephone`, `contest_content`, `contest_limitation`, `contest_join_method`, `contest_start_time`, `contest_end_time`, `contest_regtime`, `contest_res_ext`, `contest_join_num`) VALUES
-(1, '第六届ACM程序设计大赛', '沈阳工业大学ACM实验室', 13900000000, '比赛描述样例', '全校本科生', '请到acm.sut.edu.cn参与报名', '2014-06-03 10:00:00', '2014-10-03 15:00:00', '2014-05-03 23:52:17', '.zip', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -332,14 +315,7 @@ CREATE TABLE IF NOT EXISTS `contest_join` (
   `contest_join_time` datetime NOT NULL COMMENT '比赛加入时间',
   `contest_join_defunct` tinyint(1) NOT NULL COMMENT '注销加入',
   PRIMARY KEY (`contest_join_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- 转存表中的数据 `contest_join`
---
-
-INSERT INTO `contest_join` (`contest_join_id`, `contest_id`, `user_id`, `contest_join_time`, `contest_join_defunct`) VALUES
-(1, 1, 1, '2014-05-29 00:04:34', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -482,17 +458,7 @@ CREATE TABLE IF NOT EXISTS `message_push` (
   `mess_push_dele` tinyint(1) NOT NULL COMMENT '推送人删除',
   `mess_push_dele_time` datetime NOT NULL COMMENT '推送人删除时间',
   PRIMARY KEY (`mess_push_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='消息推送表' AUTO_INCREMENT=5 ;
-
---
--- 转存表中的数据 `message_push`
---
-
-INSERT INTO `message_push` (`mess_push_id`, `mess_push_user_id`, `mess_push_section_limit`, `mess_push_title`, `mess_push_content`, `mess_push_style`, `mess_push_time`, `mess_push_end_time`, `mess_push_dele`, `mess_push_dele_time`) VALUES
-(1, 120406305, 0, '推送标题A', '推送样式A', 'alert-success', '2014-08-18 00:00:00', '2014-08-25 00:00:00', 0, '0000-00-00 00:00:00'),
-(2, 120406305, 0, '推送标题B', '推送样式B', 'alert-info', '2014-08-11 00:00:00', '2014-08-31 00:00:00', 0, '0000-00-00 00:00:00'),
-(3, 120406305, 0, '推送标题C', '推送样式C', 'alert-warning', '2014-08-11 00:00:00', '2014-08-31 00:00:00', 0, '0000-00-00 00:00:00'),
-(4, 120406305, 0, '推送标题D', '推送样式D', 'alert-danger', '2014-08-11 00:00:00', '2014-08-24 00:00:00', 0, '0000-00-00 00:00:00');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='消息推送表' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -506,13 +472,6 @@ CREATE TABLE IF NOT EXISTS `mobile_version` (
   `mobile_version_notice` varchar(1000) NOT NULL COMMENT '更新内容',
   PRIMARY KEY (`mobile_version_build`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='移动端版本表';
-
---
--- 转存表中的数据 `mobile_version`
---
-
-INSERT INTO `mobile_version` (`mobile_version_release`, `mobile_version_build`, `mobile_version_notice`) VALUES
-('2014-10-27 00:00:00', '2.00001', '允许进行自动更新\r\n测试换行');
 
 -- --------------------------------------------------------
 
@@ -617,7 +576,10 @@ CREATE TABLE IF NOT EXISTS `re_user_authorizee` (
 
 CREATE TABLE IF NOT EXISTS `re_user_role` (
   `user_id` int(10) NOT NULL,
-  `role_id` int(10) NOT NULL
+  `role_id` int(10) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_id` (`user_id`),
+  KEY `user_id_2` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -643,7 +605,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   `role_describe` varchar(100) NOT NULL,
   PRIMARY KEY (`role_id`),
   UNIQUE KEY `role_id` (`role_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='角色表' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='角色表' AUTO_INCREMENT=2 ;
 
 --
 -- 转存表中的数据 `role`
@@ -682,17 +644,6 @@ CREATE TABLE IF NOT EXISTS `session` (
   `session_data` text,
   PRIMARY KEY (`session_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `session`
---
-
-INSERT INTO `session` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`, `session_last_access`, `session_data`) VALUES
-('2916cfedc7602c7ce946fc9f7207ca1c', '127.0.0.1', 0, 1414656955, 'a:5:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"user_key";s:11:"14146524871";s:9:"user_name";s:9:"林星辰";s:9:"user_role";s:9:"管理员";}', NULL, NULL),
-('48f8963bdf4034758e62ab2d9d64100e', '127.0.0.1', 0, 1414753804, 'a:5:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"user_key";s:11:"14147538141";s:9:"user_name";s:9:"林星辰";s:9:"user_role";s:9:"管理员";}', NULL, NULL),
-('790dd3e853d090b1edb140d96876b851', '127.0.0.1', 0, 1414641284, 'a:5:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"user_key";s:11:"14146371391";s:9:"user_name";s:9:"林星辰";s:9:"user_role";s:9:"管理员";}', NULL, NULL),
-('aff37d9780ccc5ddc5813cc0d22f2d1d', '127.0.0.1', 0, 1414688436, 'a:5:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"user_key";s:11:"14146851541";s:9:"user_name";s:9:"林星辰";s:9:"user_role";s:9:"管理员";}', NULL, NULL),
-('b5644596ce698648ea03a8991e341087', '127.0.0.1', 0, 1414739207, 'a:5:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"user_key";s:11:"14147381721";s:9:"user_name";s:9:"林星辰";s:9:"user_role";s:9:"管理员";}', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -753,7 +704,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_locked_reason` varchar(1000) NOT NULL COMMENT '锁定原因',
   `user_recruit` tinyint(1) NOT NULL COMMENT '是否完成负责部员设置',
   `user_mess_ban` date NOT NULL COMMENT '禁言截止日期',
-  PRIMARY KEY (`user_number`),
+  PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_id` (`user_id`),
   UNIQUE KEY `user_number` (`user_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -793,21 +744,7 @@ CREATE TABLE IF NOT EXISTS `version` (
   `ver_describe` varchar(1000) NOT NULL,
   `release_time` datetime NOT NULL,
   PRIMARY KEY (`ver_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
-
---
--- 转存表中的数据 `version`
---
-
-INSERT INTO `version` (`ver_id`, `ver_code`, `ver_describe`, `release_time`) VALUES
-(1, 'Alpha1 build1064', '', '2014-04-23 14:39:38'),
-(2, 'Alpha1 build1070', '', '2014-04-29 20:13:25'),
-(3, 'Alpha1 build1071', '第一条开发日志', '2014-04-29 23:59:49'),
-(4, 'Alpha1 build1072', '1.修复了多个因为过度安全加固而造成的BUG\n2.易用性改进\n3.紧急修改所有使用 (int) 的代码', '2014-05-04 14:36:43'),
-(5, 'Alpha1 build1074', '1.研究成功WebSocket，建立简单社团聊天室\n2.易用性更新', '2014-05-06 20:22:52'),
-(6, 'Alpha1 build1075', '细节更新', '2014-05-07 19:45:55'),
-(7, 'Alpha1 build1076', '社团聊天室已经完成以下开发（封闭测试版）\n1.对WebSocket底层代码解析\n2.发送表情、图片、文件\n3.群聊、私聊任意切换\n4.@用户\n\n其他功能即将上线', '2014-05-09 00:48:09'),
-(8, 'Alpha1 build1077', '1.易用性更新\n2.寻找灵感超级文件管理器部署完毕', '2014-05-15 21:25:26');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
