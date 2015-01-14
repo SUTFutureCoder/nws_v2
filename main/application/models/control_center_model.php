@@ -36,7 +36,7 @@ class Control_center_model extends CI_Model{
         $this->db->order_by('ver_id', 'desc');
         $this->db->limit(1);       
         $query = $this->db->get('version');
-        return $query->result_array();
+        return $query->row_array();
     }
     
     /**    

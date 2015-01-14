@@ -9,6 +9,14 @@
         <script type="text/javascript" src="js/swfobject.js"></script>
         <script type="text/javascript" src="js/web_socket.js"></script>
         <script type="text/javascript" src="js/json.js"></script>
+        <script>
+        if ('index.php' == location.href.slice(location.href.lastIndexOf("/") + 1)){
+            //请使用.../main进行安装
+            //重定向
+            location.href = '../main';
+        }
+//        alert(location.href.slice(location.href.lastIndexOf("/") + 1));
+        </script>
         <style>
             body
             {

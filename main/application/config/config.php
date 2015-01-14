@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | Encryption Key
 |--------------------------------------------------------------------------
 |
-| If you use the Encryption class or the Session class you
+$config[\'encryption_key\'] = 'rJcLU';
 | MUST set an encryption key.  See the user guide for info.
 |
 */

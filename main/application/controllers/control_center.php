@@ -70,6 +70,11 @@ class Control_center extends CI_Controller{
             !$role_authorizee ? $role_authorizee_alert = 1 : $role_authorizee = 0;
             1 == $user_num ? $user_num_alert = 1 : $user_num_alert = 0;
         }  
+        
+        if (!isset($version['ver_code'])){
+           $version['ver_code'] = '';
+           $version['release_time'] = '';
+        }
             //if (!isset($section[0]))
         $this->load->view('control_center_view', array(
             'user_id' => $this->session->userdata('user_id'),
@@ -77,8 +82,8 @@ class Control_center extends CI_Controller{
             'user_key' => $this->encrypt->encode($this->session->userdata('user_key')),
             'user_name' => $this->session->userdata('user_name'),
             'organ_name' => $this->basic->organ_name,
-            'ver_code' => $version[0]['ver_code'],
-            'release_time' => $version[0]['release_time'],
+            'ver_code' => $version['ver_code'],
+            'release_time' => $version['release_time'],
             'init' => $init,
             'role_authorizee_alert' => $role_authorizee_alert,
             'user_num_alert' => $user_num_alert,
