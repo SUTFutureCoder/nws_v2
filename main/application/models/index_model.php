@@ -129,6 +129,7 @@ class Index_model extends CI_Model{
                         $this->db->where('user_id', $row['user_id']);
                         $this->db->update('user', $logfail);
                         $data['login_pass'] = 0;
+                        
                     }
                 }
             }
