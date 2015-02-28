@@ -37,4 +37,8 @@
 ####招新界面
 使用标准EXCEL表格进行离线招新，然后进行汇总，机器筛选。  
 但准备切换到二维码式招新方法。
-![招新界面](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_08.png?raw=true)
+![招新界面](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_07.png?raw=true)
+
+
+####授权界面
+![授权界面](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_09.png?raw=true)
