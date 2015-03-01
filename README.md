@@ -5,4 +5,16 @@
 
 * 欢迎使用三位一体信息化社团建设套件V2
 
-> 目前因为WebSocket引擎未能承受住测试压力，准备切换到ajax方法，在需要同步的方面使用WebSocket引擎
+---
+
+###STAR原则
+
+> **S** 第一版采用效率较低的数据同步请求方式，数据库设计冗余，代码逻辑未封装。  
+> **T** 尝试使用Ajax技术和WebSocket引擎，掌握数据库结构优化技巧。  
+> **A** 重写 80% 代码，逻辑封装至各个函数和类库中以提高重用性，重新设计数据库结构。  
+> **R** 代码性能和重用性及数据库结构有了显著的改进，并且适合其他学校或社团使用。  
+
+###DEMO 示例
+
+####一键初始化
+![一键初始化](https://github.com/SUTFutureCoder/intelligence_server/blob/master/example-img/WSPDM2_01.png?raw=true)

@@ -229,6 +229,8 @@ class Control_center extends CI_Controller{
         $this->load->model('control_center_model'); 
         $this->load->model('user_model');
         $this->load->model('section_model');
+        echo $this->input->post('user_key', TRUE);
+        return 0;
         $user_id = $this->encrypt->decode($this->input->post('user_key', TRUE));
         if ('管理员' != $this->secure->CheckRole($user_id) || !$user_id){
             echo json_encode(array(
@@ -245,6 +247,7 @@ class Control_center extends CI_Controller{
                 ));
             return 0;
         }
+        
         //设置部门关联
         if (!$this->user_model->SetUserSection($user_id, $this->input->post('admin_section', TRUE))){
             echo json_encode(array(

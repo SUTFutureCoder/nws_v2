@@ -552,6 +552,4 @@ class Person_add_by_excel extends CI_Controller{
         }
            
     }
-    
-    
 }
