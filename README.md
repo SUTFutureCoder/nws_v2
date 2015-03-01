@@ -16,5 +16,25 @@
 
 ###DEMO 示例
 
-####一键初始化
-![一键初始化](https://github.com/SUTFutureCoder/intelligence_server/blob/master/example-img/WSPDM2_01.png?raw=true)
+####一键安装
+![一键安装](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_01.png?raw=true)
+
+####初始化
+![初始化](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_02.png?raw=true)
+
+####套件主界面
+![套件主界面](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_03.png?raw=true)
+
+####添加活动
+![添加活动](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_04.png?raw=true)
+
+####查看活动列表
+![查看活动列表](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_05.png?raw=true)
+
+####添加用户
+![添加用户](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_06.png?raw=true)
+
+####招新界面
+使用标准EXCEL表格进行离线招新，然后进行汇总，机器筛选。  
+但准备切换到二维码式招新方法。
+![招新界面](https://github.com/SUTFutureCoder/nws_v2/blob/master/sample-img/nws_v2_08.png?raw=true)
